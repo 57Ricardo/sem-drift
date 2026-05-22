@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-PT"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>index.html - Versão Final para Download</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#201f1f",
+                      "outline-variant": "#494456",
+                      "surface-container-high": "#2a2a2a",
+                      "on-primary-fixed": "#22005d",
+                      "on-tertiary-fixed": "#001f24",
+                      "on-surface": "#e5e2e1",
+                      "on-primary": "#3a0092",
+                      "secondary": "#ffb866",
+                      "surface-container-low": "#1c1b1b",
+                      "on-secondary-fixed": "#2b1700",
+                      "tertiary-fixed-dim": "#00daf3",
+                      "primary-fixed-dim": "#cfbcff",
+                      "primary-container": "#6200ea",
+                      "inverse-surface": "#e5e2e1",
+                      "on-error": "#690005",
+                      "tertiary-container": "#005b66",
+                      "on-primary-container": "#cfbcff",
+                      "inverse-primary": "#6e25f6",
+                      "error-container": "#93000a",
+                      "primary-fixed": "#e9ddff",
+                      "on-secondary-fixed-variant": "#673d00",
+                      "on-surface-variant": "#cbc3d9",
+                      "on-secondary-container": "#3f2300",
+                      "surface-bright": "#393939",
+                      "tertiary": "#00daf3",
+                      "inverse-on-surface": "#313030",
+                      "surface-dim": "#131313",
+                      "on-tertiary-container": "#00d9f2",
+                      "tertiary-fixed": "#9cf0ff",
+                      "on-primary-fixed-variant": "#5400cc",
+                      "surface-tint": "#cfbcff",
+                      "background": "#131313",
+                      "surface-container-lowest": "#0e0e0e",
+                      "outline": "#958da2",
+                      "secondary-container": "#cb8011",
+                      "surface-container-highest": "#353534",
+                      "secondary-fixed-dim": "#ffb866",
+                      "secondary-fixed": "#ffddba",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary": "#482900",
+                      "primary": "#cfbcff",
+                      "on-tertiary": "#00363d",
+                      "on-tertiary-fixed-variant": "#004f58",
+                      "error": "#ffb4ab",
+                      "surface-variant": "#353534",
+                      "on-background": "#e5e2e1",
+                      "surface": "#131313"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "unit": "8px",
+                      "gutter": "24px",
+                      "margin": "32px",
+                      "container-max": "1280px",
+                      "stack-lg": "40px"
+              },
+              "fontFamily": {
+                      "headline-xl": ["Space Grotesk"],
+                      "headline-lg": ["Space Grotesk"],
+                      "label-sm": ["JetBrains Mono"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .glass-panel {
+            background: rgba(26, 26, 26, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .neon-border-focus:focus-within {
+            border-color: theme('colors.tertiary');
+            box-shadow: 0 0 10px rgba(0, 218, 243, 0.3);
+        }
+        .glow-tertiary {
+            box-shadow: 0 0 15px rgba(0, 218, 243, 0.15);
+        }
+        .glow-primary {
+            box-shadow: 0 0 15px rgba(207, 188, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-white/5 dark:border-outline-variant/20">
+<div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<a class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed-dim tracking-tighter" href="index.html">
+                Sem Drift
+            </a>
+<div class="hidden md:flex space-x-8 items-center relative">
+<a class="text-secondary dark:text-secondary-fixed-dim border-b-2 border-secondary pb-1 hover:bg-white/5 transition-colors duration-200 font-label-sm text-label-sm uppercase" href="index.html">Início</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-on-surface hover:bg-white/5 transition-colors duration-200 font-label-sm text-label-sm uppercase" href="processo.html">Processo</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-on-surface hover:bg-white/5 transition-colors duration-200 font-label-sm text-label-sm uppercase" href="catalogo.html">Catálogo</a>
+<div class="relative group">
+<button class="text-on-surface-variant dark:text-outline hover:text-on-surface hover:bg-white/5 transition-colors duration-200 font-label-sm text-label-sm uppercase cursor-pointer py-1" id="modify-btn">Modifica o teu comando</button>
+<div class="hidden absolute top-full left-0 mt-2 bg-surface-container border border-outline-variant/20 rounded-xl shadow-2xl p-2 min-w-[200px] flex flex-col gap-1 z-[60] backdrop-blur-xl animate-in fade-in slide-in-from-top-2 duration-200" id="contact-menu">
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-variant transition-colors group/item" href="https://www.instagram.com/semdrift/" target="_blank">
+<span class="material-symbols-outlined text-secondary">photo_camera</span>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Instagram</span>
+<span class="text-xs text-on-surface-variant">Siga-nos no Insta</span>
+</div>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-variant transition-colors group/item" href="https://p.wallapop.com/p/441510329" target="_blank">
+<span class="material-symbols-outlined text-primary">shopping_bag</span>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Wallapop</span>
+<span class="text-xs text-on-surface-variant">Nossa loja online</span>
+</div>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-variant transition-colors group/item" href="https://www.olx.pt/" target="_blank">
+<span class="material-symbols-outlined text-tertiary">store</span>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">OLX</span>
+<span class="text-xs text-on-surface-variant">Anúncios OLX</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button aria-label="Toggle Dark Mode" class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-variant/50">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<a aria-label="Instagram" class="hidden md:flex items-center justify-center w-10 h-10 rounded-full border border-primary/30 text-primary hover:bg-primary/10 transition-all duration-300" href="https://www.instagram.com/semdrift/" target="_blank"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="hidden md:inline-flex bg-secondary text-on-secondary-fixed font-bold py-2 px-6 rounded-full hover:bg-secondary-fixed transition-colors items-center gap-2 shadow-[0_0_15px_rgba(255,184,102,0.2)]" href="https://p.wallapop.com/p/441510329" rel="noopener noreferrer" target="_blank">Loja Wallapop</a>
+<a class="hidden md:inline-flex bg-primary text-on-primary font-bold py-2 px-6 rounded-full hover:bg-primary-fixed-dim transition-colors items-center gap-2" href="https://www.instagram.com/semdrift/" target="_blank">
+                    Contacta-me
+                </a>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-16">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center justify-center overflow-hidden py-stack-lg">
+<!-- Background Image with Gradient Overlay -->
+<div class="absolute inset-0 z-0">
+<img alt="Hero Background" class="w-full h-full object-cover opacity-30 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ_o2n5rmF8y-7ADtOOQ1-LeuOXFkhfk-48TO-MFYpeyG3vCDZ6ncobmgkc5c-Qzwi3zSSanLxgqVkynkMFva9v55iQeHrsWSsr9qOTPUHh7YECrfIcyiwvaBG9qxay_MKdzPCZq8ZfEqxGkRMhDgaa0vmMNA6MyAdUjU6Y9NrW1jn5uuYDQKEYwVujhNl3OnAxSJBa4CreGz3fPg7FCeQGTN3mBGaCOQR6zT9l4FSPEK4psj1lihfcSY3WropuWkG-GU0pzlUN2w"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background z-10"></div>
+<!-- Neon Glow Accents -->
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-container/20 rounded-full blur-[120px] z-10 pointer-events-none"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-tertiary-container/20 rounded-full blur-[120px] z-10 pointer-events-none"></div>
+</div>
+<div class="relative z-20 container mx-auto px-gutter max-w-container-max flex flex-col md:flex-row items-center gap-stack-lg">
+<div class="flex-1 flex flex-col items-start gap-stack-md text-left">
+<div class="flex flex-wrap gap-3 mb-4">
+<span class="bg-surface-container-high/60 backdrop-blur-md text-tertiary px-4 py-1.5 rounded-full font-label-sm text-[13px] border border-tertiary/40 shadow-[0_0_15px_rgba(0,218,243,0.15)] flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+                            Sensores TMR &amp; Hall Effect
+                        </span>
+<span class="bg-surface-container-high/60 backdrop-blur-md text-primary px-4 py-1.5 rounded-full font-label-sm text-[13px] border border-primary/40 shadow-[0_0_15px_rgba(207,188,255,0.15)] flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                            Certificação Zero Drift
+                        </span>
+</div>
+<h1 class="font-headline-xl text-[56px] md:text-headline-xl leading-[1.05] text-on-surface drop-shadow-lg mb-2">
+                        O Fim do <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-error">Stick Drift</span>.
+                    </h1>
+<p class="font-body-lg text-[20px] md:text-body-lg leading-relaxed md:leading-1.6 text-on-surface-variant max-w-xl">
+                        Comandos DualSense personalizados com tecnologia magnética de precisão. Alta performance para jogadores competitivos que exigem o máximo dos seus equipamentos. Escolha entre Hall Effect e os novos sensores TMR para a derradeira precisão.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-stack-md w-full sm:w-auto">
+<a class="bg-secondary text-on-secondary-fixed font-bold py-4 px-8 rounded-lg hover:bg-secondary-fixed transition-all shadow-[0_0_20px_rgba(255,184,102,0.3)] hover:shadow-[0_0_30px_rgba(255,184,102,0.5)] flex items-center justify-center gap-2 text-lg" href="https://p.wallapop.com/p/441510329">
+<span class="material-symbols-outlined">shopping_cart</span>
+                            Comprar no Wallapop
+                        </a>
+<a class="glass-panel text-on-surface font-semibold py-4 px-8 rounded-lg hover:bg-surface-container-high transition-colors border border-tertiary/50 flex items-center justify-center gap-2 group text-lg" href="#reparo">
+<span class="material-symbols-outlined group-hover:text-tertiary transition-colors">build</span>
+                            Serviços de Reparação
+                        </a>
+</div>
+</div>
+<div class="flex-1 relative w-full mt-12 md:mt-0">
+<div class="grid grid-cols-6 grid-rows-6 gap-3 h-[500px] md:h-[600px] w-full">
+<div class="col-span-3 row-span-4 rounded-2xl overflow-hidden glass-panel border border-white/10 group">
+<img alt="DualSense Detail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsiNzKLP0FyETcYR-4L5yG0F5_N2TcpTtFB7TtIaX0LqzH_SWjnz9Oe14wD0EYHW3HbX4sBYOliSmf-_XMALxQuMh1XE2ARNCH5PMizOwUEQbLffWxXJodRLWbYNCnOSBk1zOfHH-GJtIRmov5BWbEGk3Inyz-D8z_CKczy2b5cAPMEt4fwaCaB-bx2UjAfBvVptUdxIs6FSx-uYPAif5U8n4P7Fpzty3hHRtyTpDt_8rgzsnB61HL0FxWV0dDbPfRkOgPnZhLD-E"/>
+</div>
+<div class="col-span-3 row-span-2 rounded-2xl overflow-hidden glass-panel border border-white/10 group">
+<img alt="DualSense Front" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoKbmIXG0vadr_GzgefIN11kmFev7DC7GT-xieBnw9xXbITzlU7mw150R9V_7slwIfQELDifMeCKJw66J9nIjX4XJgfCpM0prIAakQCLUvRZgarquTiHaQQDWnmzQf8-cVpno5NM05hizRZ3p1Lk9JtOA451Tgrh6HHo6Vw7asHte4PjJ8weLtxpdFXEEazQZfzmimbF7VTJTQamySizOW-UD9UpjwNCgrIzw38iltSYUzaioDntrBWkKXaNjN5JzdjdjqGCrNt_w"/>
+</div>
+<div class="col-span-3 row-span-2 rounded-2xl overflow-hidden glass-panel border border-white/10 group">
+<img alt="Custom Controllers" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnQQ9OxQCRyctQMEwXvtJZKeyjmiyndDJEnWJbds724rpq5ULpkaWH6L8l7NOCnIKGhiDCxIG558-LEgdcp4qPegillpgoe3wdX6jWeaOBSYD1Qu1Pma5oeJkD-TWg4450Aa-GK9j4AugB04BZrDZZilk4hvOKiyW9CG54sxyPfThW3mXphYlhuGxGetLhKOnhzC0jIffjkxL4XIfkESqY1gND6wBcaiRJrWq5UbAo2sSFBQz-E2HxqF_-PjDrvtvjbLQv6WOsHNU"/>
+</div>
+<div class="col-span-2 row-span-2 rounded-2xl overflow-hidden glass-panel border border-white/10 group">
+<img alt="TMR Sensors" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFMXJhwfys12wMM4w5aBM3n88kIoC1aDYgnHSdbfA-OVROUmBefcmmSp58aQN7XV82F45c2hwcVpzvKg0GUHksbQMsPgSmtGTulZdg3sZh8A1tpvLh-ULM2BILuO5E_BLPAcbwlC72cYqgd6paNbmirTVmZkAMwufzKU_gqdGPvQTfkwspocywyWtO3qPbChjYJfKv7JlqvK2TpsRLqi0_Iv3kEJqfuCTshWs9qgm25akgSPTf3BfXtbo2QUDBdMMSHsaI4NSQFjU"/>
+</div>
+<div class="col-span-2 row-span-2 rounded-2xl overflow-hidden glass-panel border border-white/10 group">
+<img alt="Controller Back" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Gs4TjALWNhIoiZdVVY75E3JmoCHEStbdTPfUEUWosMDBu_M24sVYbOlX65VIXXUSnNE7wQfjarq4cMTgDxrEMm8iggrlK2QNO_IA0wUaK7hjCMoJDODZzPHi3Wl5NYSdqgOOVms4Nwo709rwoOMsDrOMZzTOf-7lnqxGB4_zMNYLzPn-oQdCo26uzFLJhcZPw5boXYjM-4KW9d7bg7vfCFv8LiGXtcM_jlznyvrk_NupUuerR2Kl58xheYI_pcvp5jNLWIhba64"/>
+</div>
+<div class="col-span-2 row-span-2 rounded-2xl overflow-hidden glass-panel border border-white/10 group">
+<img alt="Camo DualSense" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwzmDrWA7dhD8bNhjaFV4R1ucig4ybNru_UILqbDJVOZZJs6bnxAWktTtMCqVns4CHV24BojI0m6fpas0xHOmPzCGnuHaQKjQKv7itWe7PgJK5g50c50BhIFYr4u2KyGBuY01HRNT5GTJIheZgFTWRirFOxwqcvvyNIIAeejaWDmtaowoyVz40MLmiup2IdOihJeZt5XxIlEgTO8qMexyhx05VooJzob-jOXMc5BT96VWKww7UQho1-Tl5eHbBSDlG1egZav23SrY"/>
+</div>
+</div>
+<div class="absolute -bottom-6 -right-6 glass-panel p-4 rounded-xl border border-tertiary/30 backdrop-blur-xl z-30 hidden lg:block shadow-[0_0_20px_rgba(0,218,243,0.2)]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">verified</span>
+<span class="text-on-surface font-bold">Qualidade Certificada</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Engenharia de Precisão -->
+<section class="py-stack-lg container mx-auto px-gutter max-w-container-max relative bg-surface-container-lowest" id="reparo">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-96 bg-primary/10 blur-[150px] rounded-full pointer-events-none -z-10"></div>
+<div class="text-center mb-stack-lg">
+<div class="inline-flex items-center justify-center gap-3 mb-4">
+<span class="material-symbols-outlined text-4xl text-primary drop-shadow-[0_0_10px_rgba(207,188,255,0.6)]">precision_manufacturing</span>
+<h2 class="font-headline-lg text-4xl md:text-5xl text-primary font-bold tracking-tight drop-shadow-[0_0_20px_rgba(207,188,255,0.4)] uppercase">Engenharia de Precisão</h2>
+</div>
+<p class="max-w-3xl mx-auto font-body-lg text-lg md:text-xl font-medium leading-relaxed text-on-background px-4">
+                    Não deite fora o seu comando com drift. Nós substituímos os analógicos defeituosos por sensores <span class="text-tertiary font-bold underline decoration-tertiary/30">Hall Effect</span> ou <span class="text-secondary font-bold underline decoration-secondary/30">TMR</span> indestrutíveis.
+                </p>
+</div>
+<div class="flex flex-col gap-stack-md">
+<!-- Row 1: Full Width Installation Card -->
+<div class="w-full">
+<div class="glass-panel rounded-2xl p-6 md:p-8 flex flex-col relative overflow-hidden group bg-black/60 border-white/10 shadow-lg">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -z-10 group-hover:bg-primary/20 transition-colors"></div>
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-4xl text-primary">rebase_edit</span>
+</div>
+<h3 class="font-headline-lg text-3xl font-bold text-on-surface mb-4">Instalação de Joysticks Hall Effect &amp; TMR</h3>
+<p class="flex-grow mb-8 text-on-surface leading-relaxed md:text-lg">Substituição dos joysticks originais por tecnologia magnética Hall Effect ou TMR, com instalação profissional e calibração avançada de nível competitivo.</p>
+<div class="mt-auto">
+<div class="space-y-6 border-t border-white/10 pt-6">
+<h4 class="text-secondary font-bold text-sm uppercase tracking-widest flex items-center gap-2">
+<span class="w-8 h-px bg-secondary/30"></span>
+                                    Comparativo de Tecnologias
+                                </h4>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card: Originais -->
+<div class="bg-surface-container-low/60 backdrop-blur-sm p-6 rounded-xl border border-white/5 transition-all hover:border-white/20">
+<div class="flex items-center gap-3 mb-5">
+<span class="text-3xl">🕹️</span>
+<h5 class="text-on-surface font-bold text-lg">Originais</h5>
+</div>
+<ul class="space-y-3 text-sm text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="text-green-500 font-bold">✔</span> <span>Sensação stock familiar</span></li>
+<li class="flex items-start gap-2"><span class="text-red-500 font-bold">✖</span> <span>Desgaste mecânico rápido</span></li>
+<li class="flex items-start gap-2"><span class="text-red-500 font-bold">✖</span> <span>Propensão elevada a drift</span></li>
+</ul>
+</div>
+<!-- Card: Hall Effect -->
+<div class="bg-surface-container-low/60 backdrop-blur-sm p-6 rounded-xl border border-primary/20 shadow-[0_0_15px_rgba(207,188,255,0.05)] transition-all hover:border-primary/40">
+<div class="flex items-center gap-3 mb-5">
+<span class="text-3xl">🧲</span>
+<h5 class="text-primary font-bold text-lg">Hall Effect</h5>
+</div>
+<ul class="space-y-3 text-sm text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="text-green-500 font-bold">✔</span> <span>Sem contacto físico interno</span></li>
+<li class="flex items-start gap-2"><span class="text-green-500 font-bold">✔</span> <span>Durabilidade extrema</span></li>
+<li class="flex items-start gap-2"><span class="text-red-500 font-bold">✖</span> <span>Curva de resposta linear</span></li>
+</ul>
+</div>
+<!-- Card: TMR (Highlighted) -->
+<div class="bg-surface-container/40 backdrop-blur-md p-6 rounded-xl border-2 border-tertiary shadow-[0_0_25px_rgba(0,218,243,0.2)] transition-all relative overflow-hidden scale-[1.02] z-10">
+<div class="absolute -top-1 -right-1 bg-tertiary text-on-tertiary px-3 py-1 text-[10px] font-bold uppercase rounded-bl-lg tracking-tighter">Mais Avançado</div>
+<div class="flex items-center gap-3 mb-5">
+<span class="text-3xl drop-shadow-[0_0_8px_rgba(0,218,243,0.5)]">⚡</span>
+<h5 class="text-tertiary font-bold text-lg drop-shadow-[0_0_5px_rgba(0,218,243,0.3)]">TMR Magnetic</h5>
+</div>
+<ul class="space-y-3 text-sm text-on-surface">
+<li class="flex items-start gap-2"><span class="text-green-400 font-bold">✔</span> <span class="font-medium">Precisão sub-milimétrica</span></li>
+<li class="flex items-start gap-2"><span class="text-green-400 font-bold">✔</span> <span class="font-medium">Resposta instantânea</span></li>
+<li class="flex items-start gap-2"><span class="text-green-400 font-bold">✔</span> <span class="font-medium">Sensação natural &amp; fluída</span></li>
+<li class="flex items-start gap-2"><span class="text-green-400 font-bold">✔</span> <span class="font-medium">Topo de gama competitivo</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Row 2: Mods & Upgrades -->
+<div class="w-full">
+<div class="relative rounded-2xl overflow-hidden min-h-[400px] flex flex-col group border border-white/10 shadow-2xl">
+<!-- Background Image -->
+<img alt="Mods &amp; Upgrades Background" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX0EmELsunZWtwFomjvynLpqYwU3CZ0JcLeXk-oW_MTdpdyahpyicy00_6JQsIXtIRQQUIITP-ywjJWWoLr4ZBc7SGj1whTEzwrvdRTzVQcBtNR_cj3kg-9ARee2WLSMoc4wuvvGxb3Dt5Pq9w1MmhmA9rW0sE_lE5T784jZ8P2FGVaFP2bpocHNuzU82C27AGA3hgDyZkjgEnS6REvvt60TDLVEAhZL3iC4aXrd-QORy5H4ODfIVsapC4AhaTSIZEibENXhrwj3I"/>
+<!-- Dark Overlay with Blur -->
+<div class="absolute inset-0 bg-gradient-to-tr from-black via-black/80 to-primary-container/20 backdrop-blur-[2px]"></div>
+<div class="relative z-10 p-8 md:p-12 flex flex-col h-full justify-center max-w-4xl">
+<div class="inline-flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-secondary text-4xl drop-shadow-[0_0_10px_rgba(255,184,102,0.5)]">settings_input_component</span>
+<h3 class="font-headline-lg text-4xl md:text-5xl font-bold text-on-surface uppercase tracking-tight">Mods &amp; Upgrades</h3>
+</div>
+<p class="text-on-surface text-lg md:text-xl leading-relaxed mb-8 max-w-2xl opacity-90">
+                                Transforme o seu comando numa ferramenta de precisão. Oferecemos as modificações mais avançadas do mercado para ergonomia, velocidade e estética.
+                            </p>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 p-3 rounded-lg hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-primary">mouse</span>
+<span class="font-label-sm text-xs font-bold uppercase tracking-wider">Clicky Triggers</span>
+</div>
+<div class="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 p-3 rounded-lg hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-primary">swords</span>
+<span class="font-label-sm text-xs font-bold uppercase tracking-wider">Paddles K1-K4</span>
+</div>
+<div class="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 p-3 rounded-lg hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-primary">monitor</span>
+<span class="font-label-sm text-xs font-bold uppercase tracking-wider">OLED Display Kits</span>
+</div>
+<div class="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 p-3 rounded-lg hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-primary">texture</span>
+<span class="font-label-sm text-xs font-bold uppercase tracking-wider">Extreme Grips</span>
+</div>
+<div class="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 p-3 rounded-lg hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-primary">palette</span>
+<span class="font-label-sm text-xs font-bold uppercase tracking-wider">Custom Faceplates</span>
+</div>
+<div class="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 p-3 rounded-lg hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-primary">psychology</span>
+<span class="font-label-sm text-xs font-bold uppercase tracking-wider">Custom Builds</span>
+</div>
+</div>
+<div class="mt-10 flex flex-wrap gap-4">
+<a class="bg-secondary text-on-secondary font-bold py-3 px-6 rounded-lg hover:bg-secondary-fixed transition-all flex items-center gap-2 group shadow-[0_0_20px_rgba(255,184,102,0.2)]" href="catalogo.html">
+                                    Ver Catálogo Completo
+                                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Row 3: Services Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md w-full">
+<div class="glass-panel rounded-2xl p-6 md:p-8 flex flex-col relative overflow-hidden group bg-black/60 border-white/10 shadow-md">
+<div class="absolute top-0 right-0 w-24 h-24 bg-tertiary/10 rounded-bl-full -z-10 group-hover:bg-tertiary/20 transition-colors"></div>
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-4xl text-tertiary">precision_manufacturing</span>
+</div>
+<h3 class="font-headline-lg text-3xl font-bold text-on-surface mb-4">Calibração Profissional</h3>
+<p class="text-on-surface leading-relaxed mb-6 opacity-90 md:text-lg">Calibração avançada dos joysticks para máxima precisão e consistência em todos os jogos.</p>
+<ul class="text-on-surface-variant text-sm space-y-3 mb-4">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-tertiary rounded-full"></span> Ajuste da circularidade</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-tertiary rounded-full"></span> Calibração da zona centro</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-tertiary rounded-full"></span> Compensação de flutuação de todos os eixos</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-tertiary rounded-full"></span> Testes de funcionamento após calibração</li>
+</ul>
+</div>
+<div class="glass-panel rounded-2xl p-6 md:p-8 flex flex-col relative overflow-hidden group bg-black/60 border-white/10 shadow-md">
+<div class="absolute top-0 right-0 w-24 h-24 bg-secondary/10 rounded-bl-full -z-10 group-hover:bg-secondary/20 transition-colors"></div>
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-4xl text-secondary">cleaning_services</span>
+</div>
+<h3 class="font-headline-lg text-3xl font-bold text-on-surface mb-4">Limpeza &amp; Manutenção</h3>
+<p class="text-on-surface leading-relaxed mb-6 opacity-90 md:text-lg">Serviço de manutenção preventiva e recuperação do comando, focado na fiabilidade e longevidade dos componentes.</p>
+<ul class="text-on-surface-variant text-sm space-y-3 mb-4">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> Remoção de pó, resíduos e oxidação</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> Desinfeção do comando</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> Limpeza interna e externa completa</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> Reparação de problemas de funcionamento de botões ou triggers</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> Substituição de componentes danificados</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> Diagnóstico técnico especializado</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container dark:bg-surface-container-lowest/90 backdrop-blur-2xl border-t border-white/5 shadow-lg">
+<div class="flex justify-around items-center h-16 px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-secondary bg-secondary-container/20 rounded-xl px-4 py-1 transition-all duration-300 ease-in-out" href="index.html">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 active:bg-surface-bright transition-all duration-300 ease-in-out px-4 py-1 rounded-xl" href="catalogo.html">
+<span class="material-symbols-outlined mb-1">grid_view</span>
+<span class="font-label-sm text-label-sm">Catálogo</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 active:bg-surface-bright transition-all duration-300 ease-in-out px-4 py-1 rounded-xl" href="processo.html">
+<span class="material-symbols-outlined mb-1">build</span>
+<span class="font-label-sm text-label-sm">Processo</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 active:bg-surface-bright transition-all duration-300 ease-in-out px-4 py-1 rounded-xl" href="admin.html">
+<span class="material-symbols-outlined mb-1">lock</span>
+<span class="font-label-sm text-label-sm">Admin</span>
+</a>
+</div>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-stack-lg border-t border-white/5 bg-surface-container-lowest dark:bg-black mt-stack-lg mb-16 md:mb-0">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin max-w-container-max mx-auto gap-stack-md">
+<a class="font-headline-lg text-primary text-xl font-bold" href="index.html">Sem Drift</a>
+<div class="flex flex-wrap justify-center gap-4 text-center md:text-left">
+<a class="text-outline-variant hover:text-secondary transition-colors font-body-md text-sm" href="#">Privacidade</a>
+<a class="text-outline-variant hover:text-secondary transition-colors font-body-md text-sm" href="#">Termos</a>
+<a class="text-outline-variant hover:text-secondary transition-colors font-body-md text-sm" href="processo.html">Suporte</a>
+<a class="text-outline-variant hover:text-secondary transition-colors font-body-md text-sm" href="https://p.wallapop.com/p/441510329">Loja Wallapop</a>
+<a class="text-outline-variant hover:text-secondary transition-colors font-body-md text-sm" href="admin.html">Acesso Admin</a>
+</div>
+<div class="text-outline font-body-md text-xs text-center md:text-right">
+                © 2024 SEM DRIFT HARDWARE. Zero Latência. Zero Drift.
+            </div>
+</div>
+</footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('modify-btn');
+            const menu = document.getElementById('contact-menu');
+            
+            if (btn && menu) {
+                btn.addEventListener('click', (e) => {
+                  e.stopPropagation();
+                  menu.classList.toggle('hidden');
+                });
+
+                document.addEventListener('click', (e) => {
+                  if (menu && !menu.contains(e.target) && e.target !== btn) {
+                    menu.classList.add('hidden');
+                  }
+                });
+            }
+
+            const darkModeBtn = document.querySelector('button[aria-label="Toggle Dark Mode"]');
+            if (darkModeBtn) {
+                darkModeBtn.addEventListener('click', () => {
+                  document.documentElement.classList.toggle('dark');
+                  const icon = darkModeBtn.querySelector('.material-symbols-outlined');
+                  if (icon) {
+                      icon.textContent = document.documentElement.classList.contains('dark') ? 'dark_mode' : 'light_mode';
+                  }
+                });
+            }
+        });
+    </script>
+</body></html>
