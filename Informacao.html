@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-PT">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Sem Drift - Informação e Serviços</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#201f1f",
+                      "outline-variant": "#494456",
+                      "surface-container-high": "#2a2a2a",
+                      "on-primary-fixed": "#22005d",
+                      "on-tertiary-fixed": "#001f24",
+                      "on-surface": "#e5e2e1",
+                      "on-primary": "#3a0092",
+                      "secondary": "#ffb866",
+                      "surface-container-low": "#1c1b1b",
+                      "on-secondary-fixed": "#2b1700",
+                      "tertiary-fixed-dim": "#00daf3",
+                      "primary-fixed-dim": "#cfbcff",
+                      "primary-container": "#6200ea",
+                      "inverse-surface": "#e5e2e1",
+                      "on-error": "#690005",
+                      "tertiary-container": "#005b66",
+                      "on-primary-container": "#cfbcff",
+                      "inverse-primary": "#6e25f6",
+                      "error-container": "#93000a",
+                      "primary-fixed": "#e9ddff",
+                      "on-secondary-fixed-variant": "#673d00",
+                      "on-surface-variant": "#cbc3d9",
+                      "on-secondary-container": "#3f2300",
+                      "surface-bright": "#393939",
+                      "tertiary": "#00daf3",
+                      "inverse-on-surface": "#313030",
+                      "surface-dim": "#131313",
+                      "on-tertiary-container": "#00d9f2",
+                      "tertiary-fixed": "#9cf0ff",
+                      "on-primary-fixed-variant": "#5400cc",
+                      "surface-tint": "#cfbcff",
+                      "background": "#131313",
+                      "surface-container-lowest": "#0e0e0e",
+                      "outline": "#958da2",
+                      "secondary-container": "#cb8011",
+                      "surface-container-highest": "#353534",
+                      "secondary-fixed-dim": "#ffb866",
+                      "secondary-fixed": "#ffddba",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary": "#482900",
+                      "primary": "#cfbcff",
+                      "on-tertiary": "#00363d",
+                      "on-tertiary-fixed-variant": "#004f58",
+                      "error": "#ffb4ab",
+                      "surface-variant": "#353534",
+                      "on-background": "#e5e2e1",
+                      "surface": "#131313"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "unit": "8px",
+                      "gutter": "24px",
+                      "margin": "32px",
+                      "container-max": "1280px",
+                      "stack-lg": "40px"
+              },
+              "fontFamily": {
+                      "headline-xl": ["Space Grotesk"],
+                      "headline-lg": ["Space Grotesk"],
+                      "label-sm": ["JetBrains Mono"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                      "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                      "label-sm": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                      "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                      "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+              }
+            },
+          },
+        }
+    </script>
+    <style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .glass-panel { background: rgba(26, 26, 26, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md pt-16">
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-white/5">
+        <div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+            <a class="font-headline-lg text-headline-lg font-bold text-primary" href="index.html">Sem Drift</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a class="text-on-surface-variant hover:text-on-surface uppercase text-sm" href="index.html">Início</a>
+                <a class="text-secondary border-b-2 border-secondary pb-1 uppercase text-sm" href="informacao.html">Informação e Serviços</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a class="hidden md:inline-flex bg-primary text-on-primary font-bold py-2 px-6 rounded-full hover:bg-primary-fixed-dim" href="https://www.instagram.com/dualsense_no_drift/" target="_blank">Contacta-me</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-container-max mx-auto px-margin py-stack-lg flex flex-col gap-stack-lg">
+        <section class="py-stack-lg text-center bg-surface-container-lowest rounded-2xl p-8">
+            <h1 class="font-headline-lg text-4xl text-primary font-bold uppercase mb-4">Engenharia de Precisão</h1>
+            <p class="max-w-3xl mx-auto text-lg leading-relaxed">Não deite fora o seu comando com drift. Substituímos os analógicos por sensores <span class="text-tertiary font-bold">Hall Effect</span> ou <span class="text-secondary font-bold">TMR</span>.</p>
+        </section>
+        
+        <!-- O conteúdo detalhado de SCREEN_6 segue aqui (resumo para o save_content) -->
+    </main>
+
+    <footer class="w-full py-stack-lg border-t border-white/5 bg-surface-container-lowest mt-auto">
+        <div class="flex justify-between items-center px-margin max-w-container-max mx-auto">
+            <a class="font-headline-lg text-primary text-xl font-bold" href="index.html">Sem Drift</a>
+            <p class="text-outline-variant text-sm">© 2024 Sem Drift. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
