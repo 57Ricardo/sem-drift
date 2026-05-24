@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="pt-PT"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sem Drift - Início</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="dark" lang="pt-PT">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Sem Drift - Início</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
         tailwind.config = {
           darkMode: "class",
           theme: {
@@ -79,315 +79,140 @@
                       "stack-lg": "40px"
               },
               "fontFamily": {
-                      "headline-xl": [
-                              "Space Grotesk"
-                      ],
-                      "headline-lg": [
-                              "Space Grotesk"
-                      ],
-                      "label-sm": [
-                              "JetBrains Mono"
-                      ],
-                      "body-md": [
-                              "Inter"
-                      ],
-                      "body-lg": [
-                              "Inter"
-                      ]
+                      "headline-xl": ["Space Grotesk"],
+                      "headline-lg": ["Space Grotesk"],
+                      "label-sm": ["JetBrains Mono"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"]
               },
               "fontSize": {
-                      "headline-xl": [
-                              "48px",
-                              {
-                                      "lineHeight": "1.1",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "headline-lg": [
-                              "32px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "label-sm": [
-                              "12px",
-                              {
-                                      "lineHeight": "1.0",
-                                      "letterSpacing": "0.05em",
-                                      "fontWeight": "500"
-                              }
-                      ],
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "1.5",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ]
+                      "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                      "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                      "label-sm": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                      "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                      "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
               }
             },
           },
         }
     </script>
-<style>
-        body {
-            background-color: theme('colors.background');
-            color: theme('colors.on-background');
-        }
-        .glass-panel {
-            background: rgba(26, 26, 26, 0.4);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .neon-border-focus:focus-within {
-            border-color: theme('colors.tertiary');
-            box-shadow: 0 0 10px rgba(0, 218, 243, 0.3);
-        }
-        .glow-tertiary {
-            box-shadow: 0 0 15px rgba(0, 218, 243, 0.15);
-        }
-        .glow-primary {
-            box-shadow: 0 0 15px rgba(207, 188, 255, 0.15);
-        }
-        .tech-grid-bg {
-            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0);
-            background-size: 24px 24px;
-        }
-        .accent-border-secondary {
-            border-left: 4px solid theme('colors.secondary');
-        }
-        .accent-border-primary {
-            border-left: 4px solid theme('colors.primary');
-        }
-        .accent-border-tertiary {
-            border-left: 4px solid theme('colors.tertiary');
-        }
+    <style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .glass-panel { background: rgba(26, 26, 26, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .neon-border-focus:focus-within { border-color: theme('colors.tertiary'); box-shadow: 0 0 10px rgba(0, 218, 243, 0.3); }
+        .glow-tertiary { box-shadow: 0 0 15px rgba(0, 218, 243, 0.15); }
+        .glow-primary { box-shadow: 0 0 15px rgba(207, 188, 255, 0.15); }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-white/5 dark:border-outline-variant/20">
-<div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
-<a class="font-headline-lg font-bold text-primary dark:text-primary-fixed-dim tracking-tighter text-2xl" href="index.html">
-                Sem Drift
-            </a>
-<div class="hidden md:flex space-x-8 items-center relative">
-<a class="text-secondary dark:text-secondary-fixed-dim border-b-2 border-secondary pb-1 hover:bg-white/5 transition-colors duration-200 font-label-sm text-label-sm uppercase" href="index.html">Início</a>
-<a class="text-on-surface-variant dark:text-outline hover:text-on-surface hover:bg-white/5 transition-colors duration-200 font-label-sm text-label-sm uppercase leading-tight text-center" href="informacao.html">Informação e<br/>Serviços</a>
-<div class="relative group">
-<button class="text-on-surface-variant dark:text-outline hover:text-on-surface hover:bg-white/5 transition-colors duration-200 font-label-sm text-label-sm uppercase cursor-pointer py-1 leading-tight text-center" id="modify-btn">Modifica o<br/>teu comando</button>
-<div class="hidden absolute top-full left-0 mt-2 bg-surface-container border border-outline-variant/20 rounded-xl shadow-2xl p-2 min-w-[200px] flex flex-col gap-1 z-[60] backdrop-blur-xl animate-in fade-in slide-in-from-top-2 duration-200" id="contact-menu">
-<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-variant transition-colors group/item" href="https://www.instagram.com/dualsense_no_drift/" target="_blank">
-<span class="material-symbols-outlined text-secondary">photo_camera</span>
-<div class="flex flex-col">
-<span class="text-on-surface font-medium">Instagram</span>
-<span class="text-xs text-on-surface-variant">Siga-nos no Insta</span>
-</div>
-</a>
-<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-variant transition-colors group/item" href="https://p.wallapop.com/p/441510329" target="_blank">
-<span class="material-symbols-outlined text-secondary">shopping_cart</span>
-<div class="flex flex-col">
-<span class="text-on-surface font-medium">Wallapop</span>
-<span class="text-xs text-on-surface-variant">Loja e Serviços</span>
-</div>
-</a>
-<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-variant transition-colors group/item" href="https://www.olx.pt/" target="_blank">
-<span class="material-symbols-outlined text-tertiary">store</span>
-<div class="flex flex-col">
-<span class="text-on-surface font-medium">OLX</span>
-<span class="text-xs text-on-surface-variant">Anúncios OLX</span>
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="flex items-center space-x-4">
-<a class="hidden md:inline-flex bg-secondary text-on-secondary-fixed font-bold py-2 px-6 rounded-full hover:bg-secondary-fixed transition-colors items-center gap-2 shadow-[0_0_15px_rgba(255,184,102,0.2)]" href="https://p.wallapop.com/p/441510329" rel="noopener noreferrer" target="_blank">Loja Wallapop</a>
-<a class="hidden md:inline-flex bg-primary text-on-primary font-bold py-2 px-6 rounded-full hover:bg-primary-fixed-dim transition-colors items-center gap-2" href="https://www.instagram.com/dualsense_no_drift/" target="_blank"><span class="material-symbols-outlined">photo_camera</span> Contacta-me</a>
-</div>
-</div>
-</nav>
-<!-- Main Content -->
-<main class="flex-grow pt-16">
-<!-- Hero Section -->
-<section class="relative min-h-[921px] flex items-center justify-center overflow-hidden py-stack-lg">
-<!-- Background Image with Gradient Overlay -->
-<div class="absolute inset-0 z-0">
-<img alt="Hero Background" class="w-full h-full object-cover opacity-30 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ_o2n5rmF8y-7ADtOOQ1-LeuOXFkhfk-48TO-MFYpeyG3vCDZ6ncobmgkc5c-Qzwi3zSSanLxgqVkynkMFva9v55iQeHrsWSsr9qOTPUHh7YECrfIcyiwvaBG9qxay_MKdzPCZq8ZfEqxGkRMhDgaa0vmMNA6MyAdUjU6Y9NrW1jn5uuYDQKEYwVujhNl3OnAxSJBa4CreGz3fPg7FCeQGTN3mBGaCOQR6zT9l4FSPEK4psj1lihfcSY3WropuWkG-GU0pzlUN2w"/>
-<div class="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background z-10"></div>
-<!-- Neon Glow Accents -->
-<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-container/20 rounded-full blur-[120px] z-10 pointer-events-none"></div>
-<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-tertiary-container/20 rounded-full blur-[120px] z-10 pointer-events-none"></div>
-</div>
-<div class="relative z-20 container mx-auto px-gutter max-w-container-max flex flex-col md:flex-row items-center gap-stack-lg">
-<div class="flex-1 flex flex-col items-start gap-stack-md text-left">
-<div class="flex flex-wrap gap-3 mb-4">
-<span class="bg-surface-container-high/60 backdrop-blur-md text-tertiary px-4 py-1.5 rounded-full font-label-sm text-[13px] border border-tertiary/40 shadow-[0_0_15px_rgba(0,218,243,0.15)] flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>Sensores TMR &amp; Hall Effect</span>
-<span class="bg-surface-container-high/60 backdrop-blur-md text-primary px-4 py-1.5 rounded-full font-label-sm text-[13px] border border-primary/40 shadow-[0_0_15px_rgba(207,188,255,0.15)] flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">verified</span>Certificação Zero Drift</span>
-</div>
-<h1 class="font-headline-xl text-[56px] md:text-headline-xl leading-[1.05] text-on-surface drop-shadow-lg mb-2">
-                        O Fim do <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-error">Stick Drift</span>.
-                    </h1>
-<p class="font-body-lg text-[20px] md:text-body-lg leading-relaxed md:leading-1.6 text-on-surface-variant max-w-xl">
-                        Comandos DualSense personalizados com tecnologia magnética de precisão. Alta performance para jogadores competitivos que exigem o máximo dos seus equipamentos. Escolha entre Hall Effect e os novos sensores TMR para a derradeira precisão.
-                    </p>
-<div class="flex flex-col sm:flex-row gap-4 mt-stack-md w-full sm:w-auto">
-<a class="bg-secondary text-on-secondary-fixed font-bold py-4 px-8 rounded-lg hover:bg-secondary-fixed transition-all shadow-[0_0_20px_rgba(255,184,102,0.3)] hover:shadow-[0_0_30px_rgba(255,184,102,0.5)] flex items-center justify-center gap-2 text-lg" href="https://p.wallapop.com/p/441510329">
-<span class="material-symbols-outlined">shopping_cart</span>
-                            Comprar no Wallapop
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-white/5 dark:border-outline-variant/20 transition-all duration-300">
+        <div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+            <a class="font-headline-lg font-bold text-primary dark:text-primary-fixed-dim tracking-tighter text-2xl" href="index.html">Sem Drift</a>
+            <div class="hidden md:flex space-x-8 items-center relative">
+                <a class="text-secondary dark:text-secondary-fixed-dim border-b-2 border-secondary pb-1 font-label-sm text-label-sm uppercase" href="index.html">Início</a>
+                <a class="text-on-surface-variant dark:text-outline hover:text-on-surface transition-colors duration-200 font-label-sm text-label-sm uppercase leading-tight" href="informacao.html">Informação e<br>Serviços</a>
+                <div class="relative group">
+                    <button class="text-on-surface-variant dark:text-outline hover:text-on-surface hover:bg-white/5 transition-colors duration-200 font-label-sm text-label-sm uppercase cursor-pointer py-1 leading-tight" id="modify-btn">Modifica o<br>teu comando</button>
+                    <div class="hidden absolute top-full left-0 mt-2 bg-surface-container border border-outline-variant/20 rounded-xl shadow-2xl p-2 min-w-[200px] flex flex-col gap-1 z-[60] backdrop-blur-xl animate-in fade-in slide-in-from-top-2 duration-200" id="contact-menu">
+                        <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-variant transition-colors group/item" href="https://www.instagram.com/dualsense_no_drift/" target="_blank">
+                            <span class="material-symbols-outlined text-secondary">photo_camera</span>
+                            <div class="flex flex-col">
+                                <span class="text-on-surface font-medium">Instagram</span>
+                                <span class="text-xs text-on-surface-variant">Siga-nos no Insta</span>
+                            </div>
                         </a>
-<a class="glass-panel text-on-surface font-semibold py-4 px-8 rounded-lg hover:bg-surface-container-high transition-colors border border-tertiary/50 flex items-center justify-center gap-2 group text-lg" href="informacao.html"><span class="material-symbols-outlined group-hover:text-tertiary transition-colors">info</span>Informação e Serviços</a>
-</div>
-</div>
-<div class="flex-1 relative w-full mt-12 md:mt-0">
-<div class="grid grid-cols-6 grid-rows-6 gap-3 h-[500px] md:h-[600px] w-full">
-<div class="col-span-3 row-span-4 rounded-2xl overflow-hidden glass-panel border border-white/10 group">
-<img alt="DualSense Detail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsiNzKLP0FyETcYR-4L5yG0F5_N2TcpTtFB7TtIaX0LqzH_SWjnz9Oe14wD0EYHW3HbX4sBYOliSmf-_XMALxQuMh1XE2ARNCH5PMizOwUEQbLffWxXJodRLWbYNCnOSBk1zOfHH-GJtIRmov5BWbEGk3Inyz-D8z_CKczy2b5cAPMEt4fwaCaB-bx2UjAfBvVptUdxIs6FSx-uYPAif5U8n4P7Fpzty3hHRtyTpDt_8rgzsnB61HL0FxWV0dDbPfRkOgPnZhLD-E"/>
-</div>
-<div class="col-span-3 row-span-2 rounded-2xl overflow-hidden glass-panel border border-white/10 group">
-<img alt="DualSense Front" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoKbmIXG0vadr_GzgefIN11kmFev7DC7GT-xieBnw9xXbITzlU7mw150R9V_7slwIfQELDifMeCKJw66J9nIjX4XJgfCpM0prIAakQCLUvRZgarquTiHaQQDWnmzQf8-cVpno5NM05hizRZ3p1Lk9JtOA451Tgrh6HHo6Vw7asHte4PjJ8weLtxpdFXEEazQZfzmimbF7VTJTQamySizOW-UD9UpjwNCgrIzw38iltSYUzaioDntrBWkKXaNjN5JzdjdjqGCrNt_w"/>
-</div>
-<div class="col-span-3 row-span-2 rounded-2xl overflow-hidden glass-panel border border-white/10 group">
-<img alt="Custom Controllers" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnQQ9OxQCRyctQMEwXvtJZKeyjmiyndDJEnWJbds724rpq5ULpkaWH6L8l7NOCnIKGhiDCxIG558-LEgdcp4qPegillpgoe3wdX6jWeaOBSYD1Qu1Pma5oeJkD-TWg4450Aa-GK9j4AugB04BZrDZZilk4hvOKiyW9CG54sxyPfThW3mXphYlhuGxGetLhKOnhzC0jIffjkxL4XIfkESqY1gND6wBcaiRJrWq5UbAo2sSFBQz-E2HxqF_-PjDrvtvjbLQv6WOsHNU"/>
-</div>
-<div class="col-span-2 row-span-2 rounded-2xl overflow-hidden glass-panel border border-white/10 group">
-<img alt="TMR Sensors" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFMXJhwfys12wMM4w5aBM3n88kIoC1aDYgnHSdbfA-OVROUmBefcmmSp58aQN7XV82F45c2hwcVpzvKg0GUHksbQMsPgSmtGTulZdg3sZh8A1tpvLh-ULM2BILuO5E_BLPAcbwlC72cYqgd6paNbmirTVmZkAMwufzKU_gqdGPvQTfkwspocywyWtO3qPbChjYJfKv7JlqvK2TpsRLqi0_Iv3kEJqfuCTshWs9qgm25akgSPTf3BfXtbo2QUDBdMMSHsaI4NSQFjU"/>
-</div>
-<div class="col-span-2 row-span-2 rounded-2xl overflow-hidden glass-panel border border-white/10 group">
-<img alt="Controller Back" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Gs4TjALWNhIoiZdVVY75E3JmoCHEStbdTPfUEUWosMDBu_M24sVYbOlX65VIXXUSnNE7wQfjarq4cMTgDxrEMm8iggrlK2QNO_IA0wUaK7hjCMoJDODZzPHi3Wl5NYSdqgOOVms4Nwo709rwoOMsDrOMZzTOf-7lnqxGB4_zMNYLzPn-oQdCo26uzFLJhcZPw5boXYjM-4KW9d7bg7vfCFv8LiGXtcM_jlznyvrk_NupUuerR2Kl58xheYI_pcvp5jNLWIhba64"/>
-</div>
-<div class="col-span-2 row-span-2 rounded-2xl overflow-hidden glass-panel border border-white/10 group">
-<img alt="Camo DualSense" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwzmDrWA7dhD8bNhjaFV4R1ucig4ybNru_UILqbDJVOZZJs6bnxAWktTtMCqVns4CHV24BojI0m6fpas0xHOmPzCGnuHaQKjQKv7itWe7PgJK5g50c50BhIFYr4u2KyGBuY01HRNT5GTJIheZgFTWRirFOxwqcvvyNIIAeejaWDmtaowoyVz40MLmiup2IdOihJeZt5XxIlEgTO8qMexyhx05VooJzob-jOXMc5BT96VWKww7UQho1-Tl5eHbBSDlG1egZav23SrY"/>
-</div>
-</div>
-<div class="absolute -bottom-6 -right-6 glass-panel p-4 rounded-xl border border-tertiary/30 backdrop-blur-xl z-30 hidden lg:block shadow-[0_0_20px_rgba(0,218,243,0.2)]">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-tertiary">verified</span>
-<span class="text-on-surface font-bold">Qualidade Certificada</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Wallapop Store Section -->
-<section class="py-24 relative overflow-hidden bg-surface-dim">
-<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary/30 to-transparent"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-full bg-secondary/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
-<div class="container mx-auto px-gutter max-w-container-max relative">
-<div class="glass-panel rounded-3xl overflow-hidden mb-12 border border-white/10 shadow-2xl relative bg-surface-container-low/40">
-<div class="flex flex-col md:flex-row items-center">
-<div class="flex-1 p-8 md:p-12 border-r border-white/5 relative">
-<div class="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-secondary/40 rounded-tl-3xl"></div>
-<div class="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-3 py-1 rounded-md font-label-sm text-[11px] mb-8 border border-secondary/20 tracking-widest uppercase"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>Laboratório Digital / Wallapop</div>
-<h2 class="font-headline-xl text-4xl md:text-5xl text-on-surface mb-6 tracking-tight leading-tight">Explora a Nossa <br/><span class="text-secondary">Loja Wallapop</span></h2>
-<p class="font-body-lg text-on-surface-variant/80 mb-10 max-w-xl font-body-md leading-relaxed border-l-2 border-outline-variant/30 pl-6">Aceda aos nossos serviços de reparação e comandos personalizados diretamente no Wallapop. Compra segura, envios rápidos e suporte personalizado com o selo de qualidade Sem Drift.</p>
-<div class="flex flex-wrap gap-4">
-<a class="bg-secondary text-on-secondary font-bold py-4 px-10 rounded-lg hover:bg-secondary-fixed transition-all flex items-center gap-3 shadow-[0_0_20px_rgba(255,184,102,0.3)] group relative overflow-hidden" href="https://p.wallapop.com/p/441510329" target="_blank">
-<span class="relative z-10 flex items-center gap-2">
-<span class="material-symbols-outlined group-hover:rotate-12 transition-transform">open_in_new</span>
-                                        Abrir Loja Completa
-                                    </span>
-<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
-</a>
-</div>
-</div>
-<div class="flex-1 w-full h-[400px] md:h-auto self-stretch relative overflow-hidden group">
-<img alt="Wallapop Store Preview" class="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-[2s]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnQQ9OxQCRyctQMEwXvtJZKeyjmiyndDJEnWJbds724rpq5ULpkaWH6L8l7NOCnIKGhiDCxIG558-LEgdcp4qPegillpgoe3wdX6jWeaOBSYD1Qu1Pma5oeJkD-TWg4450Aa-GK9j4AugB04BZrDZZilk4hvOKiyW9CG54sxyPfThW3mXphYlhuGxGetLhKOnhzC0jIffjkxL4XIfkESqY1gND6wBcaiRJrWq5UbAo2sSFBQz-E2HxqF_-PjDrvtvjbLQv6WOsHNU"/>
-<div class="absolute inset-0 bg-gradient-to-r from-surface-container-low via-surface-container-low/20 to-transparent"></div>
-<!-- Tech Overlay -->
-<div class="absolute inset-0 border-[20px] border-surface-container-low/80 pointer-events-none"></div>
-</div>
-</div>
-</div>
-<!-- Trust Indicators Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="glass-panel p-8 rounded-2xl accent-border-secondary bg-surface-container-low/30 hover:bg-surface-container-high/40 transition-all duration-300 group border-t border-r border-b border-white/5">
-<div class="flex flex-col gap-4">
-<div class="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0 border border-secondary/20 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-secondary text-3xl">verified_user</span>
-</div>
-<div>
-<h4 class="font-headline-lg text-xl text-on-surface mb-2 font-bold tracking-tight">Compra Segura</h4>
-<p class="text-body-md text-on-surface-variant leading-relaxed">Pagamento protegido pelo sistema de garantia do Wallapop com suporte total.</p>
-</div>
-</div>
-</div>
-<div class="glass-panel p-8 rounded-2xl accent-border-primary bg-surface-container-low/30 hover:bg-surface-container-high/40 transition-all duration-300 group border-t border-r border-b border-white/5">
-<div class="flex flex-col gap-4">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-primary text-3xl">local_shipping</span>
-</div>
-<div>
-<h4 class="font-headline-lg text-xl text-on-surface mb-2 font-bold tracking-tight">Envios Rápidos</h4>
-<p class="text-body-md text-on-surface-variant leading-relaxed">Expedição técnica em 24/48h para todo o país com rastreio em tempo real.</p>
-</div>
-</div>
-</div>
-<div class="glass-panel p-8 rounded-2xl accent-border-tertiary bg-surface-container-low/30 hover:bg-surface-container-high/40 transition-all duration-300 group border-t border-r border-b border-white/5">
-<div class="flex flex-col gap-4">
-<div class="w-12 h-12 rounded-lg bg-tertiary/10 flex items-center justify-center shrink-0 border border-tertiary/20 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-tertiary text-3xl">star</span>
-</div>
-<div>
-<h4 class="font-headline-lg text-xl text-on-surface mb-2 font-bold tracking-tight">Feedback 5*</h4>
-<p class="text-body-md text-on-surface-variant leading-relaxed">Comunidade de jogadores satisfeita com a engenharia de precisão Sem Drift.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
-</section>
-</main>
-<!-- BottomNavBar (Mobile Only) -->
-<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container dark:bg-surface-container-lowest/90 backdrop-blur-2xl border-t border-white/5 shadow-lg transition-all duration-300 ease-in-out">
-<div class="flex justify-around items-center h-16 px-4 pb-safe">
-<a class="flex flex-col items-center justify-center text-secondary bg-secondary-container/20 rounded-xl px-4 py-1 active:bg-surface-bright transition-all" href="index.html">
-<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">home</span>
-<span class="font-label-sm text-[10px] text-secondary font-bold">Início</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant/60 active:bg-surface-bright w-16 h-full transition-all" href="informacao.html">
-<span class="material-symbols-outlined mb-1">build</span>
-<span class="font-label-sm text-[10px]">Informação</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant/60 active:bg-surface-bright w-16 h-full transition-all" href="https://www.instagram.com/dualsense_no_drift/" target="_blank">
-<span class="material-symbols-outlined mb-1">photo_camera</span>
-<span class="font-label-sm text-[10px]">Insta</span>
-</a>
-</div>
-</nav>
-<!-- Footer -->
-<footer class="w-full py-stack-lg border-t border-white/5 bg-surface-container-lowest dark:bg-black mt-stack-lg mb-16 md:mb-0">
-<div class="flex flex-col md:flex-row justify-between items-center px-margin max-w-container-max mx-auto gap-stack-md">
-<a class="font-headline-lg text-primary text-xl font-bold" href="index.html">Sem Drift</a>
-<div class="flex flex-wrap justify-center gap-6 text-center md:text-left"><a class="text-outline-variant hover:text-secondary transition-colors font-body-md text-sm" href="https://p.wallapop.com/p/441510329">Loja Wallapop</a></div>
-</div>
-</footer>
-<script>
+                        <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-variant transition-colors group/item" href="https://p.wallapop.com/p/441510329" target="_blank">
+                            <span class="material-symbols-outlined text-primary">shopping_bag</span>
+                            <div class="flex flex-col">
+                                <span class="text-on-surface font-medium">Wallapop</span>
+                                <span class="text-xs text-on-surface-variant">Nossa loja online</span>
+                            </div>
+                        </a>
+                        <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-variant transition-colors group/item" href="https://www.olx.pt/" target="_blank">
+                            <span class="material-symbols-outlined text-tertiary">store</span>
+                            <div class="flex flex-col">
+                                <span class="text-on-surface font-medium">OLX</span>
+                                <span class="text-xs text-on-surface-variant">Anúncios OLX</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a class="hidden md:inline-flex bg-secondary text-on-secondary-fixed font-bold py-2 px-6 rounded-full hover:bg-secondary-fixed transition-colors items-center gap-2 shadow-[0_0_15px_rgba(255,184,102,0.2)]" href="https://p.wallapop.com/p/441510329" rel="noopener noreferrer" target="_blank">Loja Wallapop</a>
+                <a class="hidden md:inline-flex bg-primary text-on-primary font-bold py-2 px-6 rounded-full hover:bg-primary-fixed-dim transition-colors items-center gap-2" href="https://www.instagram.com/dualsense_no_drift/" target="_blank"><span class="material-symbols-outlined">photo_camera</span>Contacta-me</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-16">
+        <section class="relative min-h-[70vh] flex flex-col items-center justify-center text-center py-24 px-gutter">
+            <div class="absolute inset-0 z-0">
+                <img alt="Hero Background" class="w-full h-full object-cover opacity-20 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ_o2n5rmF8y-7ADtOOQ1-LeuOXFkhfk-48TO-MFYpeyG3vCDZ6ncobmgkc5c-Qzwi3zSSanLxgqVkynkMFva9v55iQeHrsWSsr9qOTPUHh7YECrfIcyiwvaBG9qxay_MKdzPCZq8ZfEqxGkRMhDgaa0vmMNA6MyAdUjU6Y9NrW1jn5uuYDQKEYwVujhNl3OnAxSJBa4CreGz3fPg7FCeQGTN3mBGaCOQR6zT9l4FSPEK4psj1lihfcSY3WropuWkG-GU0pzlUN2w"/>
+                <div class="absolute inset-0 bg-gradient-to-b from-background/10 via-background/60 to-background z-10"></div>
+            </div>
+            
+            <div class="relative z-20 max-w-4xl mx-auto flex flex-col items-center gap-6">
+                <div class="flex flex-col items-center gap-4 mb-8">
+                    <p class="font-headline-lg text-3xl md:text-5xl text-on-surface font-bold leading-tight">
+                        Não deite fora o seu comando com drift.<br>
+                        Nós substituímos os analógicos defeituosos por sensores<br>
+                        <span class="text-tertiary">Hall Effect</span> ou <span class="text-secondary">TMR (anti drift)</span> 🎯
+                    </p>
+                </div>
+                
+                <h1 class="font-headline-xl text-[56px] md:text-8xl leading-[1.05] text-on-surface mb-2">
+                    O Fim do <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-error">Stick Drift</span>.
+                </h1>
+                
+                <p class="font-body-lg text-xl text-on-surface-variant max-w-2xl mb-8">
+                    Comandos DualSense personalizados com tecnologia magnética de precisão. Alta performance para jogadores competitivos.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <a class="bg-secondary text-on-secondary-fixed font-bold py-4 px-10 rounded-lg hover:bg-secondary-fixed transition-all text-lg shadow-[0_0_20px_rgba(255,184,102,0.2)]" href="https://p.wallapop.com/p/441510329">Comprar no Wallapop</a>
+                    <a class="glass-panel text-on-surface font-semibold py-4 px-10 rounded-lg hover:bg-surface-container-high transition-colors border border-tertiary/50 text-lg" href="informacao.html">Informação e Serviços</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-surface-dim relative">
+            <div class="container mx-auto px-gutter max-w-container-max">
+                <div class="glass-panel rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative bg-surface-container-low/40">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="flex-1 p-8 md:p-12">
+                            <h2 class="font-headline-xl text-4xl md:text-5xl text-on-surface mb-6">Explora a Nossa <br/><span class="text-secondary">Loja Wallapop</span></h2>
+                            <p class="text-on-surface-variant/80 mb-10 max-w-xl border-l-2 border-outline-variant/30 pl-6">Aceda aos nossos serviços de reparação e comandos personalizados diretamente no Wallapop.</p>
+                            <a class="bg-secondary text-on-secondary font-bold py-4 px-10 rounded-lg hover:bg-secondary-fixed transition-all inline-flex items-center gap-3" href="https://p.wallapop.com/p/441510329" target="_blank">Abrir Loja Completa</a>
+                        </div>
+                        <div class="flex-1">
+                             <img alt="Wallapop Store Preview" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnQQ9OxQCRyctQMEwXvtJZKeyjmiyndDJEnWJbds724rpq5ULpkaWH6L8l7NOCnIKGhiDCxIG558-LEgdcp4qPegillpgoe3wdX6jWeaOBSYD1Qu1Pma5oeJkD-TWg4450Aa-GK9j4AugB04BZrDZZilk4hvOKiyW9CG54sxyPfThW3mXphYlhuGxGetLhKOnhzC0jIffjkxL4XIfkESqY1gND6wBcaiRJrWq5UbAo2sSFBQz-E2HxqF_-PjDrvtvjbLQv6WOsHNU"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full py-12 border-t border-white/5 bg-surface-container-lowest mt-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center px-margin max-w-container-max mx-auto gap-8">
+            <a class="font-headline-lg text-primary text-xl font-bold" href="index.html">Sem Drift</a>
+            <div class="flex flex-wrap justify-center gap-8 text-outline-variant text-sm">
+                <a href="https://p.wallapop.com/p/441510329" class="hover:text-secondary">Loja Wallapop</a>
+                <span>© 2024 Sem Drift.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const btn = document.getElementById('modify-btn');
             const menu = document.getElementById('contact-menu');
-            
-            btn.addEventListener('click', (e) => {
-              e.stopPropagation();
-              menu.classList.toggle('hidden');
-            });
-
-            document.addEventListener('click', (e) => {
-              if (menu && !menu.contains(e.target) && e.target !== btn) {
-                menu.classList.add('hidden');
-              }
-            });
+            if (btn && menu) {
+                btn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('hidden'); });
+                document.addEventListener('click', (e) => { if (menu && !menu.contains(e.target) && e.target !== btn) menu.classList.add('hidden'); });
+            }
         });
     </script>
-</body></html>
+</body>
+</html>
