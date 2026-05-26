@@ -172,6 +172,22 @@
         .accent-border-tertiary {
             border-left: 4px solid theme('colors.tertiary');
         }
+
+        /* Carousel Animation Styles */
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+            animation: scroll-left 40s linear infinite;
+        }
+        .carousel-container:hover .animate-scroll {
+            animation-play-state: paused;
+        }
+        .fade-edges {
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
@@ -286,6 +302,29 @@
 <div class="absolute inset-0 bg-gradient-to-r from-surface-container-low via-surface-container-low/20 to-transparent"></div>
 <div class="absolute inset-0 border-[15px] border-surface-container-low/80 pointer-events-none"></div>
 </div>
+</div>
+</div>
+<!-- Infinite Carousel Section -->
+<div class="carousel-container mb-6 overflow-hidden fade-edges relative w-full">
+<div class="flex gap-4 animate-scroll w-max">
+<!-- Set 1 -->
+<img alt="Controller 1" class="h-[200px] w-auto rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW8UFT8fLdXMt1OzUuxIG2LLjs6KvS_T4QPFWH_N0RYqcQfiC-gLXJOBKIhVBU7UuYnVtIThiNrUCGPTYGirB9CcXLSQJH0_wHO5rpUxl_gk1fpMFR11G61fJHTmfIRmOpAgz--uWYWsyZwt0Dx20wVPf4ogGZ-TXNBtY9UvJ23B4VgZIIXCRv-ikr_XtyroSPopattJ2oj_0vLs3G3EWix-YJfeFH1kk3hMyD1ro5ujVY8yIik3F0c7Ag1htWyp_z__YP-sj0C6Yh"/>
+<img alt="Controller 2" class="h-[200px] w-auto rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4Dzp2fi31SYt117277I8eBjTq-N55pBAy1QxBw-LsGzvA-e5Y7xOpXPwFyO5C6vyPnZRsqKxK87RN3kwhI8gRmhh2LdiHPEIiT20yy0vnOrEnxnz5VCQ849lxZ7dgqhXTlsU9cGF2cc7Y3M2zzyPxvDof1wXcYsJEJjAGVbf02AIDumZ1aSkhMIlbAOLJvLVriIMr6fKcJq_4ubaTt9KHx3jZpPIfnXAypPl_vfDAYGkVnvmH6CydXutSJaAJDhofw5QydqFQbUV0"/>
+<img alt="Controller 3" class="h-[200px] w-auto rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaWKHDvngXWxB2ThdXTzUG3YGf-JmBHydwVz4OydZsWntTbaeK10Ut5rohEm-_6B9PZUpveztyyr-CLFg73YTJUIakl3Ybo8cfotJwf78JPjAGATNsHY1k4WMa3ZsCWneECAyt4w3vcIcSFnk7btZy6XBhVCgX-7vDCNALek_3DlGHCDwa-eU-mQwaqK5ULNBAOAxrdAp56raAAArlnXU3D858DiNIAfi6Sd6Xnp8-7FS_2D4a1j6iOrEaSvV-uG_llOtkKEnAnZhU"/>
+<img alt="Controller 4" class="h-[200px] w-auto rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALnPz57ehX439wWp1bE-21DB6JtGuqOiKyKsBIOHYZ9pVbrIVK2MMoGQmIxPB9y0o2XS-dgJfeVZ83HMCcht0mh7VBPqTshxqCmnJGee3RaTKcfNdZKSe-0NEK9XX7sGpNC85ne0VgAokGTmCy2roIJ88tmLn9VQkrebP8HJVl3bkWTjZEdU9XhSqZ4tRoxEzB4zzKBMiiQZqI6D_Bn1icA7EPPMZ6J94G5ByZ0lDTrLb9n6rHYKi3ijcoKXd7FHbqGtFCyFbONM3f"/>
+<img alt="Controller 5" class="h-[200px] w-auto rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCplvwNv8-wLCI5z_U1wjXOSNXlqvLsKFtqOqlKyYtfIQUV_Okpp2FKDo23bCEcPYppcz6fvFIZ3eDoHY_QdMWXxnNZ5m-Eh-iS5TW0GIFmQOa5z-cnFfhlgenaqim-D7HbmTWVo5Tf4SMwtyBMWGpOVixSBQV0d6jcGn18qYBujmAmt_ZQG5Fghxqr4UQlUQ9JrkA-6x99XtDyBEQ6hP6-qpmFRV3y_-jLPeG5EOl4Dk8IdA4V_DcXha2WDsOok73gYeDjAzBegbe-"/>
+<img alt="Controller 6" class="h-[200px] w-auto rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwqmqONwwGhHmgmNiZHtRIcMi6M-6Yr5mTswtjmqd-3R1Qe4uEWNphzuowN1a-iM1aXQ2O9I5Fh-kHoOrX8-lvzEd0MDU7_N2rkQllDYQIaoDlwQe98qzhCFDoSYbpbog1pZiUU9H2_dyPFWv5AwcS-1MNxdx34AelCItYCVaPIarfVA_AA8YWwhpJh6JwqiaVFQpzMhhagM2vicpGOQm5iusG56_GoL2CS3mFt5aRZtCtLiHjna3x1Iu17f3THcDGk9ih5FEiJkN7"/>
+<img alt="Controller 7" class="h-[200px] w-auto rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgnv6X1kc18-_MsGqGcttm-AD0lMSTdFWnEvFQ1xb5kXeb8khlPCjXTV7w6Sc9g6s01hKr0O84UhFM9oWI-KHqsZdhTezl0Wa22WY-FEgpmm2nmPnh-Nd7eZrn_QGkO6-1nKTfAgmSg7iMoipNwBNpwOlKyeANmrGYgcmj-gyLPiKIYT3RN-nHcgOH6BR5HEDzW4umDC9do9p-nsplITAJn3jODHJldtOP6NHTAvdfACxtvIDMIN7c8WOx2x-DIMZf2KzRscDXo_wY"/>
+<img alt="Controller 8" class="h-[200px] w-auto rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxaNhX7DzdTpt_bL-cFXX8yGDlVmtfZh2aVy6iFa_4CP5shoKof3RELalQQ6k8zLrsVa5vHy37gfxZIHsr4m6M_RnobkvEB5Qffo47j2qkzZXsOsLIqdpPj-P-UbDwCKBeAXK-OC4r243FshWolxh5yGFDFEGEpNGkYEqi3wqVyrCh8_oZoAz1UeMA33W6PKDP2sul6Ks7SMxeYRlu2K-LaQd2HawZScUOrfttgXzroDtsZLoErZ0DIe5BCe9TVJ1z7apN6nBxrG23"/>
+<!-- Set 2 (Duplicate for infinite loop) -->
+<img alt="Controller 1" class="h-[200px] w-auto rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW8UFT8fLdXMt1OzUuxIG2LLjs6KvS_T4QPFWH_N0RYqcQfiC-gLXJOBKIhVBU7UuYnVtIThiNrUCGPTYGirB9CcXLSQJH0_wHO5rpUxl_gk1fpMFR11G61fJHTmfIRmOpAgz--uWYWsyZwt0Dx20wVPf4ogGZ-TXNBtY9UvJ23B4VgZIIXCRv-ikr_XtyroSPopattJ2oj_0vLs3G3EWix-YJfeFH1kk3hMyD1ro5ujVY8yIik3F0c7Ag1htWyp_z__YP-sj0C6Yh"/>
+<img alt="Controller 2" class="h-[200px] w-auto rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4Dzp2fi31SYt117277I8eBjTq-N55pBAy1QxBw-LsGzvA-e5Y7xOpXPwFyO5C6vyPnZRsqKxK87RN3kwhI8gRmhh2LdiHPEIiT20yy0vnOrEnxnz5VCQ849lxZ7dgqhXTlsU9cGF2cc7Y3M2zzyPxvDof1wXcYsJEJjAGVbf02AIDumZ1aSkhMIlbAOLJvLVriIMr6fKcJq_4ubaTt9KHx3jZpPIfnXAypPl_vfDAYGkVnvmH6CydXutSJaAJDhofw5QydqFQbUV0"/>
+<img alt="Controller 3" class="h-[200px] w-auto rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaWKHDvngXWxB2ThdXTzUG3YGf-JmBHydwVz4OydZsWntTbaeK10Ut5rohEm-_6B9PZUpveztyyr-CLFg73YTJUIakl3Ybo8cfotJwf78JPjAGATNsHY1k4WMa3ZsCWneECAyt4w3vcIcSFnk7btZy6XBhVCgX-7vDCNALek_3DlGHCDwa-eU-mQwaqK5ULNBAOAxrdAp56raAAArlnXU3D858DiNIAfi6Sd6Xnp8-7FS_2D4a1j6iOrEaSvV-uG_llOtkKEnAnZhU"/>
+<img alt="Controller 4" class="h-[200px] w-auto rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALnPz57ehX439wWp1bE-21DB6JtGuqOiKyKsBIOHYZ9pVbrIVK2MMoGQmIxPB9y0o2XS-dgJfeVZ83HMCcht0mh7VBPqTshxqCmnJGee3RaTKcfNdZKSe-0NEK9XX7sGpNC85ne0VgAokGTmCy2roIJ88tmLn9VQkrebP8HJVl3bkWTjZEdU9XhSqZ4tRoxEzB4zzKBMiiQZqI6D_Bn1icA7EPPMZ6J94G5ByZ0lDTrLb9n6rHYKi3ijcoKXd7FHbqGtFCyFbONM3f"/>
+<img alt="Controller 5" class="h-[200px] w-auto rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCplvwNv8-wLCI5z_U1wjXOSNXlqvLsKFtqOqlKyYtfIQUV_Okpp2FKDo23bCEcPYppcz6fvFIZ3eDoHY_QdMWXxnNZ5m-Eh-iS5TW0GIFmQOa5z-cnFfhlgenaqim-D7HbmTWVo5Tf4SMwtyBMWGpOVixSBQV0d6jcGn18qYBujmAmt_ZQG5Fghxqr4UQlUQ9JrkA-6x99XtDyBEQ6hP6-qpmFRV3y_-jLPeG5EOl4Dk8IdA4V_DcXha2WDsOok73gYeDjAzBegbe-"/>
+<img alt="Controller 6" class="h-[200px] w-auto rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwqmqONwwGhHmgmNiZHtRIcMi6M-6Yr5mTswtjmqd-3R1Qe4uEWNphzuowN1a-iM1aXQ2O9I5Fh-kHoOrX8-lvzEd0MDU7_N2rkQllDYQIaoDlwQe98qzhCFDoSYbpbog1pZiUU9H2_dyPFWv5AwcS-1MNxdx34AelCItYCVaPIarfVA_AA8YWwhpJh6JwqiaVFQpzMhhagM2vicpGOQm5iusG56_GoL2CS3mFt5aRZtCtLiHjna3x1Iu17f3THcDGk9ih5FEiJkN7"/>
+<img alt="Controller 7" class="h-[200px] w-auto rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgnv6X1kc18-_MsGqGcttm-AD0lMSTdFWnEvFQ1xb5kXeb8khlPCjXTV7w6Sc9g6s01hKr0O84UhFM9oWI-KHqsZdhTezl0Wa22WY-FEgpmm2nmPnh-Nd7eZrn_QGkO6-1nKTfAgmSg7iMoipNwBNpwOlKyeANmrGYgcmj-gyLPiKIYT3RN-nHcgOH6BR5HEDzW4umDC9do9p-nsplITAJn3jODHJldtOP6NHTAvdfACxtvIDMIN7c8WOx2x-DIMZf2KzRscDXo_wY"/>
+<img alt="Controller 8" class="h-[200px] w-auto rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxaNhX7DzdTpt_bL-cFXX8yGDlVmtfZh2aVy6iFa_4CP5shoKof3RELalQQ6k8zLrsVa5vHy37gfxZIHsr4m6M_RnobkvEB5Qffo47j2qkzZXsOsLIqdpPj-P-UbDwCKBeAXK-OC4r243FshWolxh5yGFDFEGEpNGkYEqi3wqVyrCh8_oZoAz1UeMA33W6PKDP2sul6Ks7SMxeYRlu2K-LaQd2HawZScUOrfttgXzroDtsZLoErZ0DIe5BCe9TVJ1z7apN6nBxrG23"/>
 </div>
 </div>
 <!-- Trust Indicators Grid -->
