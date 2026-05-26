@@ -111,19 +111,28 @@
         .accent-border-primary   { border-left: 4px solid theme('colors.primary'); }
         .accent-border-tertiary  { border-left: 4px solid theme('colors.tertiary'); }
 
-        /* FAQ accordion */
-        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.07); }
-        .faq-answer {
-            max-height: 0;
+        /* FAQ page overrides */
+        .faq-page main { background: #000; }
+        .faq-panel {
+            background: #e8e8e8;
+            border: 1px solid #ccc;
+            border-radius: 1rem;
             overflow: hidden;
-            transition: max-height 0.35s ease, padding 0.35s ease;
         }
+        .faq-item { border-bottom: 1px solid #ccc; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-trigger span.faq-title { color: #000 !important; }
+        .faq-answer p { color: #222 !important; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
         .faq-item.open .faq-answer { max-height: 500px; }
         .faq-item.open .faq-icon { transform: rotate(45deg); }
         .faq-icon { transition: transform 0.3s ease; }
+        .faq-page h1 { color: #fff !important; }
+        .faq-page h1 span { color: #00daf3 !important; }
+        .faq-page .faq-subtitle { color: #aaa !important; }
     </style>
 </head>
-<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container pt-16">
+<body class="faq-page antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container pt-16" style="background:#000;">
 
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-white/5 dark:border-outline-variant/20 transition-all duration-300">
@@ -166,218 +175,218 @@
       <span class="material-symbols-outlined text-tertiary text-4xl">help</span>
       <h1 class="font-headline-lg text-3xl md:text-4xl font-bold text-on-surface">O que é o Drift? <span class="text-tertiary">/ F.A.Q.</span></h1>
     </div>
-    <p class="text-on-surface-variant text-lg max-w-2xl">Respostas às perguntas mais frequentes sobre drift, joysticks, serviços e encomendas.</p>
+    <p class="faq-subtitle text-on-surface-variant text-lg max-w-2xl">Respostas às perguntas mais frequentes sobre drift, joysticks, serviços e encomendas.</p>
   </div>
 
   <!-- FAQ List -->
-  <div class="glass-panel rounded-2xl overflow-hidden border border-white/5 shadow-2xl">
+  <div class="faq-panel">
 
     <!-- Item 1 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">1. O que é o stick drift e porque acontece?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">1. O que é o stick drift e porque acontece?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">O stick drift acontece quando o comando envia ordens de movimento sem que o joystick seja tocado — o personagem move-se sozinho.<br/><br/>Acontece devido ao desgaste causado pelo atrito constante entre metal e uma pista de carbono, presentes no interior do joystick original.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">O stick drift acontece quando o comando envia ordens de movimento sem que o joystick seja tocado — o personagem move-se sozinho.<br/><br/>Acontece devido ao desgaste causado pelo atrito constante entre metal e uma pista de carbono, presentes no interior do joystick original.</p>
       </div>
     </div>
 
     <!-- Item 2 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">2. Os joysticks TMR eliminam completamente o drift? Têm algum inconveniente?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">2. Os joysticks TMR eliminam completamente o drift? Têm algum inconveniente?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">Sim, os joysticks TMR funcionam com tecnologia magnética e eliminam completamente o drift, uma vez que não existe contacto físico interno. Contudo, não estão isentos de outros problemas futuros (ex: danos físicos ou ruído mecânico).<br/><br/>Existe um inconveniente: a zona centro não é tão bem definida como nos joysticks originais e pode flutuar ligeiramente. Recomendo utilizar 4% a 5% de deadzone interna para anular este efeito.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">Sim, os joysticks TMR funcionam com tecnologia magnética e eliminam completamente o drift, uma vez que não existe contacto físico interno. Contudo, não estão isentos de outros problemas futuros (ex: danos físicos ou ruído mecânico).<br/><br/>Existe um inconveniente: a zona centro não é tão bem definida como nos joysticks originais e pode flutuar ligeiramente. Recomendo utilizar 4% a 5% de deadzone interna para anular este efeito.</p>
       </div>
     </div>
 
     <!-- Item 3 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">3. Os joysticks novos alteram a sensibilidade ou o comportamento do comando?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">3. Os joysticks novos alteram a sensibilidade ou o comportamento do comando?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">Sim, a sensibilidade será diferente. Cada marca tem os seus joysticks com tensão e força de acionamento próprias, o que cria experiências de jogo distintas.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">Sim, a sensibilidade será diferente. Cada marca tem os seus joysticks com tensão e força de acionamento próprias, o que cria experiências de jogo distintas.</p>
       </div>
     </div>
 
     <!-- Item 4 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">4. Os joysticks TMR têm menos input lag?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">4. Os joysticks TMR têm menos input lag?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">Sim, os joysticks TMR reduzem o input lag comparativamente com os joysticks Hall Effect e com os originais.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">Sim, os joysticks TMR reduzem o input lag comparativamente com os joysticks Hall Effect e com os originais.</p>
       </div>
     </div>
 
     <!-- Item 5 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">5. Vale a pena trocar para TMR mesmo sem drift?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">5. Vale a pena trocar para TMR mesmo sem drift?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">Sem dúvida. É um excelente upgrade para aumentar a precisão dos joysticks e reduzir o input lag.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">Sem dúvida. É um excelente upgrade para aumentar a precisão dos joysticks e reduzir o input lag.</p>
       </div>
     </div>
 
     <!-- Item 6 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">6. Quanto tempo demora a instalação de joysticks? Inclui calibração? O comando é testado?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">6. Quanto tempo demora a instalação de joysticks? Inclui calibração? O comando é testado?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">Cerca de 2 horas, podendo variar conforme o estado do comando. Sim, o comando é sempre entregue já calibrado e 100% testado.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">Cerca de 2 horas, podendo variar conforme o estado do comando. Sim, o comando é sempre entregue já calibrado e 100% testado.</p>
       </div>
     </div>
 
     <!-- Item 7 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">7. É feita limpeza interna durante a instalação?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">7. É feita limpeza interna durante a instalação?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">Sim, durante o processo de instalação é sempre feita limpeza interna.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">Sim, durante o processo de instalação é sempre feita limpeza interna.</p>
       </div>
     </div>
 
     <!-- Item 8 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">8. O que acontece se o comando tiver mais problemas além do drift?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">8. O que acontece se o comando tiver mais problemas além do drift?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">Contacte-me para descrever o problema. Consigo resolver a grande maioria das situações — caso não seja possível, dou-lhe resposta antes de avançarmos para qualquer modificação.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">Contacte-me para descrever o problema. Consigo resolver a grande maioria das situações — caso não seja possível, dou-lhe resposta antes de avançarmos para qualquer modificação.</p>
       </div>
     </div>
 
     <!-- Item 9 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">9. O que está incluído no serviço de Limpeza &amp; Manutenção?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">9. O que está incluído no serviço de Limpeza &amp; Manutenção?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">O comando é desmontado de forma a aceder a toda a carcaça exterior, para uma limpeza detalhada. Durante o processo, o interior do comando também é limpo e inspecionado.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">O comando é desmontado de forma a aceder a toda a carcaça exterior, para uma limpeza detalhada. Durante o processo, o interior do comando também é limpo e inspecionado.</p>
       </div>
     </div>
 
     <!-- Item 10 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">10. Que comandos aceitas?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">10. Que comandos aceitas?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">DualSense, DualSense Edge, Hexgaming, Scuf, PS Portal, Xbox Series, Xbox Elite e Switch Pro. Em caso de dúvida, questione.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">DualSense, DualSense Edge, Hexgaming, Scuf, PS Portal, Xbox Series, Xbox Elite e Switch Pro. Em caso de dúvida, questione.</p>
       </div>
     </div>
 
     <!-- Item 11 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">11. Posso enviar o meu comando por transportadora?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">11. Posso enviar o meu comando por transportadora?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">Sim, aceito envios por transportadora.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">Sim, aceito envios por transportadora.</p>
       </div>
     </div>
 
     <!-- Item 12 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">12. O que são os Clicky Triggers? Vale a pena instalar?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">12. O que são os Clicky Triggers? Vale a pena instalar?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">Os Clicky Triggers substituem o longo curso analógico dos gatilhos L2/R2 por um clique digital de curta trajetória, semelhante a um botão de rato. É um dos melhores upgrades para jogos FPS, permitindo disparar mais rápido e com maior consistência.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">Os Clicky Triggers substituem o longo curso analógico dos gatilhos L2/R2 por um clique digital de curta trajetória, semelhante a um botão de rato. É um dos melhores upgrades para jogos FPS, permitindo disparar mais rápido e com maior consistência.</p>
       </div>
     </div>
 
     <!-- Item 13 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">13. Os paddles funcionam em qualquer jogo?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">13. Os paddles funcionam em qualquer jogo?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">Sim. Os paddles são botões programáveis que podem replicar a função de qualquer outro botão do comando, conforme a programação do utilizador — funcionam em qualquer jogo.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">Sim. Os paddles são botões programáveis que podem replicar a função de qualquer outro botão do comando, conforme a programação do utilizador — funcionam em qualquer jogo.</p>
       </div>
     </div>
 
     <!-- Item 14 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">14. Fazes comandos totalmente personalizados?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">14. Fazes comandos totalmente personalizados?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">Sim. Tudo escolhido pelo cliente: cor, peças, upgrades e configuração.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">Sim. Tudo escolhido pelo cliente: cor, peças, upgrades e configuração.</p>
       </div>
     </div>
 
     <!-- Item 15 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">15. Como faço uma build personalizada?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">15. Como faço uma build personalizada?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">Se quiser algo personalizado diferente do que está disponível na loja, entre em contacto pelo Instagram e configuramos tudo ao seu gosto.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">Se quiser algo personalizado diferente do que está disponível na loja, entre em contacto pelo Instagram e configuramos tudo ao seu gosto.</p>
       </div>
     </div>
 
     <!-- Item 16 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">16. Posso comprar um comando já modificado?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">16. Posso comprar um comando já modificado?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">Sim. Pode adquirir diretamente uma das builds disponíveis na loja do Wallapop.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">Sim. Pode adquirir diretamente uma das builds disponíveis na loja do Wallapop.</p>
       </div>
     </div>
 
     <!-- Item 17 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">17. Existe garantia no serviço?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">17. Existe garantia no serviço?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">Sim. Ofereço 1 semana de garantia sobre a instalação após a receção do comando. Não cobre danos físicos causados pelo cliente, peças partidas ou desgaste normal.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">Sim. Ofereço 1 semana de garantia sobre a instalação após a receção do comando. Não cobre danos físicos causados pelo cliente, peças partidas ou desgaste normal.</p>
       </div>
     </div>
 
     <!-- Item 18 -->
     <div class="faq-item px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">18. A reparação anula a garantia da Sony?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">18. A reparação anula a garantia da Sony?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">Sim, qualquer intervenção não oficial anula a garantia do fabricante.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">Sim, qualquer intervenção não oficial anula a garantia do fabricante.</p>
       </div>
     </div>
 
     <!-- Item 19 -->
     <div class="faq-item border-b-0 px-6 md:px-8">
       <button class="faq-trigger w-full flex items-center justify-between py-5 text-left gap-4">
-        <span class="text-on-surface font-semibold text-base md:text-lg leading-snug">19. Tenho desconto na compra de peças na Extremerate?</span>
+        <span class="faq-title font-semibold text-base md:text-lg leading-snug">19. Tenho desconto na compra de peças na Extremerate?</span>
         <span class="material-symbols-outlined faq-icon text-tertiary shrink-0">add</span>
       </button>
       <div class="faq-answer">
-        <p class="text-on-surface-variant leading-relaxed pb-6">Sim. Com o código <span class="font-bold text-secondary">NODRIFT</span> tens 10% de desconto em todo o site da <a class="text-tertiary underline hover:text-tertiary/80" href="https://www.extremerate.com" target="_blank">Extremerate</a>.</p>
+        <p class="leading-relaxed pb-6" style="color:#222;">Sim. Com o código <span class="font-bold text-secondary">NODRIFT</span> tens 10% de desconto em todo o site da <a class="text-tertiary underline hover:text-tertiary/80" href="https://www.extremerate.com" target="_blank">Extremerate</a>.</p>
       </div>
     </div>
 
@@ -406,7 +415,9 @@
 <footer class="w-full py-12 border-t border-white/5 bg-surface-container-lowest mb-16 md:mb-0 mt-4">
 <div class="flex flex-col md:flex-row justify-between items-center px-margin max-w-container-max mx-auto gap-4">
   <a class="font-headline-lg text-primary text-xl font-bold" href="index.html">Sem Drift</a>
-  <a class="text-on-surface-variant hover:text-tertiary transition-colors text-sm font-medium" href="faq.html">O que é o Drift? / F.A.Q.</a>
+</div>
+<div class="flex justify-center px-margin max-w-container-max mx-auto w-full mt-4">
+  <a class="text-on-surface-variant hover:text-tertiary transition-colors text-4xl font-bold" href="faq.html">O que é o Drift? / F.A.Q.</a>
 </div>
 </footer>
 
