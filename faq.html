@@ -373,4 +373,68 @@
 </div>
 </div>
 </main>
+<!-- Mobile Bottom Navigation -->
+<nav class="fixed bottom-0 w-full z-50 md:hidden glass-panel border-t border-white/5 pb-safe" style="background:#1e1e1e;">
+<div class="flex justify-around items-center h-16 px-2">
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-on-surface" href="index.html">
+<span class="material-symbols-outlined text-[24px] mb-1">home</span>
+<span class="text-[10px] font-medium uppercase tracking-wider">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-on-surface" href="informacao.html">
+<span class="material-symbols-outlined text-[24px] mb-1">info</span>
+<span class="text-[10px] font-medium uppercase tracking-wider text-center leading-tight">Info &amp;<br/>Serviços</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-tertiary" href="faq.html">
+<span class="material-symbols-outlined text-[24px] mb-1">help</span>
+<span class="text-[10px] font-medium uppercase tracking-wider">F.A.Q.</span>
+</a>
+<button class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-on-surface" id="mobile-modify-btn">
+<span class="material-symbols-outlined text-[24px] mb-1">build</span>
+<span class="text-[10px] font-medium uppercase tracking-wider text-center leading-tight">Modifica o<br/>teu comando</span>
+</button>
+</div>
+</nav>
+<!-- Mobile Contact Menu Modal -->
+<div class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm hidden flex-col justify-end" id="mobile-contact-modal">
+<div class="bg-surface-container rounded-t-2xl p-4 transform transition-transform translate-y-full" id="mobile-contact-content">
+<div class="flex justify-between items-center mb-4 px-2">
+<h3 class="text-on-surface font-headline-lg font-bold text-xl">Onde me encontrar</h3>
+<button class="text-on-surface-variant hover:text-on-surface p-2" id="close-mobile-modal">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-4 p-4 rounded-xl hover:bg-surface-variant transition-colors bg-surface" href="https://www.instagram.com/dualsense_no_drift/" target="_blank">
+<div class="w-10 h-10 rounded-full flex items-center justify-center" style="background-color: rgba(228, 64, 95, 0.1);">
+<span class="material-symbols-outlined" style="color: #E4405F;">photo_camera</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium text-lg">Instagram</span>
+<span class="text-sm text-on-surface-variant">Contacta-me diretamente</span>
+</div>
+</a>
+<a class="flex items-center gap-4 p-4 rounded-xl hover:bg-surface-variant transition-colors bg-surface" href="https://p.wallapop.com/p/441510329" target="_blank">
+<div class="w-10 h-10 rounded-full flex items-center justify-center" style="background-color: rgba(1, 209, 193, 0.1);">
+<span class="material-symbols-outlined text-tertiary">shopping_bag</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium text-lg">Wallapop</span>
+<span class="text-sm text-on-surface-variant">Ver loja e produtos</span>
+</div>
+</a>
+<a class="flex items-center gap-4 p-4 rounded-xl hover:bg-surface-variant transition-colors bg-surface" href="https://www.olx.pt/" target="_blank">
+<div class="w-10 h-10 rounded-full flex items-center justify-center" style="background-color: rgba(35, 229, 219, 0.1);">
+<span class="material-symbols-outlined" style="color: #23E5DB;">store</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium text-lg">OLX</span>
+<span class="text-sm text-on-surface-variant">Anúncios locais</span>
+</div>
+</a>
+</div>
+<div class="mt-6 mb-safe pb-4">
+<p class="text-center text-on-surface-variant text-sm">Respondo habitualmente em poucas horas.</p>
+</div>
+</div>
+</div>
 </body></html>
