@@ -173,11 +173,11 @@
                 Sem Drift
             </a>
 <div class="hidden md:flex space-x-8 items-center relative">
-    <a class="text-on-surface-variant dark:text-outline hover:text-on-surface transition-colors duration-200 font-label-sm text-label-sm uppercase leading-tight" href="index.html">Início</a>
-    <a class="text-secondary dark:text-secondary-fixed-dim border-b-2 border-secondary pb-1 font-label-sm text-label-sm uppercase leading-tight" href="informacao.html">Informação e<br/>Serviços</a>
-    <a class="text-on-surface-variant dark:text-outline hover:text-on-surface transition-colors duration-200 font-label-sm text-label-sm uppercase leading-tight" href="faq.html"><span style="display:block;text-align:center;">O que é o Drift?</span><span style="display:block;text-align:center;">F.A.Q.</span></a>
+    <a class="text-on-surface-variant dark:text-outline hover:text-on-surface transition-colors duration-200 font-label-sm text-label-sm uppercase leading-tight" href="index.html"><span data-i18n="nav.inicio">Início</span></a>
+    <a class="text-secondary dark:text-secondary-fixed-dim border-b-2 border-secondary pb-1 font-label-sm text-label-sm uppercase leading-tight" href="informacao.html"><span data-i18n="nav.informacao">Informação e<br/>Serviços</span></a>
+    <a class="text-on-surface-variant dark:text-outline hover:text-on-surface transition-colors duration-200 font-label-sm text-label-sm uppercase leading-tight" href="faq.html"><span data-i18n="nav.faq.l1" style="display:block;text-align:center;">O que é o Drift?</span><span data-i18n="nav.faq.l2" style="display:block;text-align:center;">F.A.Q.</span></a>
     <div class="relative">
-      <button class="text-on-surface-variant dark:text-outline hover:text-on-surface hover:bg-white/5 transition-colors duration-200 font-label-sm text-label-sm uppercase cursor-pointer py-1 leading-tight" id="modify-btn">Modifica o<br/>teu comando</button>
+      <button class="text-on-surface-variant dark:text-outline hover:text-on-surface hover:bg-white/5 transition-colors duration-200 font-label-sm text-label-sm uppercase cursor-pointer py-1 leading-tight" id="modify-btn"><span data-i18n="nav.modifica">Modifica o<br/>teu comando</span></button>
       <div class="absolute top-full left-0 mt-2 bg-surface-container border border-outline-variant/20 rounded-xl shadow-2xl p-2 min-w-[200px] flex flex-col gap-1 z-[60] backdrop-blur-xl hidden" id="contact-menu">
         <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-variant transition-colors" href="https://www.instagram.com/dualsense_no_drift/" target="_blank">
           <span class="material-symbols-outlined" style="color:#E4405F;">photo_camera</span>
@@ -194,9 +194,25 @@
       </div>
     </div>
   </div>
+
+<div class="relative hidden md:block" id="lang-selector">
+  <button class="flex items-center gap-1 text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm uppercase cursor-pointer py-1 px-2 rounded-lg hover:bg-white/5 transition-colors" id="lang-btn" onclick="toggleLangMenu()">
+    <span id="lang-flag">🇵🇹</span>
+    <span id="lang-code">PT</span>
+    <span class="material-symbols-outlined text-sm" style="font-size:14px;">expand_more</span>
+  </button>
+  <div class="absolute top-full right-0 mt-2 bg-surface-container border border-outline-variant/20 rounded-xl shadow-2xl p-1 z-[70] hidden" id="lang-menu">
+    <button onclick="setLang('pt')" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-surface-variant w-full text-left text-sm text-on-surface">🇵🇹 Português</button>
+    <button onclick="setLang('en')" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-surface-variant w-full text-left text-sm text-on-surface">🇬🇧 English</button>
+    <button onclick="setLang('es')" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-surface-variant w-full text-left text-sm text-on-surface">🇪🇸 Español</button>
+    <button onclick="setLang('fr')" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-surface-variant w-full text-left text-sm text-on-surface">🇫🇷 Français</button>
+    <button onclick="setLang('it')" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-surface-variant w-full text-left text-sm text-on-surface">🇮🇹 Italiano</button>
+    <button onclick="setLang('nl')" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-surface-variant w-full text-left text-sm text-on-surface">🇳🇱 Nederlands</button>
+  </div>
+</div>
 <div class="flex items-center space-x-4">
-<a class="hidden md:inline-flex text-on-secondary-fixed font-bold py-2 px-6 rounded-full hover:bg-secondary-fixed transition-colors items-center gap-2 shadow-[0_0_15px_rgba(255,184,102,0.2)]" href="https://p.wallapop.com/p/441510329" rel="noopener noreferrer" style="background-color: #01D1C1; color: white;" target="_blank">Loja Wallapop</a>
-<a class="hidden md:inline-flex text-on-primary font-bold py-2 px-6 rounded-full hover:bg-primary-fixed-dim transition-colors items-center gap-2" href="https://www.instagram.com/dualsense_no_drift/" style="background-color: #E4405F; color: white;" target="_blank"><span class="material-symbols-outlined">photo_camera</span>Contacta-me</a>
+<a class="hidden md:inline-flex text-on-secondary-fixed font-bold py-2 px-6 rounded-full hover:bg-secondary-fixed transition-colors items-center gap-2 shadow-[0_0_15px_rgba(255,184,102,0.2)]" href="https://p.wallapop.com/p/441510329" rel="noopener noreferrer" style="background-color: #01D1C1; color: white;" target="_blank"><span data-i18n="nav.loja">Loja Wallapop</span></a>
+<a class="hidden md:inline-flex text-on-primary font-bold py-2 px-6 rounded-full hover:bg-primary-fixed-dim transition-colors items-center gap-2" href="https://www.instagram.com/dualsense_no_drift/" style="background-color: #E4405F; color: white;" target="_blank"><span class="material-symbols-outlined">photo_camera</span><span data-i18n="nav.contacta">Contacta-me</span></a>
 </div>
 </div>
 </nav>
@@ -411,11 +427,11 @@
 <div class="flex justify-around items-center h-16 px-4 pb-safe">
   <a class="flex flex-col items-center justify-center text-on-surface-variant/60 active:bg-surface-bright transition-all duration-300 ease-in-out px-4 py-1 rounded-xl" href="index.html">
     <span class="material-symbols-outlined mb-1">home</span>
-    <span class="font-label-sm text-[10px] uppercase tracking-tighter">Início</span>
+    <span class="font-label-sm text-[10px] uppercase tracking-tighter"><span data-i18n="mob.inicio">Início</span></span>
   </a>
   <a class="flex flex-col items-center justify-center text-secondary bg-secondary-container/20 rounded-xl px-4 py-1 transition-all duration-300 ease-in-out" href="informacao.html">
     <span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">info</span>
-    <span class="font-label-sm text-[10px] uppercase tracking-tighter text-secondary font-bold">Informação</span>
+    <span class="font-label-sm text-[10px] uppercase tracking-tighter text-secondary font-bold"><span data-i18n="mob.informacao">Informação</span></span>
   </a>
   <a class="flex flex-col items-center justify-center text-on-surface-variant/60 active:bg-surface-bright transition-all duration-300 ease-in-out px-4 py-1 rounded-xl" href="faq.html">
     <span class="material-symbols-outlined mb-1">help</span>
@@ -423,7 +439,7 @@
   </a>
   <a class="flex flex-col items-center justify-center text-on-surface-variant/60 active:bg-surface-bright transition-all duration-300 ease-in-out px-4 py-1 rounded-xl" href="https://www.instagram.com/dualsense_no_drift/" target="_blank">
     <span class="material-symbols-outlined mb-1">photo_camera</span>
-    <span class="font-label-sm text-[10px] uppercase tracking-tighter">Insta</span>
+    <span class="font-label-sm text-[10px] uppercase tracking-tighter"><span data-i18n="mob.insta">Insta</span></span>
   </a>
 </div>
 </nav>
@@ -452,4 +468,44 @@
             }
         });
     </script>
+
+<script id="i18n-script">
+const TRANSLATIONS = {"nav.inicio": {"pt": "Início", "en": "Home", "es": "Inicio", "fr": "Accueil", "it": "Inizio", "nl": "Start"}, "nav.informacao": {"pt": "Informação e<br/>Serviços", "en": "Info &<br/>Services", "es": "Info y<br/>Servicios", "fr": "Info &<br/>Services", "it": "Info e<br/>Servizi", "nl": "Info &<br/>Diensten"}, "nav.faq.l1": {"pt": "O que é o Drift?", "en": "What is Drift?", "es": "¿Qué es el Drift?", "fr": "C'est quoi le Drift?", "it": "Cos'è il Drift?", "nl": "Wat is Drift?"}, "nav.faq.l2": {"pt": "F.A.Q.", "en": "F.A.Q.", "es": "F.A.Q.", "fr": "F.A.Q.", "it": "F.A.Q.", "nl": "F.A.Q."}, "nav.modifica": {"pt": "Modifica o<br/>teu comando", "en": "Modify your<br/>controller", "es": "Modifica tu<br/>mando", "fr": "Modifie ta<br/>manette", "it": "Modifica il<br/>tuo controller", "nl": "Modificeer je<br/>controller"}, "nav.loja": {"pt": "Loja Wallapop", "en": "Wallapop Shop", "es": "Tienda Wallapop", "fr": "Boutique Wallapop", "it": "Negozio Wallapop", "nl": "Wallapop Winkel"}, "nav.contacta": {"pt": "Contacta-me", "en": "Contact me", "es": "Contáctame", "fr": "Contactez-moi", "it": "Contattami", "nl": "Neem contact op"}, "hero.banner": {"pt": "Não deite fora o seu comando com drift. Substitua os joysticks defeituosos por Hall Effect ou TMR (anti drift). 🎯", "en": "Don't throw away your drifting controller. Replace the faulty joysticks with Hall Effect or TMR (anti drift). 🎯", "es": "No tires tu mando con drift. Sustituye los joysticks defectuosos por Hall Effect o TMR (anti drift). 🎯", "fr": "Ne jetez pas votre manette avec le drift. Remplacez les joysticks défectueux par Hall Effect ou TMR (anti drift). 🎯", "it": "Non buttare il tuo controller con il drift. Sostituisci i joystick difettosi con Hall Effect o TMR (anti drift). 🎯", "nl": "Gooi je controller met drift niet weg. Vervang de defecte joysticks door Hall Effect of TMR (anti drift). 🎯"}, "hero.title": {"pt": "Diga adeus ao Stick Drift !", "en": "Say goodbye to Stick Drift!", "es": "¡Di adiós al Stick Drift!", "fr": "Dites adieu au Stick Drift !", "it": "Dì addio allo Stick Drift!", "nl": "Zeg vaarwel tegen Stick Drift!"}, "hero.subtitle": {"pt": "Comandos DualSense (e outros modelos...) personalizados com tecnologia magnética de alta performance. Só para jogadores competitivos que exigem o máximo dos seus equipamentos. Escolha TMR para a derradeira experiência e precisão.", "en": "DualSense (and other models...) controllers customized with high-performance magnetic technology. Only for competitive players who demand the best from their equipment. Choose TMR for the ultimate experience and precision.", "es": "Mandos DualSense (y otros modelos...) personalizados con tecnología magnética de alto rendimiento. Solo para jugadores competitivos que exigen lo máximo de su equipo. Elige TMR para la experiencia definitiva.", "fr": "Manettes DualSense (et autres modèles...) personnalisées avec technologie magnétique haute performance. Uniquement pour les joueurs compétitifs qui exigent le meilleur de leur équipement. Choisissez TMR pour l'expérience ultime.", "it": "Controller DualSense (e altri modelli...) personalizzati con tecnologia magnetica ad alte prestazioni. Solo per giocatori competitivi che pretendono il massimo. Scegli TMR per l'esperienza definitiva.", "nl": "DualSense (en andere modellen...) controllers aangepast met hoogwaardige magnetische technologie. Alleen voor competitieve spelers die het maximale eisen. Kies TMR voor de ultieme ervaring en precisie."}, "hero.btn.info": {"pt": "Informação e Serviços", "en": "Info & Services", "es": "Info y Servicios", "fr": "Info & Services", "it": "Info e Servizi", "nl": "Info & Diensten"}, "hero.loja.title": {"pt": "Explora a Loja no", "en": "Explore the Shop on", "es": "Explora la Tienda en", "fr": "Explorer la Boutique sur", "it": "Esplora il Negozio su", "nl": "Verken de Winkel op"}, "hero.loja.sub": {"pt": "Builds únicas · Disponibilidade variável", "en": "Unique builds · Variable availability", "es": "Builds únicos · Disponibilidad variable", "fr": "Builds uniques · Disponibilité variable", "it": "Build uniche · Disponibilità variabile", "nl": "Unieke builds · Variabele beschikbaarheid"}, "hero.loja.btn": {"pt": "Ver comandos disponíveis", "en": "See available controllers", "es": "Ver mandos disponibles", "fr": "Voir les manettes disponibles", "it": "Vedi controller disponibili", "nl": "Bekijk beschikbare controllers"}, "trust.segura": {"pt": "Compra Segura", "en": "Safe Purchase", "es": "Compra Segura", "fr": "Achat Sécurisé", "it": "Acquisto Sicuro", "nl": "Veilige Aankoop"}, "trust.segura.sub": {"pt": "Garantia total Wallapop.", "en": "Full Wallapop guarantee.", "es": "Garantía total Wallapop.", "fr": "Garantie totale Wallapop.", "it": "Garanzia totale Wallapop.", "nl": "Volledige Wallapop garantie."}, "trust.envios": {"pt": "Envios Rápidos", "en": "Fast Shipping", "es": "Envíos Rápidos", "fr": "Livraison Rapide", "it": "Spedizioni Rapide", "nl": "Snelle Verzending"}, "trust.envios.sub": {"pt": "Expedição em 24/48h.", "en": "Shipped within 24/48h.", "es": "Envío en 24/48h.", "fr": "Expédition sous 24/48h.", "it": "Spedizione in 24/48h.", "nl": "Verzending binnen 24/48u."}, "trust.feedback": {"pt": "Feedback 5*", "en": "5* Feedback", "es": "Valoraciones 5*", "fr": "Avis 5*", "it": "Feedback 5*", "nl": "5* Feedback"}, "trust.feedback.sub": {"pt": "A excelência ao seu alcance", "en": "Excellence within your reach", "es": "La excelencia a tu alcance", "fr": "L'excellence à votre portée", "it": "L'eccellenza a portata di mano", "nl": "Excellentie binnen handbereik"}, "mob.inicio": {"pt": "Início", "en": "Home", "es": "Inicio", "fr": "Accueil", "it": "Inizio", "nl": "Start"}, "mob.informacao": {"pt": "Informação", "en": "Info", "es": "Info", "fr": "Info", "it": "Info", "nl": "Info"}, "mob.faq": {"pt": "F.A.Q.", "en": "F.A.Q.", "es": "F.A.Q.", "fr": "F.A.Q.", "it": "F.A.Q.", "nl": "F.A.Q."}, "mob.insta": {"pt": "Insta", "en": "Insta", "es": "Insta", "fr": "Insta", "it": "Insta", "nl": "Insta"}};
+const FLAGS = {"pt": "🇵🇹", "en": "🇬🇧", "es": "🇪🇸", "fr": "🇫🇷", "it": "🇮🇹", "nl": "🇳🇱"};
+const CODES = {"pt": "PT", "en": "EN", "es": "ES", "fr": "FR", "it": "IT", "nl": "NL"};
+
+function applyLang(lang) {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (TRANSLATIONS[key] && TRANSLATIONS[key][lang]) {
+      el.innerHTML = TRANSLATIONS[key][lang];
+    }
+  });
+  const flag = document.getElementById('lang-flag');
+  const code = document.getElementById('lang-code');
+  if (flag) flag.textContent = FLAGS[lang];
+  if (code) code.textContent = CODES[lang];
+  localStorage.setItem('semdrift_lang', lang);
+  document.getElementById('lang-menu')?.classList.add('hidden');
+}
+
+function setLang(lang) { applyLang(lang); }
+
+function toggleLangMenu() {
+  document.getElementById('lang-menu')?.classList.toggle('hidden');
+}
+
+document.addEventListener('click', (e) => {
+  const btn = document.getElementById('lang-btn');
+  const menu = document.getElementById('lang-menu');
+  if (menu && btn && !btn.contains(e.target) && !menu.contains(e.target)) {
+    menu.classList.add('hidden');
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('semdrift_lang') || 'pt';
+  applyLang(saved);
+});
+</script>
 </body></html>
