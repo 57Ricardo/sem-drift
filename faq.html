@@ -14,8 +14,8 @@
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 border-b border-white/5 transition-all duration-300" style="background:#1e1e1e;">
 <div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
-  <a class="font-headline-lg font-bold text-primary dark:text-primary-fixed-dim tracking-tighter text-2xl" href="index.html">Sem Drift</a>
-  <div class="hidden md:flex space-x-8 items-center relative">
+<a class="font-headline-lg font-bold text-primary dark:text-primary-fixed-dim tracking-tighter text-2xl" href="index.html">Sem Drift</a>
+<div class="hidden md:flex space-x-8 items-center relative">
     <a class="text-on-surface-variant dark:text-outline hover:text-on-surface transition-colors duration-200 font-label-sm text-label-sm uppercase leading-tight" href="index.html"><span>Início</span></a>
     <a class="text-on-surface-variant dark:text-outline hover:text-on-surface transition-colors duration-200 font-label-sm text-label-sm uppercase leading-tight" href="informacao.html"><span>Informação e<br/>Serviços</span></a>
     <a class="text-secondary dark:text-secondary-fixed-dim border-b-2 border-secondary pb-1 font-label-sm text-label-sm uppercase leading-tight" href="faq.html"><span data-t="nav.faq1" style="display:block;text-align:center;">O que é o Drift?</span><span data-t="nav.faq2" style="display:block;text-align:center;">F.A.Q.</span></a>
@@ -36,13 +36,9 @@
         </a>
       </div>
     </div>
-  </div>
-  
-</div>
+<div class="flex items-center gap-3">
 <div class="hidden md:flex items-center" id="lang-wrapper" style="position:relative;">
-  <button onclick="sdToggleLang()" id="lang-btn" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;color:#cbc3d9;font-size:11px;font-weight:700;letter-spacing:0.05em;padding:5px 12px;cursor:pointer;font-family:inherit;text-transform:uppercase;white-space:nowrap;">
-    <span id="lang-btn-label">🇵🇹 PT</span>
-  </button>
+  <button onclick="sdToggleLang()" id="lang-btn" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;color:#cbc3d9;font-size:11px;font-weight:700;letter-spacing:0.05em;padding:5px 12px;cursor:pointer;font-family:inherit;text-transform:uppercase;white-space:nowrap;"><span id="lang-btn-label">🇵🇹 PT</span></button>
   <div id="lang-dropdown" style="display:none;position:absolute;top:calc(100% + 8px);right:0;background:#1e1e1e;border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:6px;min-width:150px;z-index:999;box-shadow:0 8px 32px rgba(0,0,0,0.5);">
     <button onclick="sdSetLang('pt')" style="display:block;width:100%;text-align:left;padding:8px 14px;border-radius:8px;background:none;border:none;color:#e5e2e1;font-size:13px;cursor:pointer;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='none'">🇵🇹 Português</button>
     <button onclick="sdSetLang('en')" style="display:block;width:100%;text-align:left;padding:8px 14px;border-radius:8px;background:none;border:none;color:#e5e2e1;font-size:13px;cursor:pointer;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='none'">🇬🇧 English</button>
@@ -52,9 +48,11 @@
     <button onclick="sdSetLang('nl')" style="display:block;width:100%;text-align:left;padding:8px 14px;border-radius:8px;background:none;border:none;color:#e5e2e1;font-size:13px;cursor:pointer;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='none'">🇳🇱 Nederlands</button>
   </div>
 </div>
-<div class="flex items-center space-x-4">
+
+<a class="hidden md:inline-flex text-on-secondary-fixed font-bold py-2 px-6 rounded-full hover:bg-secondary-fixed transition-colors items-center gap-2 shadow-[0_0_15px_rgba(255,184,102,0.2)]" href="https://p.wallapop.com/p/441510329" rel="noopener noreferrer" style="background-color: #01D1C1; color: white;" target="_blank"><span><span data-t="nav.loja">Loja Wallapop</span></span></a>
 <a class="hidden md:inline-flex text-on-secondary-fixed font-bold py-2 px-6 rounded-full hover:bg-secondary-fixed transition-colors items-center gap-2 shadow-[0_0_15px_rgba(255,184,102,0.2)]" href="https://p.wallapop.com/p/441510329" rel="noopener noreferrer" style="background-color: #01D1C1; color: white;" target="_blank"><span><span data-t="nav.loja">Loja Wallapop</span></span></a>
 <a class="hidden md:inline-flex text-on-primary font-bold py-2 px-6 rounded-full hover:bg-primary-fixed-dim transition-colors items-center gap-2" href="https://www.instagram.com/dualsense_no_drift/" style="background-color: #E4405F; color: white;" target="_blank"><span class="material-symbols-outlined">photo_camera</span><span>Contacta-me</span></a>
+</div>
 </div>
 </div>
 </nav>
@@ -341,6 +339,7 @@
         });
     });
 </script>
+
 
 
 

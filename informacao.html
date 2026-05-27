@@ -2,9 +2,173 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Informação e Serviços - Sem Drift</title>
-
-
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#201f1f",
+                      "outline-variant": "#494456",
+                      "surface-container-high": "#2a2a2a",
+                      "on-primary-fixed": "#22005d",
+                      "on-tertiary-fixed": "#001f24",
+                      "on-surface": "#e5e2e1",
+                      "on-primary": "#3a0092",
+                      "secondary": "#ffb866",
+                      "surface-container-low": "#1c1b1b",
+                      "on-secondary-fixed": "#2b1700",
+                      "tertiary-fixed-dim": "#00daf3",
+                      "primary-fixed-dim": "#cfbcff",
+                      "primary-container": "#6200ea",
+                      "inverse-surface": "#e5e2e1",
+                      "on-error": "#690005",
+                      "tertiary-container": "#005b66",
+                      "on-primary-container": "#cfbcff",
+                      "inverse-primary": "#6e25f6",
+                      "error-container": "#93000a",
+                      "primary-fixed": "#e9ddff",
+                      "on-secondary-fixed-variant": "#673d00",
+                      "on-surface-variant": "#cbc3d9",
+                      "on-secondary-container": "#3f2300",
+                      "surface-bright": "#393939",
+                      "tertiary": "#00daf3",
+                      "inverse-on-surface": "#313030",
+                      "surface-dim": "#131313",
+                      "on-tertiary-container": "#00d9f2",
+                      "tertiary-fixed": "#9cf0ff",
+                      "on-primary-fixed-variant": "#5400cc",
+                      "surface-tint": "#cfbcff",
+                      "background": "#131313",
+                      "surface-container-lowest": "#0e0e0e",
+                      "outline": "#958da2",
+                      "secondary-container": "#cb8011",
+                      "surface-container-highest": "#353534",
+                      "secondary-fixed-dim": "#ffb866",
+                      "secondary-fixed": "#ffddba",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary": "#482900",
+                      "primary": "#cfbcff",
+                      "on-tertiary": "#00363d",
+                      "on-tertiary-fixed-variant": "#004f58",
+                      "error": "#ffb4ab",
+                      "surface-variant": "#353534",
+                      "on-background": "#e5e2e1",
+                      "surface": "#131313"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "unit": "8px",
+                      "gutter": "24px",
+                      "margin": "32px",
+                      "container-max": "1280px",
+                      "stack-lg": "40px"
+              },
+              "fontFamily": {
+                      "headline-xl": [
+                              "Space Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Space Grotesk"
+                      ],
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            },
+          },
+        }
+    </script>
 <style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .glass-panel {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .neon-border-focus:focus-within {
+            border-color: theme('colors.tertiary');
+            box-shadow: 0 0 10px rgba(0, 218, 243, 0.3);
+        }
+        .glow-tertiary {
+            box-shadow: 0 0 15px rgba(0, 218, 243, 0.15);
+        }
+        .glow-primary {
+            box-shadow: 0 0 15px rgba(207, 188, 255, 0.15);
+        }
+        .text-glow-primary {
+            text-shadow: 0 0 15px rgba(207, 188, 255, 0.5);
+        }
+        .text-glow-tertiary {
+            text-shadow: 0 0 15px rgba(0, 218, 243, 0.5);
+        }
+    </style>
+<style id="lang-style">
+#lang-wrapper { display:none; }
+@media(min-width:768px){ #lang-wrapper { display:flex !important; } }
+.lang-opt { display:block;width:100%;text-align:left;padding:8px 14px;border-radius:8px;background:none;border:none;color:#e5e2e1;font-size:13px;cursor:pointer; }
+.lang-opt:hover { background:rgba(255,255,255,0.08); }
 </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container pt-16">
@@ -15,52 +179,56 @@
                 Sem Drift
             </a>
 <div class="hidden md:flex space-x-8 items-center relative">
-    <a class="text-on-surface-variant dark:text-outline hover:text-on-surface transition-colors duration-200 font-label-sm text-label-sm uppercase leading-tight" href="index.html"><span>Início</span></a>
-    <a class="text-secondary dark:text-secondary-fixed-dim border-b-2 border-secondary pb-1 font-label-sm text-label-sm uppercase leading-tight" href="informacao.html"><span>Informação e<br/>Serviços</span></a>
-    <a class="text-on-surface-variant dark:text-outline hover:text-on-surface transition-colors duration-200 font-label-sm text-label-sm uppercase leading-tight" href="faq.html"><span data-t="nav.faq1" style="display:block;text-align:center;">O que é o Drift?</span><span data-t="nav.faq2" style="display:block;text-align:center;">F.A.Q.</span></a>
-    <div class="relative">
-      <button class="text-on-surface-variant dark:text-outline hover:text-on-surface hover:bg-white/5 transition-colors duration-200 font-label-sm text-label-sm uppercase cursor-pointer py-1 leading-tight" id="modify-btn"><span>Modifica o<br/>teu comando</span></button>
-      <div class="absolute top-full left-0 mt-2 bg-surface-container border border-outline-variant/20 rounded-xl shadow-2xl p-2 min-w-[200px] flex flex-col gap-1 z-[60] backdrop-blur-xl hidden" id="contact-menu">
-        <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-variant transition-colors" href="https://www.instagram.com/dualsense_no_drift/" target="_blank">
-          <span class="material-symbols-outlined" style="color:#E4405F;">photo_camera</span>
-          <div class="flex flex-col"><span class="text-on-surface font-medium">Instagram</span><span class="text-xs text-on-surface-variant"><span data-t="nav.instagram">Contacta-me no Insta</span></span></div>
-        </a>
-        <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-variant transition-colors" href="https://p.wallapop.com/p/441510329" target="_blank">
-          <span class="material-symbols-outlined" style="color:#01D1C1;">shopping_bag</span>
-          <div class="flex flex-col"><span class="text-on-surface font-medium">Wallapop</span><span class="text-xs text-on-surface-variant"><span data-t="nav.wallapop.sub">Loja online</span></span></div>
-        </a>
-        <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-variant transition-colors" href="https://www.olx.pt/" target="_blank">
-          <span class="material-symbols-outlined" style="color:#23E5DB;">store</span>
-          <div class="flex flex-col"><span class="text-on-surface font-medium">OLX</span><span class="text-xs text-on-surface-variant"><span data-t="nav.olx.sub">Anúncios OLX</span></span></div>
-        </a>
-      </div>
-    </div>
-  </div>
-
+<a class="text-on-surface-variant dark:text-outline hover:text-on-surface transition-colors duration-200 font-label-sm text-label-sm uppercase" href="index.html">Início</a>
+<a class="text-secondary dark:text-secondary-fixed-dim border-b-2 border-secondary pb-1 font-label-sm text-label-sm uppercase leading-tight" href="informacao.html"><span data-t="nav.info">Informação e Serviços</span></a>
+<div class="relative group">
+<button class="text-on-surface-variant dark:text-outline hover:text-on-surface hover:bg-white/5 transition-colors duration-200 font-label-sm text-label-sm uppercase cursor-pointer py-1 leading-tight" id="modify-btn">Modifica o<br/>teu comando</button>
+<div class="hidden absolute top-full left-0 mt-2 bg-surface-container border border-outline-variant/20 rounded-xl shadow-2xl p-2 min-w-[200px] flex flex-col gap-1 z-[60] backdrop-blur-xl animate-in fade-in slide-in-from-top-2 duration-200" id="contact-menu">
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-variant transition-colors group/item" href="https://www.instagram.com/dualsense_no_drift/" target="_blank">
+<span class="material-symbols-outlined text-secondary">photo_camera</span>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Instagram</span>
+<span class="text-xs text-on-surface-variant">Siga-nos no Insta</span>
 </div>
-<div class="hidden md:flex items-center" id="lang-wrapper" style="position:relative;">
-  <button onclick="sdToggleLang()" id="lang-btn" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;color:#cbc3d9;font-size:11px;font-weight:700;letter-spacing:0.05em;padding:5px 12px;cursor:pointer;font-family:inherit;text-transform:uppercase;white-space:nowrap;">
-    <span id="lang-btn-label">🇵🇹 PT</span>
-  </button>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-variant transition-colors group/item" href="https://p.wallapop.com/p/441510329" target="_blank">
+<span class="material-symbols-outlined text-primary">shopping_bag</span>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Wallapop</span>
+<span class="text-xs text-on-surface-variant">Nossa loja online</span>
+</div>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-variant transition-colors group/item" href="https://www.olx.pt/" target="_blank">
+<span class="material-symbols-outlined text-tertiary">store</span>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">OLX</span>
+<span class="text-xs text-on-surface-variant">Anúncios OLX</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div id="lang-wrapper" style="position:relative;display:none;" class="md:flex items-center">
+  <button onclick="sdToggleLang()" id="lang-btn" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;color:#cbc3d9;font-size:11px;font-weight:700;letter-spacing:0.05em;padding:5px 12px;cursor:pointer;white-space:nowrap;"><span id="lang-btn-label">🇵🇹 PT</span></button>
   <div id="lang-dropdown" style="display:none;position:absolute;top:calc(100% + 8px);right:0;background:#1e1e1e;border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:6px;min-width:150px;z-index:999;box-shadow:0 8px 32px rgba(0,0,0,0.5);">
-    <button onclick="sdSetLang('pt')" style="display:block;width:100%;text-align:left;padding:8px 14px;border-radius:8px;background:none;border:none;color:#e5e2e1;font-size:13px;cursor:pointer;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='none'">🇵🇹 Português</button>
-    <button onclick="sdSetLang('en')" style="display:block;width:100%;text-align:left;padding:8px 14px;border-radius:8px;background:none;border:none;color:#e5e2e1;font-size:13px;cursor:pointer;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='none'">🇬🇧 English</button>
-    <button onclick="sdSetLang('es')" style="display:block;width:100%;text-align:left;padding:8px 14px;border-radius:8px;background:none;border:none;color:#e5e2e1;font-size:13px;cursor:pointer;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='none'">🇪🇸 Español</button>
-    <button onclick="sdSetLang('fr')" style="display:block;width:100%;text-align:left;padding:8px 14px;border-radius:8px;background:none;border:none;color:#e5e2e1;font-size:13px;cursor:pointer;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='none'">🇫🇷 Français</button>
-    <button onclick="sdSetLang('it')" style="display:block;width:100%;text-align:left;padding:8px 14px;border-radius:8px;background:none;border:none;color:#e5e2e1;font-size:13px;cursor:pointer;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='none'">🇮🇹 Italiano</button>
-    <button onclick="sdSetLang('nl')" style="display:block;width:100%;text-align:left;padding:8px 14px;border-radius:8px;background:none;border:none;color:#e5e2e1;font-size:13px;cursor:pointer;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='none'">🇳🇱 Nederlands</button>
+    <button onclick="sdSetLang('pt')" class="lang-opt">🇵🇹 Português</button>
+    <button onclick="sdSetLang('en')" class="lang-opt">🇬🇧 English</button>
+    <button onclick="sdSetLang('es')" class="lang-opt">🇪🇸 Español</button>
+    <button onclick="sdSetLang('fr')" class="lang-opt">🇫🇷 Français</button>
+    <button onclick="sdSetLang('it')" class="lang-opt">🇮🇹 Italiano</button>
+    <button onclick="sdSetLang('nl')" class="lang-opt">🇳🇱 Nederlands</button>
   </div>
 </div>
-<div class="flex items-center space-x-4">
-<a class="hidden md:inline-flex text-on-secondary-fixed font-bold py-2 px-6 rounded-full hover:bg-secondary-fixed transition-colors items-center gap-2 shadow-[0_0_15px_rgba(255,184,102,0.2)]" href="https://p.wallapop.com/p/441510329" rel="noopener noreferrer" style="background-color: #01D1C1; color: white;" target="_blank"><span><span data-t="nav.loja">Loja Wallapop</span></span></a>
-<a class="hidden md:inline-flex text-on-primary font-bold py-2 px-6 rounded-full hover:bg-primary-fixed-dim transition-colors items-center gap-2" href="https://www.instagram.com/dualsense_no_drift/" style="background-color: #E4405F; color: white;" target="_blank"><span class="material-symbols-outlined">photo_camera</span><span>Contacta-me</span></a>
+<a class="hidden md:inline-flex font-bold py-2 px-6 rounded-full transition-colors items-center gap-2" href="https://p.wallapop.com/p/441510329" rel="noopener noreferrer" style="background:#01D1C1;color:white;" target="_blank"><span data-t="nav.loja">Loja Wallapop</span></a>
+<a class="hidden md:inline-flex bg-primary text-on-primary font-bold py-2 px-6 rounded-full hover:bg-primary-fixed-dim transition-colors items-center gap-2" href="https://www.instagram.com/dualsense_no_drift/" target="_blank"><span class="material-symbols-outlined">photo_camera</span><span data-t="nav.contacta">Contacta-me</span></a>
 </div>
 </div>
 </nav>
 <!-- Main Content -->
 <main class="max-w-container-max mx-auto px-4 md:px-8 py-4 flex flex-col pb-4">
 <!-- MODS & UPGRADES Section -->
-<section class="mb-4 bg-surface-container-lowest rounded-2xl p-4 border border-white/5 shadow-2xl relative overflow-hidden bg-cover bg-center min-h-[400px] flex items-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDX0EmELsunZWtwFomjvynLpqYwU3CZ0JcLeXk-oW_MTdpdyahpyicy00_6JQsIXtIRQQUIITP-ywjJWWoLr4ZBc7SGj1whTEzwrvdRTzVQcBtNR_cj3kg-9ARee2WLSMoc4wuvvGxb3Dt5Pq9w1MmhmA9rW0sE_lE5T784jZ8P2FGVaFP2bpocHNuzU82C27AGA3hgDyZkjgEnS6REvvt60TDLVEAhZL3iC4aXrd-QORy5H4ODfIVsapC4AhaTSIZEibENXhrwj3I');">
+<section class="mb-stack-lg bg-surface-container-lowest rounded-2xl p-8 border border-white/5 shadow-2xl relative overflow-hidden bg-cover bg-center min-h-[500px] flex items-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDX0EmELsunZWtwFomjvynLpqYwU3CZ0JcLeXk-oW_MTdpdyahpyicy00_6JQsIXtIRQQUIITP-ywjJWWoLr4ZBc7SGj1whTEzwrvdRTzVQcBtNR_cj3kg-9ARee2WLSMoc4wuvvGxb3Dt5Pq9w1MmhmA9rW0sE_lE5T784jZ8P2FGVaFP2bpocHNuzU82C27AGA3hgDyZkjgEnS6REvvt60TDLVEAhZL3iC4aXrd-QORy5H4ODfIVsapC4AhaTSIZEibENXhrwj3I');">
 <div class="absolute inset-0 bg-black/70 z-0"></div>
 <div class="relative z-20 w-full">
 <div class="flex flex-col gap-8">
@@ -113,87 +281,87 @@
 <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -z-10 group-hover:bg-primary/20 transition-colors"></div>
 <div class="flex items-center gap-3 mb-4">
 <span class="material-symbols-outlined text-4xl text-primary">rebase_edit</span>
-<h3 class="font-headline-lg text-3xl font-bold text-on-surface"><span data-t="inf.joy.title">Instalação de Joysticks</span> Hall Effect &amp; TMR</h3>
+<h3 class="font-headline-lg text-3xl font-bold text-on-surface">Instalação de Joysticks Hall Effect &amp; TMR</h3>
 </div>
 <p class="flex-grow mb-8 text-on-surface leading-relaxed md:text-lg">Substituição dos joysticks originais por tecnologia magnética Hall Effect ou TMR, com instalação profissional e calibração avançada de nível competitivo.</p>
 <div class="mt-auto">
-<div class="space-y-3 border-t border-white/10 pt-4">
+<div class="space-y-6 border-t border-white/10 pt-6">
 <h4 class="text-secondary font-bold text-sm uppercase tracking-widest flex items-center gap-2">
 <span class="w-8 h-px bg-secondary/30"></span>
-                                <span data-t="inf.comp.title">COMPARATIVO DE TECNOLOGIAS</span>
+                                COMPARATIVO DE TECNOLOGIAS
                             </h4>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 <!-- Card: Originais -->
 <div class="bg-surface-container-low/60 backdrop-blur-sm p-6 rounded-xl border border-white/5 transition-all hover:border-white/20">
 <div class="flex items-center gap-3 mb-5">
 <span class="material-symbols-outlined text-3xl text-orange-400">joystick</span>
-<h5 class="text-on-surface font-bold text-lg"><span data-t="inf.orig.title">Originais</span></h5>
+<h5 class="text-on-surface font-bold text-lg">Originais</h5>
 </div>
 <ul class="space-y-3 text-sm text-on-surface-variant">
-<li class="flex items-start gap-2"><span class="text-green-500 font-bold">✔</span> <span><span data-t="inf.orig.1">Sensibilidade ao toque familiar</span></span></li>
-<li class="flex items-start gap-2"><span class="text-red-500 font-bold">✖</span> <span><span data-t="inf.orig.2">Desgaste mecânico rápido</span></span></li>
-<li class="flex items-start gap-2"><span class="text-red-500 font-bold">✖</span> <span><span data-t="inf.orig.3">Propensão elevada a drift</span></span></li>
+<li class="flex items-start gap-2"><span class="text-green-500 font-bold">✔</span> <span>Sensibilidade ao toque familiar</span></li>
+<li class="flex items-start gap-2"><span class="text-red-500 font-bold">✖</span> <span>Desgaste mecânico rápido</span></li>
+<li class="flex items-start gap-2"><span class="text-red-500 font-bold">✖</span> <span>Propensão elevada a drift</span></li>
 </ul>
 </div>
 <!-- Card: Hall Effect -->
 <div class="bg-surface-container-low/60 backdrop-blur-sm p-6 rounded-xl border border-primary/20 shadow-[0_0_15px_rgba(207,188,255,0.05)] transition-all hover:border-primary/40">
 <div class="flex items-center gap-3 mb-5"><span class="text-3xl">🧲</span><h5 class="text-primary font-bold text-lg">Hall Effect</h5></div>
 <ul class="space-y-3 text-sm text-on-surface-variant">
-<li class="flex items-start gap-2"><span class="text-green-500 font-bold">✔</span> <span><span data-t="inf.hall.1">Sem contacto físico interno</span></span></li>
-<li class="flex items-start gap-2"><span class="text-green-500 font-bold">✔</span> <span><span data-t="inf.hall.2">Durabilidade extrema</span></span></li>
+<li class="flex items-start gap-2"><span class="text-green-500 font-bold">✔</span> <span>Sem contacto físico interno</span></li>
+<li class="flex items-start gap-2"><span class="text-green-500 font-bold">✔</span> <span>Durabilidade extrema</span></li>
 <li class="flex items-start gap-2"><span class="text-red-500 font-bold">✖</span> <span>Curva de resposta linear</span></li>
 </ul>
 </div>
 <!-- Card: TMR (Highlighted) -->
 <div class="bg-surface-container/40 backdrop-blur-md p-6 rounded-xl border-2 border-tertiary shadow-[0_0_25px_rgba(0,218,243,0.2)] transition-all relative overflow-hidden scale-[1.02] z-10">
-<div class="absolute -top-1 -right-1 bg-tertiary text-on-tertiary px-3 py-1 text-[10px] font-bold uppercase rounded-bl-lg tracking-tighter"><span data-t="inf.tmr.badge">Mais Avançado</span></div>
+<div class="absolute -top-1 -right-1 bg-tertiary text-on-tertiary px-3 py-1 text-[10px] font-bold uppercase rounded-bl-lg tracking-tighter">Mais Avançado</div>
 <div class="flex items-center gap-3 mb-5">
 <span class="material-symbols-outlined text-3xl text-tertiary drop-shadow-[0_0_8px_rgba(0,218,243,0.5)]">bolt</span>
 <h5 class="text-tertiary font-bold text-lg drop-shadow-[0_0_5px_rgba(0,218,243,0.3)]">TMR Magnetic</h5>
 </div>
 <ul class="space-y-3 text-sm text-on-surface">
-<li class="flex items-start gap-2"><span class="text-green-400 font-bold">✔</span> <span class="font-medium"><span data-t="inf.tmr.1">Maior precisão de micro ajustes</span></span></li>
-<li class="flex items-start gap-2"><span class="text-green-400 font-bold">✔</span> <span class="font-medium"><span data-t="inf.tmr.2">Resposta instantânea</span></span></li>
-<li class="flex items-start gap-2"><span class="text-green-400 font-bold">✔</span> <span class="font-medium"><span data-t="inf.tmr.3">Sensação natural & fluída</span></span></li>
-<li class="flex items-start gap-2"><span class="text-green-400 font-bold">✔</span> <span class="font-medium"><span data-t="inf.tmr.4">Topo de gama competitivo</span></span></li>
+<li class="flex items-start gap-2"><span class="text-green-400 font-bold">✔</span> <span class="font-medium">Maior precisão de micro ajustes</span></li>
+<li class="flex items-start gap-2"><span class="text-green-400 font-bold">✔</span> <span class="font-medium">Resposta instantânea</span></li>
+<li class="flex items-start gap-2"><span class="text-green-400 font-bold">✔</span> <span class="font-medium">Sensação natural &amp; fluída</span></li>
+<li class="flex items-start gap-2"><span class="text-green-400 font-bold">✔</span> <span class="font-medium">Topo de gama competitivo</span></li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-<section class="mt-6 pt-6 border-t border-white/10">
-<h2 class="font-headline-xl text-primary mb-4"><span class="block text-3xl md:text-5xl font-bold mb-2"><span data-t="inf.proc.title">🛠️ Processo técnico completo</span></span><span class="block text-xl md:text-3xl text-on-surface/80"><span data-t="inf.proc.sub">Instalação de joysticks (cerca de 2 horas)</span></span></h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<section class="mt-12 pt-12 border-t border-white/10">
+<h2 class="font-headline-xl text-primary mb-stack-lg"><span class="block text-3xl md:text-5xl font-bold mb-2">🛠️ Processo técnico completo</span><span class="block text-xl md:text-3xl text-on-surface/80">Instalação de joysticks (cerca de 2 horas)</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
 <div class="glass-panel rounded-xl overflow-hidden relative border group border-white/10 bg-surface-dim h-[255px]">
 <img alt="Soldadura" class="w-full h-full object-cover opacity-30 mix-blend-luminosity transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbtrHb51oqgJ1bITvMzUGkSJtAFesaeXqkjFr_E3sWJCoXsOG_rJlLXQ-LYv-tECY5C4aiVuh0uXXsCeTzihaoKj5Wq9E7fUQWEZs3kDHT0tvrLJRXjI0gr2E9iL6atc8I-QgaOszFw1cTChYgMgFqICwMYwC1eOqUcihq4oN_R2ZNzcfsDZlK-Z1z-UPYGulWo_KakFiaVC9UdahoDQAYAFknd8LPGgfLSZ0WT5VXRk-_7bPh14fd3rYnHUldWpgQMR5QIWockp4"/>
 <div class="absolute inset-0 p-6 flex flex-col bg-gradient-to-t from-background via-background/60 to-transparent justify-start pt-16">
-<span class="font-label-sm text-lg text-secondary block mb-2 uppercase font-bold"><span data-t="inf.f1.label">Fase 1 (Desmontagem)</span></span>
+<span class="font-label-sm text-lg text-secondary block mb-2 uppercase font-bold">Fase 1 (Desmontagem)</span>
 <ul class="text-on-surface text-base md:text-lg space-y-1">
-<li>- <span data-t="inf.f1.1">abertura e remoção segura dos componentes</span></li>
-<li>- <span data-t="inf.f1.2">inspeção e limpeza da board</span></li>
+<li>- abertura e remoção segura dos componentes</li>
+<li>- inspeção e limpeza da board</li>
 </ul>
 </div>
 </div>
 <div class="glass-panel rounded-xl overflow-hidden relative border group border-white/10 bg-surface-dim h-[255px]">
 <img alt="Instalação" class="w-full h-full object-cover opacity-30 mix-blend-luminosity transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfbjiIsWw87NenW3ScGHZl_xjbDH_QO1DaNs8jWmFXHjKWCirHE99zYl4CQ-xqpkyWUkKMEgFsROPR4OB0mi1zig7qOcKfa9cCwJSXtitgb3jJkiOR3SAi2r3z3Y2Hy7RSuIC5d6kcVqE2h0FUcjw6zreoabyJvXIPj2gI-Yzg-ip27XFG5CIBascdI0TUlfHS6ULcBboI5AtAp7F7NF3Fk7FJyjbcHDnA9heCqr9mHf52jL6Y2cGgQtg2VHsigzRQiGeNcdpxi38"/>
 <div class="absolute inset-0 p-6 flex flex-col bg-gradient-to-t from-background via-background/60 to-transparent justify-start pt-16">
-<span class="font-label-sm text-lg text-tertiary block mb-2 uppercase font-bold"><span data-t="inf.f2.label">Fase 2 (Soldadura)</span></span>
+<span class="font-label-sm text-lg text-tertiary block mb-2 uppercase font-bold">Fase 2 (Soldadura)</span>
 <ul class="text-on-surface text-base md:text-lg space-y-1">
-<li>- <span data-t="inf.f2.1">remoção dos Joysticks originais</span></li>
-<li>- <span data-t="inf.f2.2">limpeza dos pontos de soldadura</span></li>
-<li>- <span data-t="inf.f2.3">instalação dos novos joysticks</span></li>
+<li>- remoção dos Joysticks originais</li>
+<li>- limpeza dos pontos de soldadura</li>
+<li>- instalação dos novos joysticks</li>
 </ul>
 </div>
 </div>
 <div class="glass-panel rounded-xl overflow-hidden relative border group border-white/10 bg-surface-dim h-[255px]">
 <img alt="Calibração" class="w-full h-full object-cover opacity-30 mix-blend-luminosity transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfbjiIsWw87NenW3ScGHZl_xjbDH_QO1DaNs8jWmFXHjKWCirHE99zYl4CQ-xqpkyWUkKMEgFsROPR4OB0mi1zig7qOcKfa9cCwJSXtitgb3jJkiOR3SAi2r3z3Y2Hy7RSuIC5d6kcVqE2h0FUcjw6zreoabyJvXIPj2gI-Yzg-ip27XFG5CIBascdI0TUlfHS6ULcBboI5AtAp7F7NF3Fk7FJyjbcHDnA9heCqr9mHf52jL6Y2cGgQtg2VHsigzRQiGeNcdpxi38"/>
 <div class="absolute inset-0 p-6 flex flex-col bg-gradient-to-t from-background via-background/60 to-transparent justify-start pt-16">
-<span class="font-label-sm text-lg text-primary block mb-2 uppercase font-bold"><span data-t="inf.f3.label">Fase 3 (Calibração)</span></span>
+<span class="font-label-sm text-lg text-primary block mb-2 uppercase font-bold">Fase 3 (Calibração)</span>
 <ul class="text-on-surface text-base md:text-lg space-y-1">
-<li>- <span data-t="inf.f3.1">ajuste da circularidade</span></li>
-<li>- <span data-t="inf.f3.2">otimização da zona centro</span></li>
-<li>- <span data-t="inf.f3.3">compensação de flutuações dos eixos</span></li>
-<li>- <span data-t="inf.f3.4">ajuste fino para a melhor experiência</span></li>
+<li>- ajuste da circularidade</li>
+<li>- otimização da zona centro</li>
+<li>- compensação de flutuações dos eixos</li>
+<li>- ajuste fino para a melhor experiência</li>
 </ul>
 </div>
 </div>
@@ -202,13 +370,13 @@
 <span class="material-symbols-outlined text-outline-variant text-6xl group-hover:text-secondary transition-colors">verified</span>
 </div>
 <div class="absolute inset-0 p-6 flex flex-col bg-gradient-to-t from-background via-background/60 to-transparent justify-start pt-16">
-<span class="font-label-sm text-lg text-secondary block mb-1 uppercase font-bold"><span data-t="inf.f4.label">Fase 4 (Testes)</span></span>
+<span class="font-label-sm text-lg text-secondary block mb-1 uppercase font-bold">Fase 4 (Testes)</span>
 <ul class="text-on-surface text-base md:text-lg space-y-1">
-<li>- <span data-t="inf.f4.1">verificação de todos os botões e triggers</span></li>
-<li>- <span data-t="inf.f4.2">testes em software e jogos</span></li>
-<li>- <span data-t="inf.f4.3">confirmação da calibração</span></li>
+<li>- verificação de todos os botões e triggers</li>
+<li>- testes em software e jogos</li>
+<li>- confirmação da calibração</li>
 </ul>
-<p class="font-label-sm text-xs text-on-surface-variant/80 mt-2 italic leading-tight"><span data-t="inf.f4.note">(Autonomia da bateria pode variar conforme desgaste normal.)</span></p>
+<p class="font-label-sm text-xs text-on-surface-variant/80 mt-2 italic leading-tight">(Autonomia da bateria pode variar conforme desgaste normal.)</p>
 </div>
 </div>
 </div>
@@ -216,44 +384,44 @@
 <!-- Separador Visual -->
 <div class="mt-32 border-t-2 border-white/20"></div>
 <!-- Limpeza & Manutenção Section -->
-<section class="mt-6">
-<div class="glass-panel rounded-2xl p-4 md:p-6 relative overflow-hidden group border-white/10 shadow-2xl bg-black w-full max-w-container-max mx-auto">
-<div class="flex flex-col lg:flex-row gap-6 items-start relative z-10">
+<section class="mt-12">
+<div class="glass-panel rounded-2xl p-8 md:p-12 relative overflow-hidden group border-white/10 shadow-2xl bg-black w-full max-w-container-max mx-auto">
+<div class="flex flex-col lg:flex-row gap-12 items-start relative z-10">
 <div class="lg:w-1/3">
 <span class="material-symbols-outlined text-secondary text-5xl mb-6 block drop-shadow-[0_0_10px_rgba(255,184,102,0.4)]">cleaning_services</span>
-<h3 class="font-headline-lg text-4xl font-bold text-on-surface mb-6 uppercase tracking-tight"><span data-t="inf.limp.title">Limpeza & Manutenção</span></h3>
-<p class="text-on-surface-variant text-lg leading-relaxed"><span data-t="inf.limp.desc">Serviço de manutenção preventiva e recuperação do comando, focado na fiabilidade e longevidade dos componentes.</span></p>
+<h3 class="font-headline-lg text-4xl font-bold text-on-surface mb-6 uppercase tracking-tight">Limpeza &amp; Manutenção</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed">Serviço de manutenção preventiva e recuperação do comando, focado na fiabilidade e longevidade dos componentes.</p>
 </div>
 <div class="hidden lg:block w-px h-48 bg-white/10 self-center"></div>
 <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-8">
 <div class="space-y-4">
 <div class="flex gap-3">
 <span class="text-secondary font-bold text-xl">•</span>
-<p class="text-on-surface-variant"><span data-t="inf.limp.1">Remoção de pó, resíduos e oxidação</span></p>
+<p class="text-on-surface-variant">Remoção de pó, resíduos e oxidação</p>
 </div>
 <div class="flex gap-3">
 <span class="text-secondary font-bold text-xl">•</span>
-<p class="text-on-surface-variant"><span data-t="inf.limp.2">Desinfeção do comando</span></p>
+<p class="text-on-surface-variant">Desinfeção do comando</p>
 </div>
 </div>
 <div class="space-y-4">
 <div class="flex gap-3">
 <span class="text-secondary font-bold text-xl">•</span>
-<p class="text-on-surface-variant"><span data-t="inf.limp.3">Limpeza interna e externa completa</span></p>
+<p class="text-on-surface-variant">Limpeza interna e externa completa</p>
 </div>
 <div class="flex gap-3">
 <span class="text-secondary font-bold text-xl">•</span>
-<p class="text-on-surface-variant"><span data-t="inf.limp.4">Reparação de problemas de botões ou triggers</span></p>
+<p class="text-on-surface-variant">Reparação de problemas de botões ou triggers</p>
 </div>
 </div>
 <div class="space-y-4">
 <div class="flex gap-3">
 <span class="text-secondary font-bold text-xl">•</span>
-<p class="text-on-surface-variant"><span data-t="inf.limp.5">Substituição de componentes danificados</span></p>
+<p class="text-on-surface-variant">Substituição de componentes danificados</p>
 </div>
 <div class="flex gap-3">
 <span class="text-secondary font-bold text-xl">•</span>
-<p class="text-on-surface-variant"><span data-t="inf.limp.6">Diagnóstico técnico especializado</span></p>
+<p class="text-on-surface-variant">Diagnóstico técnico especializado</p>
 </div>
 </div>
 </div>
@@ -266,29 +434,30 @@
 <!-- BottomNavBar (Mobile Only) -->
 <nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl backdrop-blur-2xl border-t border-white/5 shadow-lg bg-black">
 <div class="flex justify-around items-center h-16 px-4 pb-safe">
-  <a class="flex flex-col items-center justify-center text-on-surface-variant/60 active:bg-surface-bright transition-all duration-300 ease-in-out px-4 py-1 rounded-xl" href="index.html">
-    <span class="material-symbols-outlined mb-1">home</span>
-    <span class="font-label-sm text-[10px] uppercase tracking-tighter"><span>Início</span></span>
-  </a>
-  <a class="flex flex-col items-center justify-center text-secondary bg-secondary-container/20 rounded-xl px-4 py-1 transition-all duration-300 ease-in-out" href="informacao.html">
-    <span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">info</span>
-    <span class="font-label-sm text-[10px] uppercase tracking-tighter text-secondary font-bold"><span>Informação</span></span>
-  </a>
-  <a class="flex flex-col items-center justify-center text-on-surface-variant/60 active:bg-surface-bright transition-all duration-300 ease-in-out px-4 py-1 rounded-xl" href="faq.html">
-    <span class="material-symbols-outlined mb-1">help</span>
-    <span class="font-label-sm text-[10px] uppercase tracking-tighter"><span data-t="mob.faq">F.A.Q.</span></span>
-  </a>
-  <a class="flex flex-col items-center justify-center text-on-surface-variant/60 active:bg-surface-bright transition-all duration-300 ease-in-out px-4 py-1 rounded-xl" href="https://www.instagram.com/dualsense_no_drift/" target="_blank">
-    <span class="material-symbols-outlined mb-1">photo_camera</span>
-    <span class="font-label-sm text-[10px] uppercase tracking-tighter"><span>Insta</span></span>
-  </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 active:bg-surface-bright transition-all duration-300 ease-in-out px-4 py-1 rounded-xl" href="index.html">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter" data-t="mob.inicio">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary bg-secondary-container/20 rounded-xl px-4 py-1 transition-all duration-300 ease-in-out" href="informacao.html">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">info</span>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter text-secondary font-bold" data-t="mob.info">Informação</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 active:bg-surface-bright transition-all duration-300 ease-in-out px-4 py-1 rounded-xl" href="faq.html">
+<span class="material-symbols-outlined mb-1">help</span>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter" data-t="mob.faq">F.A.Q.</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 active:bg-surface-bright transition-all duration-300 ease-in-out px-4 py-1 rounded-xl" href="https://www.instagram.com/dualsense_no_drift/" target="_blank">
+<span class="material-symbols-outlined mb-1">photo_camera</span>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter" data-t="mob.insta">Insta</span>
+</a>
 </div>
 </nav>
 <!-- Footer -->
 <footer class="w-full py-6 border-t border-white/5 bg-surface-container-lowest mb-16 md:mb-0 mt-2">
 <div class="flex flex-col md:flex-row justify-between items-center px-margin max-w-container-max mx-auto gap-4">
+<a class="font-headline-lg text-primary text-xl font-bold" href="index.html">Sem Drift</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors text-sm font-medium" href="faq.html" data-t="nav.faq.footer">O que é o Drift? / F.A.Q.</a>
 </div>
-
 </footer>
 <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -309,51 +478,228 @@
             }
         });
     </script>
-
-
-
 <script id="semdrift-i18n">
-(function() {
-  const T = {"nav.inicio": {"pt": "Início", "en": "Home", "es": "Inicio", "fr": "Accueil", "it": "Inizio", "nl": "Start"}, "nav.info": {"pt": "Informação e Serviços", "en": "Info & Services", "es": "Info y Servicios", "fr": "Info & Services", "it": "Info e Servizi", "nl": "Info & Diensten"}, "nav.faq1": {"pt": "O que é o Drift?", "en": "What is Drift?", "es": "¿Qué es el Drift?", "fr": "C'est quoi le Drift?", "it": "Cos'è il Drift?", "nl": "Wat is Drift?"}, "nav.faq2": {"pt": "F.A.Q.", "en": "F.A.Q.", "es": "F.A.Q.", "fr": "F.A.Q.", "it": "F.A.Q.", "nl": "F.A.Q."}, "nav.modifica": {"pt": "Modifica o teu comando", "en": "Modify your controller", "es": "Modifica tu mando", "fr": "Modifie ta manette", "it": "Modifica il tuo controller", "nl": "Modificeer je controller"}, "nav.loja": {"pt": "Loja Wallapop", "en": "Wallapop Shop", "es": "Tienda Wallapop", "fr": "Boutique Wallapop", "it": "Negozio Wallapop", "nl": "Wallapop Winkel"}, "nav.contacta": {"pt": "Contacta-me", "en": "Contact me", "es": "Contáctame", "fr": "Contactez-moi", "it": "Contattami", "nl": "Neem contact op"}, "nav.instagram": {"pt": "Contacta-me no Insta", "en": "Contact me on Insta", "es": "Contáctame en Insta", "fr": "Contactez-moi sur Insta", "it": "Contattami su Insta", "nl": "Neem contact op via Insta"}, "nav.wallapop.sub": {"pt": "Loja online", "en": "Online shop", "es": "Tienda online", "fr": "Boutique en ligne", "it": "Negozio online", "nl": "Online winkel"}, "nav.olx.sub": {"pt": "Anúncios OLX", "en": "OLX listings", "es": "Anuncios OLX", "fr": "Annonces OLX", "it": "Annunci OLX", "nl": "OLX advertenties"}, "mob.inicio": {"pt": "Início", "en": "Home", "es": "Inicio", "fr": "Accueil", "it": "Inizio", "nl": "Start"}, "mob.info": {"pt": "Informação", "en": "Info", "es": "Info", "fr": "Info", "it": "Info", "nl": "Info"}, "mob.faq": {"pt": "F.A.Q.", "en": "F.A.Q.", "es": "F.A.Q.", "fr": "F.A.Q.", "it": "F.A.Q.", "nl": "F.A.Q."}, "mob.insta": {"pt": "Insta", "en": "Insta", "es": "Insta", "fr": "Insta", "it": "Insta", "nl": "Insta"}, "idx.banner": {"pt": "Não deite fora o seu comando com drift. Substitua os joysticks defeituosos por Hall Effect ou TMR (anti drift). 🎯", "en": "Don't throw away your drifting controller. Replace faulty joysticks with Hall Effect or TMR (anti drift). 🎯", "es": "No tires tu mando con drift. Sustituye los joysticks defectuosos por Hall Effect o TMR. 🎯", "fr": "Ne jetez pas votre manette. Remplacez les joysticks par Hall Effect ou TMR (anti drift). 🎯", "it": "Non buttare il tuo controller. Sostituisci i joystick con Hall Effect o TMR (anti drift). 🎯", "nl": "Gooi je controller niet weg. Vervang joysticks door Hall Effect of TMR (anti drift). 🎯"}, "idx.title": {"pt": "Diga adeus ao Stick Drift !", "en": "Say goodbye to Stick Drift!", "es": "¡Di adiós al Stick Drift!", "fr": "Dites adieu au Stick Drift !", "it": "Dì addio allo Stick Drift!", "nl": "Zeg vaarwel tegen Stick Drift!"}, "idx.subtitle": {"pt": "Comandos DualSense (e outros modelos...) personalizados com tecnologia magnética de alta performance. Só para jogadores competitivos que exigem o máximo dos seus equipamentos. Escolha TMR para a derradeira experiência e precisão.", "en": "DualSense (and other models...) controllers customized with high-performance magnetic technology. For competitive players who demand the best. Choose TMR for the ultimate precision.", "es": "Mandos DualSense (y otros modelos...) personalizados con tecnología magnética de alto rendimiento. Para jugadores competitivos que exigen lo máximo. Elige TMR para la precisión definitiva.", "fr": "Manettes DualSense (et autres modèles...) personnalisées avec technologie magnétique haute performance. Pour les joueurs compétitifs. Choisissez TMR pour la précision ultime.", "it": "Controller DualSense (e altri modelli...) personalizzati con tecnologia magnetica. Per giocatori competitivi. Scegli TMR per la precisione definitiva.", "nl": "DualSense (en andere modellen...) controllers met hoogwaardige magnetische technologie. Voor competitieve spelers. Kies TMR voor ultieme precisie."}, "idx.btn.info": {"pt": "Informação e Serviços", "en": "Info & Services", "es": "Info y Servicios", "fr": "Info & Services", "it": "Info e Servizi", "nl": "Info & Diensten"}, "idx.loja.title": {"pt": "Explora a Loja no", "en": "Explore the Shop on", "es": "Explora la Tienda en", "fr": "Explorer la Boutique sur", "it": "Esplora il Negozio su", "nl": "Verken de Winkel op"}, "idx.loja.sub": {"pt": "Builds únicas · Disponibilidade variável", "en": "Unique builds · Variable availability", "es": "Builds únicos · Disponibilidad variable", "fr": "Builds uniques · Disponibilité variable", "it": "Build uniche · Disponibilità variabile", "nl": "Unieke builds · Variabele beschikbaarheid"}, "idx.loja.btn": {"pt": "Ver comandos disponíveis", "en": "See available controllers", "es": "Ver mandos disponibles", "fr": "Voir les manettes disponibles", "it": "Vedi controller disponibili", "nl": "Bekijk beschikbare controllers"}, "idx.trust1.title": {"pt": "Compra Segura", "en": "Safe Purchase", "es": "Compra Segura", "fr": "Achat Sécurisé", "it": "Acquisto Sicuro", "nl": "Veilige Aankoop"}, "idx.trust1.sub": {"pt": "Garantia total Wallapop.", "en": "Full Wallapop guarantee.", "es": "Garantía total Wallapop.", "fr": "Garantie totale Wallapop.", "it": "Garanzia totale Wallapop.", "nl": "Volledige Wallapop garantie."}, "idx.trust2.title": {"pt": "Envios Rápidos", "en": "Fast Shipping", "es": "Envíos Rápidos", "fr": "Livraison Rapide", "it": "Spedizioni Rapide", "nl": "Snelle Verzending"}, "idx.trust2.sub": {"pt": "Expedição em 24/48h.", "en": "Shipped within 24/48h.", "es": "Envío en 24/48h.", "fr": "Expédition sous 24/48h.", "it": "Spedizione in 24/48h.", "nl": "Verzending binnen 24/48u."}, "idx.trust3.title": {"pt": "Feedback 5*", "en": "5* Feedback", "es": "Valoraciones 5*", "fr": "Avis 5*", "it": "Feedback 5*", "nl": "5* Feedback"}, "idx.trust3.sub": {"pt": "A excelência ao seu alcance", "en": "Excellence within your reach", "es": "La excelencia a tu alcance", "fr": "L'excellence à votre portée", "it": "L'eccellenza a portata di mano", "nl": "Excellentie binnen handbereik"}, "inf.mods.title": {"pt": "MODS & UPGRADES", "en": "MODS & UPGRADES", "es": "MODS & UPGRADES", "fr": "MODS & UPGRADES", "it": "MODS & UPGRADES", "nl": "MODS & UPGRADES"}, "inf.mods.sub": {"pt": "<span data-t="inf.mods.sub">Transforme o seu comando numa build completamente personalizada — feita à sua medida, do estilo à performance.
-</span>\n", "en": "Transform your controller into a fully custom build — made to your measure, from style to performance.\nErgonomics and aesthetics upgrades, or a monster built to win matches. Your choice.", "es": "Transforma tu mando en una build completamente personalizada — a tu medida, del estilo al rendimiento.\nUpgrades de ergonomía y estética, o un monstruo para ganar partidas. Lo que prefieras.", "fr": "Transformez votre manette en une build entièrement personnalisée — à votre mesure, du style à la performance.\nUpgrades d'ergonomie et d'esthétique, ou un monstre taillé pour gagner. À vous de choisir.", "it": "Trasforma il tuo controller in una build completamente personalizzata — fatta su misura, dallo stile alle prestazioni.\nUpgrade di ergonomia ed estetica, o un mostro fatto per vincere. Come preferisci.", "nl": "Transformeer je controller in een volledig aangepaste build — op maat gemaakt, van stijl tot prestaties.\nErgonomie en esthetiek upgrades, of een monster gebouwd om te winnen. Jouw keuze."}, "inf.mods.btn": {"pt": "Agenda já a tua personalização", "en": "Schedule your customization now", "es": "Agenda ya tu personalización", "fr": "Planifiez votre personnalisation", "it": "Prenota ora la tua personalizzazione", "nl": "Plan nu je aanpassing"}, "inf.joy.title": {"pt": "Instalação de Joysticks", "en": "Joystick Installation", "es": "Instalación de Joysticks", "fr": "Installation de Joysticks", "it": "Installazione Joystick", "nl": "Joystick Installatie"}, "inf.joy.sub": {"pt": "(Hall Effect e TMR)", "en": "(Hall Effect and TMR)", "es": "(Hall Effect y TMR)", "fr": "(Hall Effect et TMR)", "it": "(Hall Effect e TMR)", "nl": "(Hall Effect en TMR)"}, "inf.joy.desc": {"pt": "Upgrade de joysticks para tecnologia Hall Effect ou TMR, com instalação profissional, calibração avançada e testes completos após montagem.", "en": "Joystick upgrade to Hall Effect or TMR technology, with professional installation, advanced calibration and complete testing after assembly.", "es": "Upgrade de joysticks a tecnología Hall Effect o TMR, con instalación profesional, calibración avanzada y pruebas completas.", "fr": "Upgrade des joysticks vers la technologie Hall Effect ou TMR, avec installation professionnelle, calibration avancée et tests complets.", "it": "Upgrade dei joystick alla tecnologia Hall Effect o TMR, con installazione professionale, calibrazione avanzata e test completi.", "nl": "Joystick upgrade naar Hall Effect of TMR technologie, met professionele installatie, geavanceerde kalibratie en volledige tests."}, "inf.comp.title": {"pt": "<span data-t="inf.comp.title">COMPARATIVO DE TECNOLOGIAS</span>", "en": "TECHNOLOGY COMPARISON", "es": "COMPARATIVA DE TECNOLOGÍAS", "fr": "COMPARATIF DE TECHNOLOGIES", "it": "CONFRONTO TECNOLOGIE", "nl": "TECHNOLOGIE VERGELIJKING"}, "inf.orig.title": {"pt": "Originais", "en": "Original", "es": "Originales", "fr": "Originaux", "it": "Originali", "nl": "Origineel"}, "inf.orig.1": {"pt": "Sensibilidade ao toque familiar", "en": "Familiar touch sensitivity", "es": "Sensibilidad al tacto familiar", "fr": "Sensibilité au toucher familière", "it": "Sensibilità al tocco familiare", "nl": "Vertrouwde aanraakgevoeligheid"}, "inf.orig.2": {"pt": "Desgaste mecânico rápido", "en": "Rapid mechanical wear", "es": "Desgaste mecánico rápido", "fr": "Usure mécanique rapide", "it": "Usura meccanica rapida", "nl": "Snelle mechanische slijtage"}, "inf.orig.3": {"pt": "Propensão elevada a drift", "en": "High drift tendency", "es": "Alta propensión al drift", "fr": "Forte tendance au drift", "it": "Alta tendenza al drift", "nl": "Hoge drift neiging"}, "inf.hall.1": {"pt": "Sem contacto físico interno", "en": "No internal physical contact", "es": "Sin contacto físico interno", "fr": "Sans contact physique interne", "it": "Nessun contatto fisico interno", "nl": "Geen intern fysiek contact"}, "inf.hall.2": {"pt": "Durabilidade extrema", "en": "Extreme durability", "es": "Durabilidad extrema", "fr": "Durabilité extrême", "it": "Durabilità estrema", "nl": "Extreme duurzaamheid"}, "inf.hall.3": {"pt": "resposta menos natural e pouco fluida em alguns jogos", "en": "Less natural response in some games", "es": "Respuesta menos natural en algunos juegos", "fr": "Réponse moins naturelle dans certains jeux", "it": "Risposta meno naturale in alcuni giochi", "nl": "Minder natuurlijke respons in sommige games"}, "inf.tmr.badge": {"pt": "Mais Avançado", "en": "Most Advanced", "es": "Más Avanzado", "fr": "Le Plus Avancé", "it": "Più Avanzato", "nl": "Meest Geavanceerd"}, "inf.tmr.1": {"pt": "Maior precisão de micro ajustes", "en": "Higher micro-adjustment precision", "es": "Mayor precisión de micro ajustes", "fr": "Plus grande précision des micro-ajustements", "it": "Maggiore precisione nei micro-aggiustamenti", "nl": "Hogere micro-aanpassing precisie"}, "inf.tmr.2": {"pt": "Resposta instantânea", "en": "Instant response", "es": "Respuesta instantánea", "fr": "Réponse instantanée", "it": "Risposta istantanea", "nl": "Directe respons"}, "inf.tmr.3": {"pt": "Sensação natural & fluída", "en": "Natural & fluid feel", "es": "Sensación natural y fluida", "fr": "Sensation naturelle et fluide", "it": "Sensazione naturale e fluida", "nl": "Natuurlijk & vloeiend gevoel"}, "inf.tmr.4": {"pt": "Topo de gama competitivo", "en": "Top competitive grade", "es": "Gama alta competitiva", "fr": "Haut de gamme compétitif", "it": "Top di gamma competitivo", "nl": "Topprestaties competitief"}, "inf.proc.title": {"pt": "Processo técnico completo", "en": "Complete technical process", "es": "Proceso técnico completo", "fr": "Processus technique complet", "it": "Processo tecnico completo", "nl": "Volledig technisch proces"}, "inf.proc.sub": {"pt": "Instalação de joysticks (cerca de 2 horas)", "en": "Joystick installation (approximately 2 hours)", "es": "Instalación de joysticks (alrededor de 2 horas)", "fr": "Installation des joysticks (environ 2 heures)", "it": "Installazione joystick (circa 2 ore)", "nl": "Joystick installatie (ongeveer 2 uur)"}, "inf.f1.label": {"pt": "Fase 1 (Desmontagem)", "en": "Phase 1 (Disassembly)", "es": "Fase 1 (Desmontaje)", "fr": "Phase 1 (Démontage)", "it": "Fase 1 (Smontaggio)", "nl": "Fase 1 (Demonteren)"}, "inf.f1.1": {"pt": "abertura e remoção segura dos componentes", "en": "safe opening and component removal", "es": "apertura y extracción segura de componentes", "fr": "ouverture et retrait sécurisé des composants", "it": "apertura e rimozione sicura dei componenti", "nl": "veilig openen en verwijderen van componenten"}, "inf.f1.2": {"pt": "inspeção e limpeza da board", "en": "board inspection and cleaning", "es": "inspección y limpieza de la placa", "fr": "inspection et nettoyage de la carte", "it": "ispezione e pulizia della scheda", "nl": "inspectie en reiniging van het bord"}, "inf.f2.label": {"pt": "Fase 2 (Soldadura)", "en": "Phase 2 (Soldering)", "es": "Fase 2 (Soldadura)", "fr": "Phase 2 (Soudure)", "it": "Fase 2 (Saldatura)", "nl": "Fase 2 (Solderen)"}, "inf.f2.1": {"pt": "remoção dos Joysticks originais", "en": "removal of original joysticks", "es": "extracción de los joysticks originales", "fr": "retrait des joysticks originaux", "it": "rimozione dei joystick originali", "nl": "verwijdering van originele joysticks"}, "inf.f2.2": {"pt": "limpeza dos pontos de soldadura", "en": "cleaning of solder points", "es": "limpieza de los puntos de soldadura", "fr": "nettoyage des points de soudure", "it": "pulizia dei punti di saldatura", "nl": "reiniging van soldeerverbindingen"}, "inf.f2.3": {"pt": "instalação dos novos joysticks", "en": "installation of new joysticks", "es": "instalación de los nuevos joysticks", "fr": "installation des nouveaux joysticks", "it": "installazione dei nuovi joystick", "nl": "installatie van nieuwe joysticks"}, "inf.f3.label": {"pt": "Fase 3 (Calibração)", "en": "Phase 3 (Calibration)", "es": "Fase 3 (Calibración)", "fr": "Phase 3 (Calibration)", "it": "Fase 3 (Calibrazione)", "nl": "Fase 3 (Kalibratie)"}, "inf.f3.1": {"pt": "ajuste da circularidade", "en": "circularity adjustment", "es": "ajuste de la circularidad", "fr": "ajustement de la circularité", "it": "regolazione della circolarità", "nl": "cirkelvormaanpassing"}, "inf.f3.2": {"pt": "otimização da zona centro", "en": "center zone optimization", "es": "optimización de la zona central", "fr": "optimisation de la zone centrale", "it": "ottimizzazione della zona centrale", "nl": "middenzoneoptimalisatie"}, "inf.f3.3": {"pt": "compensação de flutuações dos eixos", "en": "axis fluctuation compensation", "es": "compensación de fluctuaciones de ejes", "fr": "compensation des fluctuations des axes", "it": "compensazione delle fluttuazioni degli assi", "nl": "compensatie van asvariaties"}, "inf.f3.4": {"pt": "ajuste fino para a melhor experiência", "en": "fine tuning for the best experience", "es": "ajuste fino para la mejor experiencia", "fr": "réglage fin pour la meilleure expérience", "it": "messa a punto per la migliore esperienza", "nl": "fijnafstemming voor de beste ervaring"}, "inf.f4.label": {"pt": "Fase 4 (Testes)", "en": "Phase 4 (Testing)", "es": "Fase 4 (Pruebas)", "fr": "Phase 4 (Tests)", "it": "Fase 4 (Test)", "nl": "Fase 4 (Testen)"}, "inf.f4.1": {"pt": "verificação de todos os botões e triggers", "en": "verification of all buttons and triggers", "es": "verificación de todos los botones y gatillos", "fr": "vérification de tous les boutons et gâchettes", "it": "verifica di tutti i pulsanti e trigger", "nl": "verificatie van alle knoppen en triggers"}, "inf.f4.2": {"pt": "testes em software e jogos", "en": "software and game testing", "es": "pruebas en software y juegos", "fr": "tests sur logiciel et jeux", "it": "test su software e giochi", "nl": "software- en gametests"}, "inf.f4.3": {"pt": "confirmação da calibração", "en": "calibration confirmation", "es": "confirmación de la calibración", "fr": "confirmation de la calibration", "it": "conferma della calibrazione", "nl": "kalibratie bevestiging"}, "inf.f4.note": {"pt": "(Autonomia da bateria pode variar conforme desgaste normal.)", "en": "(Battery life may vary depending on normal wear.)", "es": "(La autonomía de la batería puede variar según el desgaste normal.)", "fr": "(L'autonomie de la batterie peut varier selon l'usure normale.)", "it": "(L'autonomia della batteria può variare in base all'usura normale.)", "nl": "(Batterijduur kan variëren afhankelijk van normale slijtage.)"}, "inf.limp.title": {"pt": "Limpeza & Manutenção", "en": "Cleaning & Maintenance", "es": "Limpieza & Mantenimiento", "fr": "Nettoyage & Maintenance", "it": "Pulizia & Manutenzione", "nl": "Reiniging & Onderhoud"}, "inf.limp.desc": {"pt": "Serviço de manutenção preventiva e recuperação do comando, focado na fiabilidade e longevidade dos componentes.", "en": "Preventive maintenance and controller recovery service, focused on component reliability and longevity.", "es": "Servicio de mantenimiento preventivo y recuperación del mando, centrado en la fiabilidad y longevidad de los componentes.", "fr": "Service de maintenance préventive et récupération de manette, axé sur la fiabilité et la longévité des composants.", "it": "Servizio di manutenzione preventiva e recupero del controller, focalizzato sull'affidabilità e longevità dei componenti.", "nl": "Preventieve onderhouds- en herstelservice voor controllers, gericht op betrouwbaarheid en levensduur van componenten."}, "inf.limp.1": {"pt": "Remoção de pó, resíduos e oxidação", "en": "Dust, residue and oxidation removal", "es": "Eliminación de polvo, residuos y oxidación", "fr": "Élimination de poussière, résidus et oxydation", "it": "Rimozione di polvere, residui e ossidazione", "nl": "Verwijdering van stof, resten en oxidatie"}, "inf.limp.2": {"pt": "Desinfeção do comando", "en": "Controller disinfection", "es": "Desinfección del mando", "fr": "Désinfection de la manette", "it": "Disinfezione del controller", "nl": "Desinfectie van de controller"}, "inf.limp.3": {"pt": "Limpeza interna e externa completa", "en": "Complete internal and external cleaning", "es": "Limpieza interna y externa completa", "fr": "Nettoyage interne et externe complet", "it": "Pulizia interna ed esterna completa", "nl": "Volledige interne en externe reiniging"}, "inf.limp.4": {"pt": "Reparação de problemas de botões ou triggers", "en": "Button or trigger problem repair", "es": "Reparación de problemas de botones o gatillos", "fr": "Réparation de problèmes de boutons ou gâchettes", "it": "Riparazione di problemi con pulsanti o trigger", "nl": "Reparatie van knop- of triggerproblemen"}, "inf.limp.5": {"pt": "Substituição de componentes danificados", "en": "Replacement of damaged components", "es": "Sustitución de componentes dañados", "fr": "Remplacement de composants endommagés", "it": "Sostituzione di componenti danneggiati", "nl": "Vervanging van beschadigde onderdelen"}, "inf.limp.6": {"pt": "Diagnóstico técnico especializado", "en": "Specialized technical diagnosis", "es": "Diagnóstico técnico especializado", "fr": "Diagnostic technique spécialisé", "it": "Diagnosi tecnica specializzata", "nl": "Gespecialiseerde technische diagnose"}, "faq.page.title": {"pt": "O que é o Drift?", "en": "What is Drift?", "es": "¿Qué es el Drift?", "fr": "C'est quoi le Drift?", "it": "Cos'è il Drift?", "nl": "Wat is Drift?"}, "faq.page.faq": {"pt": "/ F.A.Q.", "en": "/ F.A.Q.", "es": "/ F.A.Q.", "fr": "/ F.A.Q.", "it": "/ F.A.Q.", "nl": "/ F.A.Q."}, "faq.page.sub": {"pt": "Respostas às perguntas mais frequentes sobre drift, joysticks, serviços e encomendas.", "en": "Answers to the most frequently asked questions about drift, joysticks, services and orders.", "es": "Respuestas a las preguntas más frecuentes sobre drift, joysticks, servicios y pedidos.", "fr": "Réponses aux questions les plus fréquentes sur le drift, les joysticks, les services et les commandes.", "it": "Risposte alle domande più frequenti su drift, joystick, servizi e ordini.", "nl": "Antwoorden op de meest gestelde vragen over drift, joysticks, diensten en bestellingen."}, "faq.q1": {"pt": "1. O que é o stick drift e porque acontece?", "en": "1. What is stick drift and why does it happen?", "es": "1. ¿Qué es el stick drift y por qué ocurre?", "fr": "1. Qu'est-ce que le stick drift et pourquoi cela arrive-t-il?", "it": "1. Cos'è lo stick drift e perché accade?", "nl": "1. Wat is stick drift en waarom gebeurt het?"}, "faq.a1": {"pt": "O stick drift acontece quando o comando envia ordens de movimento sem que o joystick seja tocado — o personagem move-se sozinho.\n\nAcontece devido ao desgaste causado pelo atrito constante entre metal e uma pista de carbono, presentes no interior do joystick original.", "en": "Stick drift happens when the controller sends movement commands without the joystick being touched — the character moves on its own.\n\nIt happens due to wear caused by constant friction between metal and a carbon track inside the original joystick.", "es": "El stick drift ocurre cuando el mando envía órdenes de movimiento sin que el joystick sea tocado — el personaje se mueve solo.\n\nOcurre debido al desgaste causado por la fricción constante entre metal y una pista de carbono en el interior del joystick original.", "fr": "Le stick drift se produit quand la manette envoie des commandes de mouvement sans que le joystick soit touché — le personnage bouge tout seul.\n\nCela est dû à l'usure causée par la friction constante entre le métal et une piste en carbone à l'intérieur du joystick original.", "it": "Lo stick drift avviene quando il controller invia comandi di movimento senza che il joystick venga toccato — il personaggio si muove da solo.\n\nAvviene a causa dell'usura causata dall'attrito costante tra metallo e una pista di carbonio all'interno del joystick originale.", "nl": "Stick drift treedt op wanneer de controller bewegingsopdrachten stuurt zonder dat de joystick wordt aangeraakt — het personage beweegt vanzelf.\n\nDit gebeurt door slijtage als gevolg van constante wrijving tussen metaal en een koolstofbaan binnenin de originele joystick."}, "faq.q2": {"pt": "2. Os joysticks TMR eliminam completamente o drift? Têm algum inconveniente?", "en": "2. Do TMR joysticks completely eliminate drift? Are there any drawbacks?", "es": "2. ¿Los joysticks TMR eliminan completamente el drift? ¿Tienen algún inconveniente?", "fr": "2. Les joysticks TMR éliminent-ils complètement le drift? Y a-t-il des inconvénients?", "it": "2. I joystick TMR eliminano completamente il drift? Ci sono svantaggi?", "nl": "2. Elimineren TMR joysticks drift volledig? Zijn er nadelen?"}, "faq.a2": {"pt": "Sim, os joysticks TMR funcionam com tecnologia magnética e eliminam completamente o drift, uma vez que não existe contacto físico interno. Contudo, não estão isentos de outros problemas futuros (ex: danos físicos ou ruído mecânico).\n\nExiste um inconveniente: a zona centro não é tão bem definida como nos joysticks originais e pode flutuar ligeiramente. Recomendo utilizar 4% a 5% de deadzone interna para anular este efeito.", "en": "Yes, TMR joysticks use magnetic technology and completely eliminate drift, since there is no internal physical contact. However, they are not immune to other future problems (e.g. physical damage or mechanical noise).\n\nThere is one drawback: the center zone is not as well defined as in original joysticks and may fluctuate slightly. I recommend using 4% to 5% internal deadzone to cancel this effect.", "es": "Sí, los joysticks TMR usan tecnología magnética y eliminan completamente el drift, ya que no hay contacto físico interno. Sin embargo, no están exentos de otros problemas futuros (ej: daños físicos o ruido mecánico).\n\nExiste un inconveniente: la zona central no es tan bien definida como en los joysticks originales y puede fluctuar ligeramente. Recomiendo usar un 4% a 5% de deadzone interna para anular este efecto.", "fr": "Oui, les joysticks TMR utilisent la technologie magnétique et éliminent complètement le drift, car il n'y a pas de contact physique interne. Cependant, ils ne sont pas à l'abri d'autres problèmes futurs (ex: dommages physiques ou bruit mécanique).\n\nIl y a un inconvénient: la zone centrale n'est pas aussi bien définie que dans les joysticks originaux et peut légèrement fluctuer. Je recommande d'utiliser 4% à 5% de deadzone interne pour annuler cet effet.", "it": "Sì, i joystick TMR usano la tecnologia magnetica ed eliminano completamente il drift, poiché non c'è contatto fisico interno. Tuttavia, non sono immuni ad altri problemi futuri (es. danni fisici o rumore meccanico).\n\nC'è uno svantaggio: la zona centrale non è così ben definita come nei joystick originali e può fluttuare leggermente. Consiglio di usare il 4%-5% di deadzone interna per annullare questo effetto.", "nl": "Ja, TMR joysticks gebruiken magnetische technologie en elimineren drift volledig, omdat er geen intern fysiek contact is. Ze zijn echter niet immuun voor andere toekomstige problemen (bv. fysieke schade of mechanisch geluid).\n\nEr is één nadeel: de middenzone is niet zo goed gedefinieerd als bij originele joysticks en kan licht fluctueren. Ik raad aan om 4% tot 5% interne deadzone te gebruiken om dit effect te neutraliseren."}, "faq.q3": {"pt": "3. Os joysticks novos alteram a sensibilidade ou o comportamento do comando?", "en": "3. Do new joysticks change the sensitivity or behavior of the controller?", "es": "3. ¿Los joysticks nuevos alteran la sensibilidad o el comportamiento del mando?", "fr": "3. Les nouveaux joysticks modifient-ils la sensibilité ou le comportement de la manette?", "it": "3. I nuovi joystick alterano la sensibilità o il comportamento del controller?", "nl": "3. Veranderen nieuwe joysticks de gevoeligheid of het gedrag van de controller?"}, "faq.a3": {"pt": "Sim, a sensibilidade será diferente. Cada marca tem os seus joysticks com tensão e força de acionamento próprias, o que cria experiências de jogo distintas.", "en": "Yes, the sensitivity will be different. Each brand has its joysticks with their own tension and actuation force, which creates distinct gaming experiences.", "es": "Sí, la sensibilidad será diferente. Cada marca tiene sus joysticks con su propia tensión y fuerza de accionamiento, lo que crea experiencias de juego distintas.", "fr": "Oui, la sensibilité sera différente. Chaque marque a ses joysticks avec leur propre tension et force d'actionnement, ce qui crée des expériences de jeu distinctes.", "it": "Sì, la sensibilità sarà diversa. Ogni marca ha i suoi joystick con tensione e forza di attuazione proprie, il che crea esperienze di gioco distinte.", "nl": "Ja, de gevoeligheid zal anders zijn. Elk merk heeft zijn joysticks met eigen spanning en activeringskracht, wat verschillende gameplay-ervaringen creëert."}, "faq.q4": {"pt": "4. Os joysticks TMR têm menos input lag?", "en": "4. Do TMR joysticks have less input lag?", "es": "4. ¿Los joysticks TMR tienen menos input lag?", "fr": "4. Les joysticks TMR ont-ils moins d'input lag?", "it": "4. I joystick TMR hanno meno input lag?", "nl": "4. Hebben TMR joysticks minder input lag?"}, "faq.a4": {"pt": "Sim, os joysticks TMR reduzem o input lag comparativamente com os joysticks Hall Effect e com os originais.", "en": "Yes, TMR joysticks reduce input lag compared to Hall Effect joysticks and the originals.", "es": "Sí, los joysticks TMR reducen el input lag en comparación con los joysticks Hall Effect y los originales.", "fr": "Oui, les joysticks TMR réduisent l'input lag par rapport aux joysticks Hall Effect et aux originaux.", "it": "Sì, i joystick TMR riducono l'input lag rispetto ai joystick Hall Effect e agli originali.", "nl": "Ja, TMR joysticks verminderen input lag vergeleken met Hall Effect joysticks en de originelen."}, "faq.q5": {"pt": "5. Vale a pena trocar para TMR mesmo sem drift?", "en": "5. Is it worth switching to TMR even without drift?", "es": "5. ¿Vale la pena cambiar a TMR incluso sin drift?", "fr": "5. Vaut-il la peine de passer au TMR même sans drift?", "it": "5. Vale la pena passare al TMR anche senza drift?", "nl": "5. Is het de moeite waard om over te stappen op TMR zelfs zonder drift?"}, "faq.a5": {"pt": "Sem dúvida. É um excelente upgrade para aumentar a precisão dos joysticks e reduzir o input lag.", "en": "Absolutely. It's an excellent upgrade to increase joystick precision and reduce input lag.", "es": "Sin duda. Es un excelente upgrade para aumentar la precisión de los joysticks y reducir el input lag.", "fr": "Sans aucun doute. C'est un excellent upgrade pour augmenter la précision des joysticks et réduire l'input lag.", "it": "Assolutamente. È un eccellente upgrade per aumentare la precisione dei joystick e ridurre l'input lag.", "nl": "Absoluut. Het is een uitstekende upgrade om de joystickprecisie te verhogen en input lag te verminderen."}, "faq.q6": {"pt": "6. Quanto tempo demora a instalação de joysticks? Inclui calibração? O comando é testado?", "en": "6. How long does joystick installation take? Does it include calibration? Is the controller tested?", "es": "6. ¿Cuánto tiempo tarda la instalación de joysticks? ¿Incluye calibración? ¿Se prueba el mando?", "fr": "6. Combien de temps prend l'installation des joysticks? Inclut-elle la calibration? La manette est-elle testée?", "it": "6. Quanto tempo richiede l'installazione dei joystick? Include la calibrazione? Il controller viene testato?", "nl": "6. Hoe lang duurt de joystick installatie? Inclusief kalibratie? Wordt de controller getest?"}, "faq.a6": {"pt": "Cerca de 2 horas, podendo variar conforme o estado do comando. Sim, o comando é sempre entregue já calibrado e 100% testado.", "en": "About 2 hours, which may vary depending on the controller's condition. Yes, the controller is always delivered already calibrated and 100% tested.", "es": "Alrededor de 2 horas, pudiendo variar según el estado del mando. Sí, el mando siempre se entrega ya calibrado y 100% probado.", "fr": "Environ 2 heures, pouvant varier selon l'état de la manette. Oui, la manette est toujours livrée déjà calibrée et 100% testée.", "it": "Circa 2 ore, che possono variare a seconda delle condizioni del controller. Sì, il controller viene sempre consegnato già calibrato e 100% testato.", "nl": "Ongeveer 2 uur, afhankelijk van de staat van de controller. Ja, de controller wordt altijd al gekalibreerd en 100% getest geleverd."}, "faq.q7": {"pt": "7. É feita limpeza interna durante a instalação?", "en": "7. Is internal cleaning done during installation?", "es": "7. ¿Se hace limpieza interna durante la instalación?", "fr": "7. Un nettoyage interne est-il effectué lors de l'installation?", "it": "7. Viene effettuata la pulizia interna durante l'installazione?", "nl": "7. Wordt er interne reiniging gedaan tijdens de installatie?"}, "faq.a7": {"pt": "Sim, durante o processo de instalação é sempre feita limpeza interna.", "en": "Yes, internal cleaning is always done during the installation process.", "es": "Sí, durante el proceso de instalación siempre se realiza limpieza interna.", "fr": "Oui, un nettoyage interne est toujours effectué pendant le processus d'installation.", "it": "Sì, durante il processo di installazione viene sempre effettuata la pulizia interna.", "nl": "Ja, interne reiniging wordt altijd gedaan tijdens het installatieproces."}, "faq.q8": {"pt": "8. O que acontece se o comando tiver mais problemas além do drift?", "en": "8. What happens if the controller has more issues beyond drift?", "es": "8. ¿Qué pasa si el mando tiene más problemas además del drift?", "fr": "8. Que se passe-t-il si la manette a d'autres problèmes en plus du drift?", "it": "8. Cosa succede se il controller ha altri problemi oltre al drift?", "nl": "8. Wat gebeurt er als de controller meer problemen heeft dan alleen drift?"}, "faq.a8": {"pt": "Contacte-me para descrever o problema. Consigo resolver a grande maioria das situações — caso não seja possível, dou-lhe resposta antes de avançarmos para qualquer modificação.", "en": "Contact me to describe the problem. I can solve the vast majority of situations — if not possible, I will give you an answer before we proceed with any modification.", "es": "Contáctame para describir el problema. Puedo resolver la gran mayoría de situaciones — si no es posible, te daré respuesta antes de proceder con cualquier modificación.", "fr": "Contactez-moi pour décrire le problème. Je peux résoudre la grande majorité des situations — si ce n'est pas possible, je vous répondrai avant de procéder à toute modification.", "it": "Contattami per descrivere il problema. Riesco a risolvere la grande maggioranza delle situazioni — se non è possibile, ti darò una risposta prima di procedere con qualsiasi modifica.", "nl": "Neem contact met me op om het probleem te beschrijven. Ik kan de overgrote meerderheid van situaties oplossen — als dat niet mogelijk is, geef ik u een antwoord voordat we doorgaan met een modificatie."}, "faq.q9": {"pt": "9. O que está incluído no serviço de Limpeza & Manutenção?", "en": "9. What is included in the Cleaning & Maintenance service?", "es": "9. ¿Qué está incluido en el servicio de Limpieza y Mantenimiento?", "fr": "9. Qu'est-ce qui est inclus dans le service de Nettoyage & Maintenance?", "it": "9. Cosa è incluso nel servizio di Pulizia & Manutenzione?", "nl": "9. Wat is inbegrepen in de Reinigings- & Onderhoudsdienst?"}, "faq.a9": {"pt": "O comando é desmontado de forma a aceder a toda a carcaça exterior, para uma limpeza detalhada. Durante o processo, o interior do comando também é limpo e inspecionado.", "en": "The controller is disassembled to access the entire outer casing for a detailed cleaning. During the process, the interior of the controller is also cleaned and inspected.", "es": "El mando se desmonta para acceder a toda la carcasa exterior, para una limpieza detallada. Durante el proceso, el interior del mando también se limpia e inspecciona.", "fr": "La manette est démontée pour accéder à l'ensemble du boîtier extérieur, pour un nettoyage détaillé. Pendant le processus, l'intérieur de la manette est également nettoyé et inspecté.", "it": "Il controller viene smontato per accedere all'intera scocca esterna, per una pulizia dettagliata. Durante il processo, l'interno del controller viene anche pulito e ispezionato.", "nl": "De controller wordt gedemonteerd om toegang te krijgen tot de gehele buitenbehuizing, voor een gedetailleerde reiniging. Tijdens het proces wordt ook het interieur van de controller gereinigd en geïnspecteerd."}, "faq.q10": {"pt": "10. Que comandos aceitas?", "en": "10. Which controllers do you accept?", "es": "10. ¿Qué mandos aceptas?", "fr": "10. Quelles manettes acceptez-vous?", "it": "10. Quali controller accetti?", "nl": "10. Welke controllers accepteer je?"}, "faq.a10": {"pt": "DualSense, DualSense Edge, Hexgaming, Scuf, PS Portal, Xbox Series, Xbox Elite e Switch Pro. Em caso de dúvida, questione.", "en": "DualSense, DualSense Edge, Hexgaming, Scuf, PS Portal, Xbox Series, Xbox Elite and Switch Pro. If in doubt, ask.", "es": "DualSense, DualSense Edge, Hexgaming, Scuf, PS Portal, Xbox Series, Xbox Elite y Switch Pro. En caso de duda, consulta.", "fr": "DualSense, DualSense Edge, Hexgaming, Scuf, PS Portal, Xbox Series, Xbox Elite et Switch Pro. En cas de doute, demandez.", "it": "DualSense, DualSense Edge, Hexgaming, Scuf, PS Portal, Xbox Series, Xbox Elite e Switch Pro. In caso di dubbio, chiedete.", "nl": "DualSense, DualSense Edge, Hexgaming, Scuf, PS Portal, Xbox Series, Xbox Elite en Switch Pro. Vraag het bij twijfel."}, "faq.q11": {"pt": "11. Posso enviar o meu comando por transportadora?", "en": "11. Can I send my controller by courier?", "es": "11. ¿Puedo enviar mi mando por mensajería?", "fr": "11. Puis-je envoyer ma manette par transporteur?", "it": "11. Posso inviare il mio controller tramite corriere?", "nl": "11. Kan ik mijn controller per koerier sturen?"}, "faq.a11": {"pt": "Sim, aceito envios por transportadora.", "en": "Yes, I accept courier shipments.", "es": "Sí, acepto envíos por mensajería.", "fr": "Oui, j'accepte les envois par transporteur.", "it": "Sì, accetto spedizioni tramite corriere.", "nl": "Ja, ik accepteer koerierszendingen."}, "faq.q12": {"pt": "12. O que são os Clicky Triggers? Vale a pena instalar?", "en": "12. What are Clicky Triggers? Is it worth installing?", "es": "12. ¿Qué son los Clicky Triggers? ¿Vale la pena instalarlos?", "fr": "12. Que sont les Clicky Triggers? Vaut-il la peine de les installer?", "it": "12. Cosa sono i Clicky Triggers? Vale la pena installarli?", "nl": "12. Wat zijn Clicky Triggers? Is het de moeite waard om ze te installeren?"}, "faq.a12": {"pt": "Os Clicky Triggers substituem o longo curso analógico dos gatilhos L2/R2 por um clique digital de curta trajetória, semelhante a um botão de rato. É um dos melhores upgrades para jogos FPS, permitindo disparar mais rápido e com maior consistência.", "en": "Clicky Triggers replace the long analog travel of L2/R2 triggers with a short digital click, similar to a mouse button. It's one of the best upgrades for FPS games, allowing faster and more consistent firing.", "es": "Los Clicky Triggers reemplazan el largo recorrido analógico de los gatillos L2/R2 por un clic digital de corto recorrido, similar a un botón de ratón. Es uno de los mejores upgrades para juegos FPS.", "fr": "Les Clicky Triggers remplacent le long débattement analogique des gâchettes L2/R2 par un clic digital court, similaire à un bouton de souris. C'est l'un des meilleurs upgrades pour les jeux FPS.", "it": "I Clicky Triggers sostituiscono la lunga corsa analogica dei trigger L2/R2 con un clic digitale breve, simile a un pulsante del mouse. È uno dei migliori upgrade per i giochi FPS.", "nl": "Clicky Triggers vervangen de lange analoge beweging van L2/R2 triggers door een korte digitale klik, vergelijkbaar met een muisknop. Het is een van de beste upgrades voor FPS-games."}, "faq.q13": {"pt": "13. Os paddles funcionam em qualquer jogo?", "en": "13. Do paddles work in any game?", "es": "13. ¿Los paddles funcionan en cualquier juego?", "fr": "13. Les paddles fonctionnent-ils dans n'importe quel jeu?", "it": "13. I paddles funzionano in qualsiasi gioco?", "nl": "13. Werken paddles in elk spel?"}, "faq.a13": {"pt": "Sim. Os paddles são botões programáveis que podem replicar a função de qualquer outro botão do comando, conforme a programação do utilizador — funcionam em qualquer jogo.", "en": "Yes. Paddles are programmable buttons that can replicate the function of any other button on the controller, as programmed by the user — they work in any game.", "es": "Sí. Los paddles son botones programables que pueden replicar la función de cualquier otro botón del mando, según la programación del usuario — funcionan en cualquier juego.", "fr": "Oui. Les paddles sont des boutons programmables qui peuvent répliquer la fonction de n'importe quel autre bouton de la manette — ils fonctionnent dans n'importe quel jeu.", "it": "Sì. I paddles sono pulsanti programmabili che possono replicare la funzione di qualsiasi altro pulsante del controller — funzionano in qualsiasi gioco.", "nl": "Ja. Paddles zijn programmeerbare knoppen die de functie van elke andere knop op de controller kunnen repliceren — ze werken in elk spel."}, "faq.q14": {"pt": "14. Fazes comandos totalmente personalizados?", "en": "14. Do you make fully customized controllers?", "es": "14. ¿Haces mandos totalmente personalizados?", "fr": "14. Faites-vous des manettes entièrement personnalisées?", "it": "14. Fai controller completamente personalizzati?", "nl": "14. Maak je volledig aangepaste controllers?"}, "faq.a14": {"pt": "Sim. Tudo escolhido pelo cliente: cor, peças, upgrades e configuração.", "en": "Yes. Everything chosen by the customer: color, parts, upgrades and configuration.", "es": "Sí. Todo elegido por el cliente: color, piezas, upgrades y configuración.", "fr": "Oui. Tout choisi par le client: couleur, pièces, upgrades et configuration.", "it": "Sì. Tutto scelto dal cliente: colore, pezzi, upgrade e configurazione.", "nl": "Ja. Alles gekozen door de klant: kleur, onderdelen, upgrades en configuratie."}, "faq.q15": {"pt": "15. Como faço uma build personalizada?", "en": "15. How do I get a custom build?", "es": "15. ¿Cómo hago una build personalizada?", "fr": "15. Comment puis-je obtenir une build personnalisée?", "it": "15. Come faccio una build personalizzata?", "nl": "15. Hoe maak ik een aangepaste build?"}, "faq.a15": {"pt": "Se quiser algo personalizado diferente do que está disponível na loja, entre em contacto pelo Instagram e configuramos tudo ao seu gosto.", "en": "If you want something customized different from what's available in the shop, contact me on Instagram and we'll set everything up to your liking.", "es": "Si quieres algo personalizado diferente a lo que está disponible en la tienda, contáctame por Instagram y configuramos todo a tu gusto.", "fr": "Si vous voulez quelque chose de personnalisé différent de ce qui est disponible en boutique, contactez-moi sur Instagram et nous configurerons tout à votre goût.", "it": "Se vuoi qualcosa di personalizzato diverso da ciò che è disponibile nel negozio, contattami su Instagram e configuriamo tutto a tuo piacimento.", "nl": "Als je iets aangepast wilt dat anders is dan wat beschikbaar is in de winkel, neem dan contact met me op via Instagram en we zetten alles naar jouw wens op."}, "faq.q16": {"pt": "16. Posso comprar um comando já modificado?", "en": "16. Can I buy an already modified controller?", "es": "16. ¿Puedo comprar un mando ya modificado?", "fr": "16. Puis-je acheter une manette déjà modifiée?", "it": "16. Posso comprare un controller già modificato?", "nl": "16. Kan ik een al gemodificeerde controller kopen?"}, "faq.a16": {"pt": "Sim. Pode adquirir diretamente uma das builds disponíveis na loja do Wallapop.", "en": "Yes. You can purchase directly one of the builds available in the Wallapop shop.", "es": "Sí. Puede adquirir directamente una de las builds disponibles en la tienda de Wallapop.", "fr": "Oui. Vous pouvez acheter directement l'une des builds disponibles dans la boutique Wallapop.", "it": "Sì. Puoi acquistare direttamente una delle build disponibili nel negozio Wallapop.", "nl": "Ja. U kunt direct een van de beschikbare builds in de Wallapop winkel kopen."}, "faq.q17": {"pt": "17. Existe garantia no serviço?", "en": "17. Is there a warranty on the service?", "es": "17. ¿Hay garantía en el servicio?", "fr": "17. Y a-t-il une garantie sur le service?", "it": "17. C'è una garanzia sul servizio?", "nl": "17. Is er garantie op de service?"}, "faq.a17": {"pt": "Sim. Ofereço 1 semana de garantia sobre a instalação após a receção do comando. Não cobre danos físicos causados pelo cliente, peças partidas ou desgaste normal.", "en": "Yes. I offer 1 week warranty on the installation after receiving the controller. Does not cover physical damage caused by the customer, broken parts or normal wear.", "es": "Sí. Ofrezco 1 semana de garantía sobre la instalación tras la recepción del mando. No cubre daños físicos causados por el cliente, piezas rotas o desgaste normal.", "fr": "Oui. J'offre 1 semaine de garantie sur l'installation après réception de la manette. Ne couvre pas les dommages physiques causés par le client, les pièces cassées ou l'usure normale.", "it": "Sì. Offro 1 settimana di garanzia sull'installazione dopo la ricezione del controller. Non copre danni fisici causati dal cliente, pezzi rotti o usura normale.", "nl": "Ja. Ik bied 1 week garantie op de installatie na ontvangst van de controller. Dekt geen fysieke schade veroorzaakt door de klant, gebroken onderdelen of normale slijtage."}, "faq.q18": {"pt": "18. A reparação anula a garantia da Sony?", "en": "18. Does repair void the Sony warranty?", "es": "18. ¿La reparación anula la garantía de Sony?", "fr": "18. La réparation annule-t-elle la garantie Sony?", "it": "18. La riparazione annulla la garanzia Sony?", "nl": "18. Vervalt de Sony garantie door reparatie?"}, "faq.a18": {"pt": "Sim, qualquer intervenção não oficial anula a garantia do fabricante.", "en": "Yes, any unofficial intervention voids the manufacturer's warranty.", "es": "Sí, cualquier intervención no oficial anula la garantía del fabricante.", "fr": "Oui, toute intervention non officielle annule la garantie du fabricant.", "it": "Sì, qualsiasi intervento non ufficiale annulla la garanzia del produttore.", "nl": "Ja, elke niet-officiële ingreep maakt de fabrieksgarantie ongeldig."}, "faq.q19": {"pt": "19. Tenho desconto na compra de peças na Extremerate?", "en": "19. Do I get a discount on Extremerate parts?", "es": "19. ¿Tengo descuento en la compra de piezas en Extremerate?", "fr": "19. Ai-je une réduction sur les pièces Extremerate?", "it": "19. Ho uno sconto sull'acquisto di pezzi su Extremerate?", "nl": "19. Krijg ik korting op Extremerate onderdelen?"}, "faq.a19.text": {"pt": "Sim. Com o código", "en": "Yes. With the code", "es": "Sí. Con el código", "fr": "Oui. Avec le code", "it": "Sì. Con il codice", "nl": "Ja. Met de code"}, "faq.a19.suffix": {"pt": "tens 10% de desconto em todo o site da", "en": "you get 10% discount on the entire", "it": "hai il 10% di sconto su tutto il sito di", "es": "tienes un 10% de descuento en todo el sitio de", "fr": "vous avez 10% de réduction sur tout le site", "nl": "krijg je 10% korting op de hele website van"}, "faq.a19.guide": {"pt": "Como aplicar o código — guia visual:", "en": "How to apply the code — visual guide:", "es": "Cómo aplicar el código — guía visual:", "fr": "Comment appliquer le code — guide visuel:", "it": "Come applicare il codice — guida visiva:", "nl": "Hoe de code toe te passen — visuele gids:"}};
-
-  const FLAGS = {"pt":"🇵🇹 PT","en":"🇬🇧 EN","es":"🇪🇸 ES","fr":"🇫🇷 FR","it":"🇮🇹 IT","nl":"🇳🇱 NL"};
-
-  function applyLang(lang) {
-    document.querySelectorAll('[data-t]').forEach(function(el) {
-      var key = el.getAttribute('data-t');
-      if (T[key] && T[key][lang]) {
-        el.innerHTML = T[key][lang].replace(/\n/g, '<br><br>');
-      }
-    });
-    var btn = document.getElementById('lang-btn-label');
-    if (btn) btn.innerHTML = FLAGS[lang] || FLAGS['pt'];
-    try { localStorage.setItem('sd_lang', lang); } catch(e) {}
-    var menu = document.getElementById('lang-dropdown');
-    if (menu) menu.style.display = 'none';
+(function(){
+const T={
+  "nav.inicio": {
+    "pt": "Início",
+    "en": "Home",
+    "es": "Inicio",
+    "fr": "Accueil",
+    "it": "Inizio",
+    "nl": "Start"
+  },
+  "nav.informacao": {
+    "pt": "Informação e<br/>Serviços",
+    "en": "Info &<br/>Services",
+    "es": "Info y<br/>Servicios",
+    "fr": "Info &<br/>Services",
+    "it": "Info e<br/>Servizi",
+    "nl": "Info &<br/>Diensten"
+  },
+  "nav.faq.l1": {
+    "pt": "O que é o Drift?",
+    "en": "What is Drift?",
+    "es": "¿Qué es el Drift?",
+    "fr": "C'est quoi le Drift?",
+    "it": "Cos'è il Drift?",
+    "nl": "Wat is Drift?"
+  },
+  "nav.faq.l2": {
+    "pt": "F.A.Q.",
+    "en": "F.A.Q.",
+    "es": "F.A.Q.",
+    "fr": "F.A.Q.",
+    "it": "F.A.Q.",
+    "nl": "F.A.Q."
+  },
+  "nav.modifica": {
+    "pt": "Modifica o<br/>teu comando",
+    "en": "Modify your<br/>controller",
+    "es": "Modifica tu<br/>mando",
+    "fr": "Modifie ta<br/>manette",
+    "it": "Modifica il<br/>tuo controller",
+    "nl": "Modificeer je<br/>controller"
+  },
+  "nav.loja": {
+    "pt": "Loja Wallapop",
+    "en": "Wallapop Shop",
+    "es": "Tienda Wallapop",
+    "fr": "Boutique Wallapop",
+    "it": "Negozio Wallapop",
+    "nl": "Wallapop Winkel"
+  },
+  "nav.contacta": {
+    "pt": "Contacta-me",
+    "en": "Contact me",
+    "es": "Contáctame",
+    "fr": "Contactez-moi",
+    "it": "Contattami",
+    "nl": "Neem contact op"
+  },
+  "hero.banner": {
+    "pt": "Não deite fora o seu comando com drift. Substitua os joysticks defeituosos por Hall Effect ou TMR (anti drift). 🎯",
+    "en": "Don't throw away your drifting controller. Replace the faulty joysticks with Hall Effect or TMR (anti drift). 🎯",
+    "es": "No tires tu mando con drift. Sustituye los joysticks defectuosos por Hall Effect o TMR (anti drift). 🎯",
+    "fr": "Ne jetez pas votre manette avec le drift. Remplacez les joysticks défectueux par Hall Effect ou TMR (anti drift). 🎯",
+    "it": "Non buttare il tuo controller con il drift. Sostituisci i joystick difettosi con Hall Effect o TMR (anti drift). 🎯",
+    "nl": "Gooi je controller met drift niet weg. Vervang de defecte joysticks door Hall Effect of TMR (anti drift). 🎯"
+  },
+  "hero.title": {
+    "pt": "Diga adeus ao Stick Drift !",
+    "en": "Say goodbye to Stick Drift!",
+    "es": "¡Di adiós al Stick Drift!",
+    "fr": "Dites adieu au Stick Drift !",
+    "it": "Dì addio allo Stick Drift!",
+    "nl": "Zeg vaarwel tegen Stick Drift!"
+  },
+  "hero.subtitle": {
+    "pt": "Comandos DualSense (e outros modelos...) personalizados com tecnologia magnética de alta performance. Só para jogadores competitivos que exigem o máximo dos seus equipamentos. Escolha TMR para a derradeira experiência e precisão.",
+    "en": "DualSense (and other models...) controllers customized with high-performance magnetic technology. Only for competitive players who demand the best from their equipment. Choose TMR for the ultimate experience and precision.",
+    "es": "Mandos DualSense (y otros modelos...) personalizados con tecnología magnética de alto rendimiento. Solo para jugadores competitivos que exigen lo máximo de su equipo. Elige TMR para la experiencia definitiva.",
+    "fr": "Manettes DualSense (et autres modèles...) personnalisées avec technologie magnétique haute performance. Uniquement pour les joueurs compétitifs qui exigent le meilleur de leur équipement. Choisissez TMR pour l'expérience ultime.",
+    "it": "Controller DualSense (e altri modelli...) personalizzati con tecnologia magnetica ad alte prestazioni. Solo per giocatori competitivi che pretendono il massimo. Scegli TMR per l'esperienza definitiva.",
+    "nl": "DualSense (en andere modellen...) controllers aangepast met hoogwaardige magnetische technologie. Alleen voor competitieve spelers die het maximale eisen. Kies TMR voor de ultieme ervaring en precisie."
+  },
+  "hero.btn.info": {
+    "pt": "Informação e Serviços",
+    "en": "Info & Services",
+    "es": "Info y Servicios",
+    "fr": "Info & Services",
+    "it": "Info e Servizi",
+    "nl": "Info & Diensten"
+  },
+  "hero.loja.title": {
+    "pt": "Explora a Loja no",
+    "en": "Explore the Shop on",
+    "es": "Explora la Tienda en",
+    "fr": "Explorer la Boutique sur",
+    "it": "Esplora il Negozio su",
+    "nl": "Verken de Winkel op"
+  },
+  "hero.loja.sub": {
+    "pt": "Builds únicas · Disponibilidade variável",
+    "en": "Unique builds · Variable availability",
+    "es": "Builds únicos · Disponibilidad variable",
+    "fr": "Builds uniques · Disponibilité variable",
+    "it": "Build uniche · Disponibilità variabile",
+    "nl": "Unieke builds · Variabele beschikbaarheid"
+  },
+  "hero.loja.btn": {
+    "pt": "Ver comandos disponíveis",
+    "en": "See available controllers",
+    "es": "Ver mandos disponibles",
+    "fr": "Voir les manettes disponibles",
+    "it": "Vedi controller disponibili",
+    "nl": "Bekijk beschikbare controllers"
+  },
+  "trust.segura": {
+    "pt": "Compra Segura",
+    "en": "Safe Purchase",
+    "es": "Compra Segura",
+    "fr": "Achat Sécurisé",
+    "it": "Acquisto Sicuro",
+    "nl": "Veilige Aankoop"
+  },
+  "trust.segura.sub": {
+    "pt": "Garantia total Wallapop.",
+    "en": "Full Wallapop guarantee.",
+    "es": "Garantía total Wallapop.",
+    "fr": "Garantie totale Wallapop.",
+    "it": "Garanzia totale Wallapop.",
+    "nl": "Volledige Wallapop garantie."
+  },
+  "trust.envios": {
+    "pt": "Envios Rápidos",
+    "en": "Fast Shipping",
+    "es": "Envíos Rápidos",
+    "fr": "Livraison Rapide",
+    "it": "Spedizioni Rapide",
+    "nl": "Snelle Verzending"
+  },
+  "trust.envios.sub": {
+    "pt": "Expedição em 24/48h.",
+    "en": "Shipped within 24/48h.",
+    "es": "Envío en 24/48h.",
+    "fr": "Expédition sous 24/48h.",
+    "it": "Spedizione in 24/48h.",
+    "nl": "Verzending binnen 24/48u."
+  },
+  "trust.feedback": {
+    "pt": "Feedback 5*",
+    "en": "5* Feedback",
+    "es": "Valoraciones 5*",
+    "fr": "Avis 5*",
+    "it": "Feedback 5*",
+    "nl": "5* Feedback"
+  },
+  "trust.feedback.sub": {
+    "pt": "A excelência ao seu alcance",
+    "en": "Excellence within your reach",
+    "es": "La excelencia a tu alcance",
+    "fr": "L'excellence à votre portée",
+    "it": "L'eccellenza a portata di mano",
+    "nl": "Excellentie binnen handbereik"
+  },
+  "mob.inicio": {
+    "pt": "Início",
+    "en": "Home",
+    "es": "Inicio",
+    "fr": "Accueil",
+    "it": "Inizio",
+    "nl": "Start"
+  },
+  "mob.informacao": {
+    "pt": "Informação",
+    "en": "Info",
+    "es": "Info",
+    "fr": "Info",
+    "it": "Info",
+    "nl": "Info"
+  },
+  "mob.faq": {
+    "pt": "F.A.Q.",
+    "en": "F.A.Q.",
+    "es": "F.A.Q.",
+    "fr": "F.A.Q.",
+    "it": "F.A.Q.",
+    "nl": "F.A.Q."
+  },
+  "mob.insta": {
+    "pt": "Insta",
+    "en": "Insta",
+    "es": "Insta",
+    "fr": "Insta",
+    "it": "Insta",
+    "nl": "Insta"
   }
-
-  window.sdSetLang = applyLang;
-
-  window.sdToggleLang = function() {
-    var menu = document.getElementById('lang-dropdown');
-    if (!menu) return;
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-  };
-
-  document.addEventListener('click', function(e) {
-    var wrapper = document.getElementById('lang-wrapper');
-    var menu = document.getElementById('lang-dropdown');
-    if (menu && wrapper && !wrapper.contains(e.target)) {
-      menu.style.display = 'none';
-    }
+};
+const FL={"pt":"🇵🇹 PT","en":"🇬🇧 EN","es":"🇪🇸 ES","fr":"🇫🇷 FR","it":"🇮🇹 IT","nl":"🇳🇱 NL"};
+function apply(lang){
+  document.querySelectorAll('[data-t]').forEach(function(el){
+    var k=el.getAttribute('data-t');
+    if(T[k]&&T[k][lang]) el.innerHTML=T[k][lang].replace(/\n/g,'<br><br>');
   });
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var saved = 'pt';
-    try { saved = localStorage.getItem('sd_lang') || 'pt'; } catch(e) {}
-    applyLang(saved);
-  });
+  var b=document.getElementById('lang-btn-label');
+  if(b) b.innerHTML=FL[lang]||FL.pt;
+  try{localStorage.setItem('sd_lang',lang);}catch(e){}
+  var m=document.getElementById('lang-dropdown');
+  if(m) m.style.display='none';
+}
+window.sdSetLang=apply;
+window.sdToggleLang=function(){
+  var m=document.getElementById('lang-dropdown');
+  if(m) m.style.display=m.style.display==='block'?'none':'block';
+};
+document.addEventListener('click',function(e){
+  var w=document.getElementById('lang-wrapper');
+  var m=document.getElementById('lang-dropdown');
+  if(m&&w&&!w.contains(e.target)) m.style.display='none';
+});
+document.addEventListener('DOMContentLoaded',function(){
+  var s='pt';try{s=localStorage.getItem('sd_lang')||'pt';}catch(e){}
+  apply(s);
+});
 })();
 </script>
 </body></html>
