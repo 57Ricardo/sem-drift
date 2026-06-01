@@ -290,14 +290,14 @@
 </section>
 <!-- Hero Section -->
 <section class="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center overflow-hidden py-8">
-<!-- Background Image with Gradient Overlay - Two Images Side by Side -->
+<!-- Background Image with Gradient Overlay - Two Images Side by Side (Desktop) / One Image (Mobile) -->
 <div class="absolute inset-0 z-0 flex">
-<!-- Left Image -->
-<div class="absolute left-0 top-0 w-1/2 h-full overflow-hidden">
+<!-- Left Image - Hidden on Mobile -->
+<div class="absolute left-0 top-0 w-1/2 h-full overflow-hidden hidden md:block">
 <img alt="Hero Background Left" class="w-full h-full object-cover opacity-30 mix-blend-luminosity" style="object-position: left center;" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663407768581/kragTQBYYLmuDXVb.jpg"/>
 </div>
-<!-- Right Image -->
-<div class="absolute right-0 top-0 w-1/2 h-full overflow-hidden">
+<!-- Right Image - Full Width on Mobile, Half Width on Desktop -->
+<div class="absolute right-0 top-0 w-full md:w-1/2 h-full overflow-hidden">
 <img alt="Hero Background Right" class="w-full h-full object-cover opacity-30 mix-blend-luminosity" style="object-position: right center;" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663407768581/kragTQBYYLmuDXVb.jpg"/>
 </div>
 <div class="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background z-10"></div>
